@@ -13,6 +13,7 @@ from classifier import (  # noqa: E402
     GroupDecision,
     SourceDocument,
     classify_manifest,
+    extract_hf_paper,
     extract_publication_year,
     load_state,
     read_manifest,
@@ -62,6 +63,20 @@ class ClassifierTests(unittest.TestCase):
         )
         self.assertIsNone(extract_publication_year("Released in 2020, source unavailable."))
 
+    def test_extract_hf_paper_returns_first_link_and_its_identifier(self) -> None:
+        self.assertEqual(
+            extract_hf_paper(
+                "[ALBERT](https://huggingface.co/papers/1909.11942) and "
+                "https://huggingface.co/papers/2401.12345"
+            ),
+            ("https://huggingface.co/papers/1909.11942", "1909.11942"),
+        )
+        self.assertEqual(
+            extract_hf_paper("https://huggingface.co/papers/2401.12345"),
+            ("https://huggingface.co/papers/2401.12345", "2401.12345"),
+        )
+        self.assertEqual(extract_hf_paper("No paper link."), (None, None))
+
     def test_legacy_checkpoint_is_rebuilt_for_metadata_cutover(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             output_path = Path(directory) / "groups.yaml"
@@ -73,7 +88,7 @@ class ClassifierTests(unittest.TestCase):
 
             state = load_state(output_path, Path("new.yaml"))
 
-            self.assertEqual(state.version, 2)
+            self.assertEqual(state.version, 3)
             self.assertEqual(state.source_config, str(Path("new.yaml").resolve()))
             self.assertEqual(state.groups, {})
 
@@ -83,7 +98,8 @@ class ClassifierTests(unittest.TestCase):
             first_path = root / "first.md"
             second_path = root / "second.md"
             first_path.write_text(
-                "This model was published in HF papers on 2020-05-26. First architecture",
+                "This model was published in HF papers on 2020-05-26. "
+                "[First](https://huggingface.co/papers/2005.12345) architecture",
                 encoding="utf-8",
             )
             second_path.write_text("second architecture", encoding="utf-8")
@@ -103,7 +119,7 @@ class ClassifierTests(unittest.TestCase):
                 fake,
                 output_path=output_path,
                 batch_size=2,
-                max_content_chars=100,
+                max_content_chars=200,
             )
 
             self.assertEqual((classified, unreadable), (2, 1))
@@ -111,7 +127,11 @@ class ClassifierTests(unittest.TestCase):
             documents_in_group = state.groups["Object detection"].documents
             self.assertEqual([d.title for d in documents_in_group], ["First", "Second"])
             self.assertEqual(documents_in_group[0].year, 2020)
+            self.assertEqual(documents_in_group[0].paper_link, "https://huggingface.co/papers/2005.12345")
+            self.assertEqual(documents_in_group[0].paper_id, "2005.12345")
             self.assertIsNone(documents_in_group[1].year)
+            self.assertIsNone(documents_in_group[1].paper_link)
+            self.assertIsNone(documents_in_group[1].paper_id)
             self.assertEqual(documents_in_group[0].techniques, ["encoder-decoder transformer", "object queries"])
             self.assertEqual(documents_in_group[0].domains, ["computer vision"])
             self.assertEqual(documents_in_group[0].tasks, ["object detection"])

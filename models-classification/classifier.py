@@ -36,6 +36,8 @@ class SourceDocument(BaseModel):
     local: str = Field(min_length=1)
     title: str = Field(min_length=1)
     year: int | None = Field(default=None, ge=1950, le=2100)
+    paper_link: str | None = None
+    paper_id: str | None = None
     techniques: list[str] = Field(default_factory=list)
     domains: list[str] = Field(default_factory=list)
     tasks: list[str] = Field(default_factory=list)
@@ -57,7 +59,7 @@ class ReadError(BaseModel):
 class ClassificationState(BaseModel):
     """The checkpoint written after each processed batch."""
 
-    version: int = 2
+    version: int = 3
     source_config: str
     groups: dict[str, Group] = Field(default_factory=dict)
     read_errors: list[ReadError] = Field(default_factory=list)
@@ -186,12 +188,12 @@ def read_manifest(path: Path) -> list[SourceDocument]:
 
 
 def load_state(path: Path, source_config: Path) -> ClassificationState:
-    """Load a v2 checkpoint, rebuilding legacy checkpoints with incomplete metadata."""
+    """Load a v3 checkpoint, rebuilding legacy checkpoints with incomplete metadata."""
     if not path.exists():
         return ClassificationState(source_config=str(source_config.resolve()))
     try:
         raw = yaml.safe_load(path.read_text(encoding="utf-8"))
-        if not isinstance(raw, dict) or raw.get("version") != 2:
+        if not isinstance(raw, dict) or raw.get("version") != 3:
             print(f"rebuilding legacy checkpoint: {path}")
             return ClassificationState(source_config=str(source_config.resolve()))
         return ClassificationState.model_validate(raw)
@@ -221,6 +223,7 @@ PUBLISHED_IN_HF_PAPERS = re.compile(
     r"\b(?:this|the) model was published in HF papers on (\d{4})-\d{2}-\d{2}",
     re.IGNORECASE,
 )
+HF_PAPER_LINK = re.compile(r"https://huggingface\.co/papers/(?P<paper_id>\d{4}\.\d{4,5})\b")
 
 
 def read_document(path: str, max_content_chars: int) -> str:
@@ -235,6 +238,12 @@ def extract_publication_year(content: str) -> int | None:
     """Return an explicitly documented original-publication year, if present."""
     match = PUBLISHED_IN_HF_PAPERS.search(content)
     return int(match.group(1)) if match else None
+
+
+def extract_hf_paper(content: str) -> tuple[str | None, str | None]:
+    """Return the first linked Hugging Face paper URL and its identifier, if present."""
+    match = HF_PAPER_LINK.search(content)
+    return (match.group(0), match.group("paper_id")) if match else (None, None)
 
 
 def normalise_group_name(name: str) -> str:
@@ -319,7 +328,14 @@ def classify_manifest(
                 print(f"unreadable: {document.title} ({document.local}): {exc}")
                 continue
 
-            document = document.model_copy(update={"year": extract_publication_year(content)})
+            paper_link, paper_id = extract_hf_paper(content)
+            document = document.model_copy(
+                update={
+                    "year": extract_publication_year(content),
+                    "paper_link": paper_link,
+                    "paper_id": paper_id,
+                }
+            )
             decision = classifier.classify(document, content, state.groups)
             group_name = assign_group(state, document, decision)
             processed_paths.add(document.local)
