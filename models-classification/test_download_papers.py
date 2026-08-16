@@ -65,7 +65,7 @@ groups:
             with patch.object(download_papers.subprocess, "run", side_effect=fake_run):
                 result = download_paper(record, output)
 
-            target = output / "Group name" / "Model name.md"
+            target = output / "Group name" / "2508.10104_Model name.md"
             self.assertEqual(result, "downloaded")
             self.assertEqual(target.read_bytes(), b"# Downloaded paper\n")
             self.assertEqual(

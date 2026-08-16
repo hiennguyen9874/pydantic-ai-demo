@@ -214,7 +214,7 @@ def download_paper(
     target = (
         output_directory
         / _path_component(record.group_name, "group name")
-        / f"{_path_component(record.model_name, 'model name')}.md"
+        / f"{_path_component(record.paper_id, 'paper ID')}_{_path_component(record.model_name, 'model name')}.md"
     )
     if target.exists() and not overwrite:
         return "skipped"
@@ -268,7 +268,7 @@ def main() -> None:
         outcome = download_paper(record, output_directory, overwrite=args.overwrite)
         counts[outcome] += 1
         if outcome == "downloaded":
-            print(f"downloaded: {record.group_name}/{record.model_name}.md")
+            print(f"downloaded: {record.group_name}/{record.paper_id}_{record.model_name}.md")
         elif outcome == "missing-paper-id":
             print(f"no paper id: {record.group_name}/{record.model_name}")
         elif outcome == "failed":
