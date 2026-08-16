@@ -1,0 +1,104 @@
+- local: models-classification/model_doc/audio-spectrogram-transformer.md
+  title: Audio Spectrogram Transformer
+- local: models-classification/model_doc/bark.md
+  title: Bark
+- local: models-classification/model_doc/clap.md
+  title: CLAP
+- local: models-classification/model_doc/cohere_asr.md
+  title: Cohere ASR
+- local: models-classification/model_doc/csm.md
+  title: CSM
+- local: models-classification/model_doc/dac.md
+  title: dac
+- local: models-classification/model_doc/dia.md
+  title: Dia
+- local: models-classification/model_doc/encodec.md
+  title: EnCodec
+- local: models-classification/model_doc/fastspeech2_conformer.md
+  title: FastSpeech2Conformer
+- local: models-classification/model_doc/glmasr.md
+  title: GLM-ASR
+- local: models-classification/model_doc/granite_speech.md
+  title: GraniteSpeech
+- local: models-classification/model_doc/granite_speech_plus.md
+  title: GraniteSpeechPlus
+- local: models-classification/model_doc/higgs_audio_v2.md
+  title: Higgs Audio V2
+- local: models-classification/model_doc/higgs_audio_v2_tokenizer.md
+  title: Higgs Audio V2 Tokenizer
+- local: models-classification/model_doc/hubert.md
+  title: Hubert
+- local: models-classification/model_doc/kyutai_speech_to_text.md
+  title: Kyutai Speech-To-Text
+- local: models-classification/model_doc/lasr.md
+  title: LASR
+- local: models-classification/model_doc/mimi.md
+  title: Mimi
+- local: models-classification/model_doc/mms.md
+  title: MMS
+- local: models-classification/model_doc/moonshine.md
+  title: Moonshine
+- local: models-classification/model_doc/moonshine_streaming.md
+  title: Moonshine Streaming
+- local: models-classification/model_doc/moshi.md
+  title: Moshi
+- local: models-classification/model_doc/musicgen.md
+  title: MusicGen
+- local: models-classification/model_doc/musicgen_melody.md
+  title: MusicGen Melody
+- local: models-classification/model_doc/nemotron3_5_asr.md
+  title: Nemotron 3.5 ASR
+- local: models-classification/model_doc/nemotron_asr_streaming.md
+  title: Nemotron ASR Streaming
+- local: models-classification/model_doc/parakeet.md
+  title: Parakeet
+- local: models-classification/model_doc/pe_audio.md
+  title: PE Audio
+- local: models-classification/model_doc/pop2piano.md
+  title: Pop2Piano
+- local: models-classification/model_doc/qwen3_asr.md
+  title: Qwen3 ASR
+- local: models-classification/model_doc/seamless_m4t.md
+  title: Seamless-M4T
+- local: models-classification/model_doc/seamless_m4t_v2.md
+  title: SeamlessM4T-v2
+- local: models-classification/model_doc/sew.md
+  title: SEW
+- local: models-classification/model_doc/sew-d.md
+  title: SEW-D
+- local: models-classification/model_doc/speech_to_text.md
+  title: Speech2Text
+- local: models-classification/model_doc/speecht5.md
+  title: SpeechT5
+- local: models-classification/model_doc/unispeech.md
+  title: UniSpeech
+- local: models-classification/model_doc/unispeech-sat.md
+  title: UniSpeech-SAT
+- local: models-classification/model_doc/univnet.md
+  title: UnivNet
+- local: models-classification/model_doc/vibevoice_acoustic_tokenizer.md
+  title: VibeVoice Acoustic Tokenizer
+- local: models-classification/model_doc/vibevoice_asr.md
+  title: VibeVoice ASR
+- local: models-classification/model_doc/vits.md
+  title: VITS
+- local: models-classification/model_doc/wav2vec2.md
+  title: Wav2Vec2
+- local: models-classification/model_doc/wav2vec2-bert.md
+  title: Wav2Vec2-BERT
+- local: models-classification/model_doc/wav2vec2-conformer.md
+  title: Wav2Vec2-Conformer
+- local: models-classification/model_doc/wav2vec2_phoneme.md
+  title: Wav2Vec2Phoneme
+- local: models-classification/model_doc/wavlm.md
+  title: WavLM
+- local: models-classification/model_doc/whisper.md
+  title: Whisper
+- local: models-classification/model_doc/xcodec.md
+  title: X-Codec
+- local: models-classification/model_doc/xcodec2.md
+  title: X-Codec2
+- local: models-classification/model_doc/xls_r.md
+  title: XLS-R
+- local: models-classification/model_doc/xlsr_wav2vec2.md
+  title: XLSR-Wav2Vec2

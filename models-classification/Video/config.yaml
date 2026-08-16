@@ -1,0 +1,16 @@
+- local: models-classification/model_doc/pe_video.md
+  title: PE Video
+- local: models-classification/model_doc/sam2_video.md
+  title: SAM2 Video
+- local: models-classification/model_doc/sam3_tracker_video.md
+  title: Sam3TrackerVideo
+- local: models-classification/model_doc/timesformer.md
+  title: TimeSformer
+- local: models-classification/model_doc/vjepa2.md
+  title: V-JEPA 2
+- local: models-classification/model_doc/videomae.md
+  title: VideoMAE
+- local: models-classification/model_doc/videoprism.md
+  title: VideoPrism
+- local: models-classification/model_doc/vivit.md
+  title: ViViT

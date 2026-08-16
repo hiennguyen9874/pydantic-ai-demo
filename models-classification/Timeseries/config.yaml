@@ -1,0 +1,14 @@
+- local: models-classification/model_doc/autoformer.md
+  title: Autoformer
+- local: models-classification/model_doc/informer.md
+  title: Informer
+- local: models-classification/model_doc/patchtsmixer.md
+  title: PatchTSMixer
+- local: models-classification/model_doc/patchtst.md
+  title: PatchTST
+- local: models-classification/model_doc/time_series_transformer.md
+  title: Time Series Transformer
+- local: models-classification/model_doc/timesfm.md
+  title: TimesFM
+- local: models-classification/model_doc/timesfm2_5.md
+  title: TimesFM2.5

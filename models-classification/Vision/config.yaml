@@ -1,0 +1,161 @@
+
+- local: models-classification/model_doc/aimv2.md
+  title: Aimv2
+- local: models-classification/model_doc/beit.md
+  title: BEiT
+- local: models-classification/model_doc/bit.md
+  title: BiT
+- local: models-classification/model_doc/chmv2.md
+  title: CHMv2
+- local: models-classification/model_doc/conditional_detr.md
+  title: Conditional DETR
+- local: models-classification/model_doc/convnext.md
+  title: ConvNeXT
+- local: models-classification/model_doc/convnextv2.md
+  title: ConvNeXTV2
+- local: models-classification/model_doc/cvt.md
+  title: CvT
+- local: models-classification/model_doc/d_fine.md
+  title: D-FINE
+- local: models-classification/model_doc/dab-detr.md
+  title: DAB-DETR
+- local: models-classification/model_doc/deformable_detr.md
+  title: Deformable DETR
+- local: models-classification/model_doc/deimv2.md
+  title: DEIMv2
+- local: models-classification/model_doc/deit.md
+  title: DeiT
+- local: models-classification/model_doc/depth_anything.md
+  title: Depth Anything
+- local: models-classification/model_doc/depth_anything_v2.md
+  title: Depth Anything V2
+- local: models-classification/model_doc/depth_pro.md
+  title: DepthPro
+- local: models-classification/model_doc/detr.md
+  title: DETR
+- local: models-classification/model_doc/dinat.md
+  title: DiNAT
+- local: models-classification/model_doc/dinov2.md
+  title: DINOV2
+- local: models-classification/model_doc/dinov2_with_registers.md
+  title: DINOv2 with Registers
+- local: models-classification/model_doc/dinov3.md
+  title: DINOv3
+- local: models-classification/model_doc/dpt.md
+  title: DPT
+- local: models-classification/model_doc/efficientloftr.md
+  title: EfficientLoFTR
+- local: models-classification/model_doc/efficientnet.md
+  title: EfficientNet
+- local: models-classification/model_doc/eomt.md
+  title: EoMT
+- local: models-classification/model_doc/eomt_dinov3.md
+  title: EoMT-DINOv3
+- local: models-classification/model_doc/focalnet.md
+  title: FocalNet
+- local: models-classification/model_doc/glpn.md
+  title: GLPN
+- local: models-classification/model_doc/hgnet_v2.md
+  title: HGNet-V2
+- local: models-classification/model_doc/hiera.md
+  title: Hiera
+- local: models-classification/model_doc/ijepa.md
+  title: I-JEPA
+- local: models-classification/model_doc/imagegpt.md
+  title: ImageGPT
+- local: models-classification/model_doc/levit.md
+  title: LeViT
+- local: models-classification/model_doc/lightglue.md
+  title: LightGlue
+- local: models-classification/model_doc/lw_detr.md
+  title: LW-DETR
+- local: models-classification/model_doc/mask2former.md
+  title: Mask2Former
+- local: models-classification/model_doc/maskformer.md
+  title: MaskFormer
+- local: models-classification/model_doc/mlcd.md
+  title: MLCD
+- local: models-classification/model_doc/mobilenet_v1.md
+  title: MobileNetV1
+- local: models-classification/model_doc/mobilenet_v2.md
+  title: MobileNetV2
+- local: models-classification/model_doc/mobilevit.md
+  title: MobileViT
+- local: models-classification/model_doc/mobilevitv2.md
+  title: MobileViTV2
+- local: models-classification/model_doc/pixio.md
+  title: Pixio
+- local: models-classification/model_doc/poolformer.md
+  title: PoolFormer
+- local: models-classification/model_doc/prompt_depth_anything.md
+  title: Prompt Depth Anything
+- local: models-classification/model_doc/pvt.md
+  title: Pyramid Vision Transformer (PVT)
+- local: models-classification/model_doc/pvt_v2.md
+  title: Pyramid Vision Transformer v2 (PVTv2)
+- local: models-classification/model_doc/radio.md
+  title: RADIO
+- local: models-classification/model_doc/regnet.md
+  title: RegNet
+- local: models-classification/model_doc/resnet.md
+  title: ResNet
+- local: models-classification/model_doc/rf_detr.md
+  title: RF-DETR
+- local: models-classification/model_doc/rt_detr.md
+  title: RT-DETR
+- local: models-classification/model_doc/rt_detr_v2.md
+  title: RT-DETRv2
+- local: models-classification/model_doc/sam2.md
+  title: SAM2
+- local: models-classification/model_doc/sam3_tracker.md
+  title: Sam3Tracker
+- local: models-classification/model_doc/sapiens2.md
+  title: Sapiens2
+- local: models-classification/model_doc/segformer.md
+  title: SegFormer
+- local: models-classification/model_doc/seggpt.md
+  title: SegGpt
+- local: models-classification/model_doc/sam.md
+  title: Segment Anything
+- local: models-classification/model_doc/sam_hq.md
+  title: Segment Anything High Quality
+- local: models-classification/model_doc/superglue.md
+  title: SuperGlue
+- local: models-classification/model_doc/superpoint.md
+  title: SuperPoint
+- local: models-classification/model_doc/swiftformer.md
+  title: SwiftFormer
+- local: models-classification/model_doc/swin.md
+  title: Swin Transformer
+- local: models-classification/model_doc/swinv2.md
+  title: Swin Transformer V2
+- local: models-classification/model_doc/swin2sr.md
+  title: Swin2SR
+- local: models-classification/model_doc/table-transformer.md
+  title: Table Transformer
+- local: models-classification/model_doc/textnet.md
+  title: TextNet
+- local: models-classification/model_doc/timm_wrapper.md
+  title: Timm Wrapper
+- local: models-classification/model_doc/upernet.md
+  title: UperNet
+- local: models-classification/model_doc/uvdoc.md
+  title: UVDoc
+- local: models-classification/model_doc/videomt.md
+  title: VidEoMT
+- local: models-classification/model_doc/vit.md
+  title: Vision Transformer (ViT)
+- local: models-classification/model_doc/vitdet.md
+  title: ViTDet
+- local: models-classification/model_doc/vit_mae.md
+  title: ViTMAE
+- local: models-classification/model_doc/vitmatte.md
+  title: ViTMatte
+- local: models-classification/model_doc/vit_msn.md
+  title: ViTMSN
+- local: models-classification/model_doc/vitpose.md
+  title: ViTPose
+- local: models-classification/model_doc/yolos.md
+  title: YOLOS
+- local: models-classification/model_doc/zoedepth.md
+  title: ZoeDepth

@@ -1,0 +1,2952 @@
+version: 2
+source_config: /home/hiennx/Documents/pydantic-ai-demo/models-classification/Multimodal/config.yaml
+groups:
+  Image-text retrieval:
+    description: Models whose primary downstream task is retrieving or ranking semantically aligned images
+      and text in a shared embedding space.
+    documents:
+    - local: models-classification/model_doc/align.md
+      title: ALIGN
+      year: 2021
+      techniques:
+      - dual-encoder architecture
+      - contrastive learning
+      - shared image-text embedding space
+      - EfficientNet image encoder
+      - BERT text encoder
+      - zero-shot inference
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - image-text retrieval
+      - zero-shot image classification
+      - image-text similarity
+    - local: models-classification/model_doc/altclip.md
+      title: AltCLIP
+      year: 2022
+      techniques:
+      - multilingual XLM-R text encoder
+      - contrastive learning
+      - teacher learning
+      - bidirectional attention
+      - shared image-text representation space
+      - int4 weight-only quantization
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-text retrieval
+    - local: models-classification/model_doc/bridgetower.md
+      title: BridgeTower
+      year: 2022
+      techniques:
+      - vision-language representation learning
+      - visual, textual, and cross-modal encoders
+      - multi-layer bridge layers
+      - cross-modal alignment and fusion
+      - contrastive learning
+      - masked language modeling
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-text retrieval
+      - image-text matching
+      - contrastive learning
+      - masked language modeling
+    - local: models-classification/model_doc/chinese_clip.md
+      title: Chinese-CLIP
+      year: 2022
+      techniques:
+      - contrastive vision-language pretraining
+      - dual image-text encoders
+      - two-stage pretraining with frozen image encoder
+      - vision transformer
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - cross-modal retrieval
+      - zero-shot image classification
+      - open-domain object detection
+    - local: models-classification/model_doc/clip.md
+      title: CLIP
+      year: 2021
+      techniques:
+      - multimodal dual encoder
+      - contrastive pretraining
+      - image encoder and text encoder
+      - shared latent-space projection
+      - dot-product similarity
+      - zero-shot transfer
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-text retrieval
+      - zero-shot image classification
+      - image classification
+    - local: models-classification/model_doc/colmodernvbert.md
+      title: ColModernVBert
+      year: 2025
+      techniques:
+      - ModernVBert backbone
+      - multi-vector embeddings
+      - ColPali-style retrieval
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - multimodal learning
+      - document understanding
+      tasks:
+      - visual document retrieval
+      - image-text retrieval
+    - local: models-classification/model_doc/colpali.md
+      title: ColPali
+      year: 2024
+      techniques:
+      - PaliGemma-3B backbone
+      - visual document encoding
+      - multi-vector embeddings
+      - late interaction similarity scoring
+      - OCR-free retrieval
+      domains:
+      - multimodal learning
+      - computer vision
+      - document understanding
+      - information retrieval
+      tasks:
+      - image-text retrieval
+      - image retrieval
+      - document retrieval
+    - local: models-classification/model_doc/colqwen2.md
+      title: ColQwen2
+      year: 2024
+      techniques:
+      - Qwen2-VL backbone
+      - multimodal embeddings
+      - multi-vector embeddings
+      - late interaction similarity scoring
+      - arbitrary-resolution image encoding
+      - 4-bit quantization
+      domains:
+      - computer vision
+      - multimodal learning
+      - document retrieval
+      tasks:
+      - image-text retrieval
+      - image retrieval
+      - document retrieval
+    - local: models-classification/model_doc/metaclip_2.md
+      title: MetaCLIP 2
+      year: null
+      techniques:
+      - contrastive image-text pretraining
+      - dual-encoder architecture
+      - shared multimodal embedding space
+      - multilingual training
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - computer vision
+      - multimodal learning
+      - natural language processing
+      tasks:
+      - image-text retrieval
+      - zero-shot image classification
+      - image classification
+    - local: models-classification/model_doc/siglip.md
+      title: SigLIP
+      year: 2023
+      techniques:
+      - dual-encoder architecture
+      - separate image and text encoders
+      - pairwise sigmoid loss
+      - shared multimodal representations
+      - memory-efficient attention
+      domains:
+      - computer vision
+      - multimodal learning
+      - natural language processing
+      tasks:
+      - image-text retrieval
+      - zero-shot image classification
+      - image classification
+    - local: models-classification/model_doc/siglip2.md
+      title: SigLIP2
+      year: 2025
+      techniques:
+      - multilingual vision-language encoder
+      - decoder-based pretraining
+      - self-distillation
+      - masked prediction
+      - native-aspect-ratio processing (NaFlex)
+      - fixed-resolution processing (FixRes)
+      - memory-efficient attention (SDPA/FlashAttention)
+      - int4 quantization
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - image-text retrieval
+      - zero-shot image classification
+      - image classification
+      - image segmentation
+      - depth estimation
+      - optical character recognition
+    - local: models-classification/model_doc/tipsv2.md
+      title: TIPSv2
+      year: 2026
+      techniques:
+      - contrastive vision-language pretraining
+      - dual-encoder architecture
+      - vision transformer
+      - patch-level distillation
+      - iBOT++ masked image objective
+      - patch-text alignment
+      - exponential moving average training
+      - synthetic caption sampling
+      - cosine-similarity embeddings
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - image-text retrieval
+      - zero-shot image classification
+      - image classification
+      - image segmentation
+      - depth estimation
+      - surface normal estimation
+    - local: models-classification/model_doc/vision-text-dual-encoder.md
+      title: Vision Text Dual Encoder
+      year: 2021
+      techniques:
+      - vision-text dual encoder
+      - pretrained vision and text encoders
+      - shared latent-space projections
+      - contrastive image-text training
+      - zero-shot transfer
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - image-text retrieval
+      - image classification
+  Image-to-text generation:
+    description: Models whose primary downstream task is generating natural-language text conditioned
+      on an input image.
+    documents:
+    - local: models-classification/model_doc/aria.md
+      title: Aria
+      year: 2024
+      techniques:
+      - multimodal mixture-of-experts
+      - lightweight visual encoder
+      - mixture-of-experts text decoder
+      - causal language modeling
+      - multimodal pretraining
+      - long-context pretraining
+      - FlashAttention
+      - scaled dot-product attention
+      - int4 weight-only quantization
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-to-text generation
+    - local: models-classification/model_doc/aya_vision.md
+      title: AyaVision
+      year: 2025
+      techniques:
+      - multimodal vision-language model
+      - CommandR-7B language model
+      - SigLIP vision encoder
+      - synthetic multilingual image-caption annotation
+      - cross-modal model merging
+      - autoregressive conditional generation
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - image captioning
+      - visual question answering
+      - optical character recognition
+    - local: models-classification/model_doc/blip.md
+      title: BLIP
+      year: 2022
+      techniques:
+      - vision-language pretraining
+      - bootstrapped caption generation
+      - noisy-caption filtering
+      - conditional text generation
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image captioning
+      - visual question answering
+      - image-text retrieval
+    - local: models-classification/model_doc/blip-2.md
+      title: BLIP-2
+      year: 2023
+      techniques:
+      - frozen pretrained image encoder
+      - frozen large language model
+      - querying transformer
+      - two-stage vision-language pretraining
+      - conditional text generation
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - image captioning
+      - visual question answering
+      - image-text retrieval
+    - local: models-classification/model_doc/chameleon.md
+      title: Chameleon
+      year: 2024
+      techniques:
+      - early-fusion multimodal transformer
+      - vector quantization
+      - VQ-VAE image tokenization
+      - interleaved image-text modeling
+      - autoregressive generation
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - visual question answering
+      - image captioning
+      - text generation
+      - image generation
+      - long-form mixed-modal generation
+    - local: models-classification/model_doc/cohere2_vision.md
+      title: Cohere2Vision
+      year: null
+      techniques:
+      - vision-language model
+      - multimodal visual-text integration
+      - conditional text generation
+      - FlashAttention
+      - scaled dot-product attention
+      - tensor parallelism
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      - document understanding
+      tasks:
+      - image captioning
+      - visual question answering
+      - document understanding
+      - chart understanding
+      - image-text-to-text generation
+    - local: models-classification/model_doc/cosmos3_edge.md
+      title: Cosmos3 Edge
+      year: null
+      techniques:
+      - decoder-only transformer language model
+      - Llama-compatible language tower
+      - SigLIP2 vision encoder
+      - multimodal vision-language projection
+      - multimodal rotary position IDs
+      - packed variable-resolution image and video patches
+      - conditional text generation
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - video-to-text generation
+    - local: models-classification/model_doc/cosmos3_omni.md
+      title: Cosmos3 Omni
+      year: null
+      techniques:
+      - mixture-of-transformers
+      - vision-language transformer
+      - shared input embedding
+      - shared visual encoder
+      - disjoint experts for understanding and generation
+      - cross-modal adapters
+      - conditional generation
+      domains:
+      - multimodal learning
+      - computer vision
+      tasks:
+      - image captioning
+    - local: models-classification/model_doc/deepseek_vl.md
+      title: DeepseekVL
+      year: 2024
+      techniques:
+      - vision-language model
+      - LLaMA text encoder
+      - SigLip image encoder
+      - conditional text generation
+      - multimodal chat templating
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - image-text-to-text generation
+    - local: models-classification/model_doc/deepseek_vl_hybrid.md
+      title: DeepseekVLHybrid
+      year: 2024
+      techniques:
+      - vision-language model
+      - LLaMA text encoder
+      - SigLIP image encoder
+      - SAM high-resolution image encoder
+      - conditional text generation
+      - multi-image conversational inference
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - visual question answering
+    - local: models-classification/model_doc/deplot.md
+      title: DePlot
+      year: 2022
+      techniques:
+      - Pix2Struct architecture
+      - plot-to-table translation
+      - modality conversion
+      - encoder-decoder conditional generation
+      - one-shot prompting with large language models
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - image-to-text generation
+      - plot-to-table translation
+      - visual question answering
+      - chart question answering
+    - local: models-classification/model_doc/ernie4_5_vl_moe.md
+      title: ernie4_5_vl_moe
+      year: null
+      techniques:
+      - multimodal heterogeneous architecture
+      - mixture of experts
+      - dedicated text, vision, and shared experts
+      - vision transformer
+      - variable-resolution resampler
+      - autoregressive conditional generation
+      - flashattention
+      - tensor parallelism
+      domains:
+      - multimodal learning
+      - computer vision
+      - video understanding
+      tasks:
+      - image-to-text generation
+      - video-to-text generation
+    - local: models-classification/model_doc/fast_vlm.md
+      title: FastVLM
+      year: 2024
+      techniques:
+      - hybrid vision encoder
+      - reparameterizable convolutional layers
+      - scaled input resolution
+      - visual token reduction
+      - vision-language model
+      - autoregressive language decoding
+      - FlashAttention
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - image-to-text generation
+    - local: models-classification/model_doc/florence2.md
+      title: Florence2
+      year: 2023
+      techniques:
+      - prompt-based task conditioning
+      - vision-language sequence-to-sequence architecture
+      - encoder-decoder conditional generation
+      - multitask learning
+      - zero-shot and fine-tuned inference
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - image captioning
+      - detailed image captioning
+      - optical character recognition
+      - region-aware optical character recognition
+      - object detection
+      - dense region captioning
+      - phrase grounding
+      - referring expression segmentation
+      - region-to-segmentation
+      - open-vocabulary object detection
+      - region classification
+      - region description
+      - region proposal
+    - local: models-classification/model_doc/gemma3.md
+      title: Gemma3
+      year: 2025
+      techniques:
+      - multimodal transformer with SigLip vision encoder
+      - causal language modeling
+      - alternating local sliding-window and global self-attention
+      - encoder-decoder conditional generation
+      - knowledge distillation
+      - reinforcement learning
+      - pan-and-scan image processing
+      - scaled dot-product attention
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - image-text-to-text generation
+      - text generation
+      - sequence classification
+    - local: models-classification/model_doc/gemma3n.md
+      title: Gemma3n
+      year: 2024
+      techniques:
+      - multimodal conditional generation
+      - causal language modeling
+      - MobileNet v5 vision encoder
+      - Universal Speech Model-based audio encoder
+      - alternating local sliding-window and global self-attention
+      - Alternating Updates (AltUp)
+      - Learned Augmented Residual Layer (LAuReL)
+      - MatFormer
+      - Per-Layer Embeddings (PLE)
+      - statistical top-k activation sparsity
+      - KV cache sharing
+      - knowledge distillation
+      - reinforcement learning
+      domains:
+      - multimodal learning
+      - computer vision
+      - audio processing
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - audio-to-text generation
+      - multimodal-to-text generation
+    - local: models-classification/model_doc/gemma4.md
+      title: Gemma4
+      year: null
+      techniques:
+      - multimodal language modeling
+      - mixture-of-experts (MoE)
+      - vision patch embeddings
+      - variable-aspect-ratio image processing
+      - fixed-budget visual tokens
+      - learned 2D position embeddings
+      - 2D rotary position embeddings
+      - per-layer embeddings (PLE)
+      - configurable reasoning modes
+      - function calling
+      domains:
+      - multimodal learning
+      - natural language processing
+      - computer vision
+      - audio processing
+      tasks:
+      - image-to-text generation
+      - audio-to-text generation
+      - text generation
+      - function calling
+    - local: models-classification/model_doc/git.md
+      title: GIT
+      year: 2022
+      techniques:
+      - decoder-only transformer
+      - CLIP vision encoder
+      - causal language modeling
+      - autoregressive generation
+      - vision-conditioned text decoding
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - image captioning
+      - visual question answering
+      - video captioning
+      - question answering
+      - image classification
+      - scene text recognition
+    - local: models-classification/model_doc/glmga.md
+      title: Glmga
+      year: null
+      techniques:
+      - multimodal language model
+      - image and video processing
+      - GLM-4.6V architecture reuse
+      domains:
+      - multimodal learning
+      tasks:
+      - image-to-text generation
+    - local: models-classification/model_doc/granitevision.md
+      title: GraniteVision
+      year: null
+      techniques:
+      - vision-language model
+      - SigLIP visual encoder
+      - Granite language model
+      - LLaVA-NeXT architecture
+      - concatenated vision hidden states
+      - multimodal autoregressive generation
+      - multi-aspect-ratio image grid pinpoints
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - image-to-text generation
+      - visual question answering
+      - image captioning
+    - local: models-classification/model_doc/idefics.md
+      title: IDEFICS
+      year: 2023
+      techniques:
+      - vision-language model
+      - interleaved image-text modeling
+      - perceiver resampler
+      - autoregressive text generation
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-to-text generation
+    - local: models-classification/model_doc/idefics2.md
+      title: Idefics2
+      year: 2024
+      techniques:
+      - vision transformer
+      - perceiver resampler
+      - autoregressive conditional generation
+      - multimodal fusion
+      - native-aspect-ratio image processing
+      - flash attention
+      - sliding-window attention
+      - 4-bit quantization
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image question answering
+      - image captioning
+      - visual storytelling
+      - multi-image understanding
+      - document understanding
+      - optical character recognition
+      - visual reasoning
+      - text generation
+      - JSON extraction
+    - local: models-classification/model_doc/idefics3.md
+      title: Idefics3
+      year: 2024
+      techniques:
+      - vision transformer
+      - Llama 3 language model
+      - multimodal vision-language modeling
+      - image patch decomposition
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-to-text generation
+    - local: models-classification/model_doc/instructblip.md
+      title: InstructBLIP
+      year: 2023
+      techniques:
+      - BLIP-2 architecture
+      - vision encoder
+      - Q-Former
+      - instruction tuning
+      - instruction-aware visual feature extraction
+      - conditional generation
+      domains:
+      - computer vision
+      - multimodal learning
+      - natural language processing
+      tasks:
+      - image-to-text generation
+    - local: models-classification/model_doc/internvl.md
+      title: InternVL
+      year: 2025
+      techniques:
+      - multimodal pre-training
+      - vision-language model
+      - variable visual position encoding (V2PE)
+      - supervised fine-tuning (SFT)
+      - mixed preference optimization (MPO)
+      - test-time scaling
+      - FlashAttention
+      - SDPA
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      - video understanding
+      tasks:
+      - image-to-text generation
+      - video-to-text generation
+      - text generation
+    - local: models-classification/model_doc/kimi_k25.md
+      title: KimiK-2.5
+      year: null
+      techniques:
+      - native multimodal vision-language modeling
+      - autoregressive conditional generation
+      - chat-template-based instruction following
+      - expert parallelism
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      - software engineering
+      tasks:
+      - image-to-text generation
+      - code generation
+      - text generation
+      - visual question answering
+      - autonomous task execution
+      - task orchestration
+    - local: models-classification/model_doc/kosmos-2.md
+      title: KOSMOS-2
+      year: 2023
+      techniques:
+      - transformer-based causal language model
+      - multimodal large language model
+      - autoregressive next-word prediction
+      - grounded image-text pretraining
+      - bounding-box location tokens
+      - vision-language grounding
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - image captioning
+      - multimodal grounding
+      - referring expression comprehension
+      - phrase grounding
+      - referring expression generation
+      - perception-language tasks
+      - language understanding
+      - language generation
+    - local: models-classification/model_doc/lfm2_vl.md
+      title: LFM2-VL
+      year: null
+      techniques:
+      - language model backbone
+      - SigLIP2 NaFlex vision encoder
+      - multimodal projector
+      - 2-layer MLP connector
+      - pixel unshuffle
+      - variable-resolution image processing
+      - patch-based image encoding
+      - thumbnail-based global context
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - image-to-text generation
+    - local: models-classification/model_doc/llava.md
+      title: LLaVA
+      year: 2023
+      techniques:
+      - autoregressive transformer language model
+      - vision transformer (CLIP ViT) encoder
+      - MLP vision-language projection
+      - visual instruction tuning
+      - multimodal cross-modal connector
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - image-to-text generation
+      - visual question answering
+      - multimodal instruction following
+      - multimodal chat
+    - local: models-classification/model_doc/llava_next.md
+      title: LLaVA-NeXT
+      year: null
+      techniques:
+      - vision encoder with projection into a language model
+      - autoregressive conditional generation
+      - multimodal transformer
+      - visual instruction tuning
+      - high-resolution multi-aspect-ratio image processing
+      - multi-image conditioning
+      - chat-template prompting
+      - 4-bit weight quantization
+      domains:
+      - computer vision
+      - multimodal learning
+      - natural language generation
+      tasks:
+      - image-to-text generation
+      - optical character recognition
+      - visual question answering
+    - local: models-classification/model_doc/minicpmv4_6.md
+      title: MiniCPM-V
+      year: 2025
+      techniques:
+      - SigLIP vision encoder
+      - window-attention merger
+      - Qwen language model backbone
+      - multimodal autoregressive generation
+      - 4x/16x visual downsampling
+      domains:
+      - multimodal learning
+      - computer vision
+      - video understanding
+      tasks:
+      - image-to-text generation
+      - video-to-text generation
+    - local: models-classification/model_doc/mistral3.md
+      title: Mistral3
+      year: null
+      techniques:
+      - vision-language modeling
+      - autoregressive text generation
+      - long-context modeling (up to 128K tokens)
+      - latency-optimized fewer-layer architecture
+      - batched multimodal inputs
+      - 4-bit quantization with bitsandbytes
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - text generation
+    - local: models-classification/model_doc/mllama.md
+      title: mllama
+      year: null
+      techniques:
+      - autoregressive transformer
+      - multimodal large language model
+      - vision adapter
+      - cross-attention layers
+      - supervised fine-tuning
+      - reinforcement learning from human feedback
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - image-to-text generation
+      - image captioning
+      - visual question answering
+      - image reasoning
+      - visual recognition
+    - local: models-classification/model_doc/ovis2.md
+      title: Ovis2
+      year: 2024
+      techniques:
+      - multimodal large language model
+      - visual-text embedding alignment
+      - autoregressive conditional generation
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - image-to-text generation
+    - local: models-classification/model_doc/paligemma.md
+      title: PaliGemma
+      year: 2024
+      techniques:
+      - vision-language model
+      - SigLIP vision encoder
+      - shape-optimized vision transformer
+      - Gemma decoder
+      - encoder-decoder multimodal architecture
+      - full attention over image and text tokens
+      - contrastive pretraining
+      - conditional text generation
+      - int4 weight-only quantization
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - image-to-text generation
+      - image captioning
+      - visual question answering
+      - object detection
+      - document understanding
+    - local: models-classification/model_doc/pix2struct.md
+      title: Pix2Struct
+      year: 2022
+      techniques:
+      - image-to-text encoder-decoder
+      - vision transformer
+      - variable-resolution image representation
+      - masked screenshot-to-HTML pretraining
+      - multimodal language-vision integration
+      - conditional text generation
+      domains:
+      - computer vision
+      - multimodal learning
+      - document understanding
+      - visual language understanding
+      tasks:
+      - image captioning
+      - visual question answering
+      - user-interface captioning
+    - local: models-classification/model_doc/pixtral.md
+      title: Pixtral
+      year: 2024
+      techniques:
+      - vision encoder-decoder architecture
+      - PixtralVisionModel vision encoder
+      - Mistral autoregressive language decoder
+      - 2D rotary positional embeddings
+      - variable-resolution image encoding
+      - multimodal image-text fusion
+      - long-context modeling
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      - document understanding
+      tasks:
+      - image-to-text generation
+      - visual question answering
+    - local: models-classification/model_doc/vision-encoder-decoder.md
+      title: Vision Encoder Decoder Models
+      year: 2021
+      techniques:
+      - vision transformer encoder
+      - autoregressive language-model decoder
+      - encoder-decoder transformer
+      - cross-attention
+      - pretrained checkpoint initialization
+      - autoregressive decoding
+      - beam search
+      - multinomial sampling
+      domains:
+      - computer vision
+      - multimodal learning
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - image captioning
+      - optical character recognition
+  Audio-to-text generation:
+    description: Models whose primary downstream task is generating natural-language text conditioned
+      on speech, environmental sounds, music, or other audio inputs.
+    documents:
+    - local: models-classification/model_doc/audioflamingo3.md
+      title: AudioFlamingo3
+      year: 2025
+      techniques:
+      - Whisper-style audio encoder
+      - causal language model
+      - multimodal projector
+      - replace-in-place audio-text fusion
+      - audio windowing
+      - post-pool frame alignment
+      - multi-turn conversational generation
+      domains:
+      - audio processing
+      - speech
+      - music understanding
+      - multimodal learning
+      tasks:
+      - speech transcription
+      - audio question answering
+      - audio understanding
+      - audio reasoning
+    - local: models-classification/model_doc/musicflamingo.md
+      title: MusicFlamingo
+      year: 2025
+      techniques:
+      - Whisper-style audio encoder
+      - rotary time embeddings (RoTE)
+      - 2D axial rotary embeddings
+      - MLP multimodal projector
+      - causal language model
+      - audio-text embedding fusion
+      - long-audio windowing
+      - post-pool alignment
+      - FlashAttention
+      - SDPA
+      domains:
+      - audio processing
+      - music understanding
+      - multimodal learning
+      tasks:
+      - audio-to-text generation
+      - audio captioning
+      - audio question answering
+      - music information extraction
+      - lyric generation
+    - local: models-classification/model_doc/qwen2_audio.md
+      title: Qwen2Audio
+      year: 2024
+      techniques:
+      - audio encoder
+      - audio-language model
+      - autoregressive conditional generation
+      - natural-language instruction tuning
+      - direct preference optimization (DPO)
+      - FlashAttention
+      - scaled dot-product attention (SDPA)
+      domains:
+      - audio processing
+      - multimodal learning
+      tasks:
+      - audio captioning
+      - speech recognition
+      - speech translation
+      - audio understanding
+      - audio question answering
+      - voice chat
+    - local: models-classification/model_doc/speech-encoder-decoder.md
+      title: Speech Encoder Decoder Models
+      year: 2021
+      techniques:
+      - speech encoder-decoder architecture
+      - pretrained speech autoencoding encoder
+      - autoregressive text decoder
+      - cross-attention
+      - sequence-to-sequence fine-tuning
+      - autoregressive generation
+      - greedy decoding
+      - beam search
+      - multinomial sampling
+      domains:
+      - speech processing
+      - audio
+      - natural language processing
+      tasks:
+      - speech-to-text generation
+      - speech recognition
+      - speech translation
+      - speech transcription
+    - local: models-classification/model_doc/voxtral.md
+      title: Voxtral
+      year: null
+      techniques:
+      - audio encoder
+      - multimodal audio-text instruction tuning
+      - autoregressive conditional generation
+      - long-context modeling
+      - multilingual speech processing
+      - automatic language detection
+      - multi-turn generation
+      - function calling
+      domains:
+      - audio and speech
+      - multimodal learning
+      - natural language processing
+      tasks:
+      - speech transcription
+      - speech translation
+      - audio understanding
+      - audio question answering
+      - audio summarization
+      - voice-controlled function calling
+      - text generation
+    - local: models-classification/model_doc/voxtral_realtime.md
+      title: VoxtralRealtime
+      year: null
+      techniques:
+      - audio encoder
+      - Mistral-based language model decoder
+      - time conditioning embeddings
+      - causal convolutions
+      - padding caches
+      - chunked streaming inference
+      domains:
+      - audio
+      - speech processing
+      tasks:
+      - automatic speech recognition
+      - speech-to-text transcription
+      - streaming transcription
+  Document information extraction:
+    description: Models whose primary downstream task is extracting structured entities, fields, or relations
+      from text and layout in documents.
+    documents:
+    - local: models-classification/model_doc/bros.md
+      title: BROS
+      year: 2021
+      techniques:
+      - encoder-only Transformer
+      - relative spatial position encoding
+      - bounding-box layout encoding
+      - token-masked language modeling
+      - area-masked language modeling
+      - token classification
+      - entity linking
+      domains:
+      - document understanding
+      - natural language processing
+      tasks:
+      - key information extraction
+      - token classification
+      - entity linking
+      - relation extraction
+    - local: models-classification/model_doc/donut.md
+      title: Donut
+      year: 2021
+      techniques:
+      - end-to-end vision encoder-decoder transformer
+      - Swin vision encoder
+      - BART text decoder
+      - OCR-free document understanding
+      - autoregressive sequence generation
+      - int4 weight-only quantization
+      domains:
+      - computer vision
+      - document understanding
+      - multimodal learning
+      tasks:
+      - document question answering
+      - document image classification
+      - document parsing
+    - local: models-classification/model_doc/granite4_vision.md
+      title: Granite4Vision
+      year: null
+      techniques:
+      - vision-language model
+      - SigLIP2 vision encoder
+      - windowed cross-attention Q-Former projector
+      - DeepStack feature injection
+      - LoRA adapters
+      - autoregressive conditional generation
+      - 4-bit quantization
+      domains:
+      - computer vision
+      - multimodal learning
+      - document understanding
+      tasks:
+      - chart extraction
+      - chart-to-CSV generation
+      - chart summarization
+      - chart-to-code generation
+      - table extraction
+      - table-to-HTML generation
+      - table-to-OTSL generation
+      - table-to-JSON generation
+      - semantic key-value pair extraction
+      - image-to-text generation
+    - local: models-classification/model_doc/layoutlm.md
+      title: LayoutLM
+      year: 2019
+      techniques:
+      - multimodal transformer
+      - text-layout joint modeling
+      - 2D positional embeddings
+      - document image visual features
+      - OCR bounding boxes
+      - masked language modeling
+      domains:
+      - document understanding
+      - multimodal learning
+      - natural language processing
+      - computer vision
+      tasks:
+      - question answering
+      - sequence classification
+      - token classification
+      - masked language modeling
+    - local: models-classification/model_doc/layoutlmv2.md
+      title: LayoutLMV2
+      year: 2020
+      techniques:
+      - multimodal pre-training
+      - transformer encoder
+      - spatial-aware self-attention
+      - relative 1D attention bias
+      - spatial 2D attention bias
+      - visual backbone
+      - masked visual-language modeling
+      - text-image alignment
+      - text-image matching
+      domains:
+      - document understanding
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - information extraction
+      - document image classification
+      - document visual question answering
+      - text classification
+      - question answering
+      - document question answering
+      - token classification
+    - local: models-classification/model_doc/layoutlmv3.md
+      title: LayoutLMV3
+      year: 2022
+      techniques:
+      - multimodal transformer
+      - vision transformer patch embeddings
+      - unified text and image masking
+      - masked language modeling
+      - masked image modeling
+      - word-patch alignment
+      - self-supervised pretraining
+      - byte-pair encoding
+      domains:
+      - document AI
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - form understanding
+      - receipt understanding
+      - document visual question answering
+      - document image classification
+      - document layout analysis
+      - text classification
+      - token classification
+      - question answering
+      - document question answering
+    - local: models-classification/model_doc/layoutxlm.md
+      title: LayoutXLM
+      year: 2021
+      techniques:
+      - multimodal pre-training
+      - joint text, layout, and image modeling
+      - multilingual pre-training
+      - layout-aware document modeling
+      domains:
+      - document understanding
+      - multimodal learning
+      - natural language processing
+      tasks:
+      - form understanding
+      - key-value pair extraction
+      - visually-rich document understanding
+    - local: models-classification/model_doc/lilt.md
+      title: LiLT
+      year: 2022
+      techniques:
+      - layout transformer
+      - RoBERTa text encoder
+      - text-layout multimodal fusion
+      - language-independent pretraining
+      domains:
+      - document understanding
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - sequence classification
+      - token classification
+      - question answering
+  Image segmentation:
+    description: Models whose primary downstream task is predicting pixel-level segmentation masks for
+      images, including prompt-conditioned segmentation variants.
+    documents:
+    - local: models-classification/model_doc/clipseg.md
+      title: CLIPSeg
+      year: 2021
+      techniques:
+      - frozen CLIP backbone
+      - vision-language model
+      - transformer-based decoder
+      - dense prediction
+      - text and image prompting
+      - zero-shot inference
+      - one-shot inference
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - image segmentation
+      - referring expression segmentation
+      - zero-shot segmentation
+      - one-shot segmentation
+      - binary segmentation
+    - local: models-classification/model_doc/edgetam.md
+      title: EdgeTAM
+      year: 2025
+      techniques:
+      - SAM 2 adaptation
+      - 2D Spatial Perceiver
+      - lightweight transformer
+      - learnable queries
+      - memory bank and memory attention
+      - knowledge distillation
+      - prompt-conditioned segmentation
+      domains:
+      - computer vision
+      - video understanding
+      tasks:
+      - image segmentation
+      - video segmentation
+      - promptable segmentation
+      - automatic mask generation
+    - local: models-classification/model_doc/groupvit.md
+      title: GroupViT
+      year: 2022
+      techniques:
+      - vision-language model
+      - hierarchical grouping vision transformer
+      - text encoder
+      - contrastive learning
+      - zero-shot transfer
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - semantic segmentation
+      - zero-shot semantic segmentation
+    - local: models-classification/model_doc/oneformer.md
+      title: OneFormer
+      year: 2022
+      techniques:
+      - task token conditioning
+      - task-conditioned joint multi-task training
+      - query-text contrastive loss
+      - ConvNeXt backbone
+      - DiNAT backbone
+      domains:
+      - computer vision
+      tasks:
+      - semantic segmentation
+      - instance segmentation
+      - panoptic segmentation
+    - local: models-classification/model_doc/pp_doclayout_v3.md
+      title: PP-DocLayoutV3
+      year: null
+      techniques:
+      - RT-DETR framework
+      - instance segmentation
+      - mask-based detection head
+      - transformer decoder
+      - global pointer mechanism
+      - end-to-end joint prediction
+      domains:
+      - computer vision
+      - document understanding
+      tasks:
+      - document layout analysis
+      - instance segmentation
+      - object detection
+      - reading order prediction
+    - local: models-classification/model_doc/sam3.md
+      title: SAM3
+      year: null
+      techniques:
+      - promptable concept segmentation
+      - text and image-exemplar conditioning
+      - shared backbone
+      - image-level detector
+      - memory-based video tracker
+      - decoupled recognition and localization
+      - presence head
+      domains:
+      - computer vision
+      - video understanding
+      tasks:
+      - promptable concept segmentation
+      - instance segmentation
+      - semantic segmentation
+      - object detection
+      - object tracking
+    - local: models-classification/model_doc/sam3_lite_text.md
+      title: SAM3-LiteText
+      year: 2026
+      techniques:
+      - MobileCLIP-based text encoder
+      - knowledge distillation
+      - ViT-H image encoder
+      - prompt-conditioned segmentation
+      - vision-language grounding
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - image segmentation
+      - video segmentation
+      - instance segmentation
+  Text-to-speech generation:
+    description: Models whose primary downstream task is generating spoken audio conditioned on text,
+      including systems that rank or select generated speech candidates for synthesis.
+    documents:
+    - local: models-classification/model_doc/clvp.md
+      title: CLVP
+      year: 2023
+      techniques:
+      - contrastive language-voice pretraining
+      - autoregressive transformer
+      - causal language modeling
+      - text and speech encoders
+      - shared latent-space embeddings
+      - contrastive similarity scoring
+      - speech candidate ranking
+      domains:
+      - speech processing
+      - audio
+      - multimodal learning
+      tasks:
+      - text-to-speech generation
+      - text-speech matching
+      - speech candidate ranking
+  Code generation:
+    description: Models whose primary downstream task is generating, completing, or transforming source
+      code, including code-focused reasoning and software-engineering workflows.
+    documents:
+    - local: models-classification/model_doc/cwm.md
+      title: Code World Model (CWM)
+      year: null
+      techniques:
+      - dense decoder-only large language model
+      - causal language modeling
+      - world modeling
+      - observation-action trajectory training
+      - multi-task reinforcement learning
+      - supervised fine-tuning
+      - test-time scaling
+      domains:
+      - natural language processing
+      - code intelligence
+      - software engineering
+      tasks:
+      - code generation
+      - code reasoning
+      - mathematical reasoning
+      - agentic coding
+      - Python code execution simulation
+      - planning in computational environments
+      - software engineering
+  Self-supervised representation learning:
+    description: Models whose primary task is learning general-purpose representations from unlabeled
+      or weakly transformed inputs through self-supervised objectives for transfer across downstream tasks.
+    documents:
+    - local: models-classification/model_doc/data2vec.md
+      title: Data2Vec
+      year: 2022
+      techniques:
+      - standard transformer architecture
+      - masked-view prediction
+      - self-distillation
+      - contextualized latent representation prediction
+      - modality-agnostic self-supervised learning
+      - scaled dot-product attention
+      domains:
+      - speech
+      - natural language processing
+      - computer vision
+      tasks:
+      - image classification
+      - semantic segmentation
+      - audio classification
+      - automatic speech recognition
+      - text classification
+      - token classification
+      - question answering
+      - causal language modeling
+      - masked language modeling
+      - multiple-choice classification
+      - audio frame classification
+      - speaker recognition
+    - local: models-classification/model_doc/flava.md
+      title: FLAVA
+      year: 2021
+      techniques:
+      - multimodal pretraining
+      - contrastive learning
+      - multimodal fusion
+      - unified vision-and-language foundation modeling
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - vision tasks
+      - language tasks
+      - cross-modal vision-and-language tasks
+      - multimodal vision-and-language tasks
+  Text generation:
+    description: Models whose primary downstream task is generating or refining natural-language text,
+      including autoregressive, diffusion-based, and block-autoregressive generation.
+    documents:
+    - local: models-classification/model_doc/diffusion_gemma.md
+      title: DiffusionGemma
+      year: null
+      techniques:
+      - encoder-decoder architecture
+      - bidirectional attention
+      - cross-attention
+      - KV caching
+      - diffusion sampling
+      - iterative denoising
+      - multi-canvas sampling
+      - block-autoregressive generation
+      - streaming generation
+      domains:
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - text generation
+      - image-to-text generation
+    - local: models-classification/model_doc/evolla.md
+      title: Evolla
+      year: null
+      techniques:
+      - protein-language modeling
+      - multimodal conditioning on protein sequences and structures
+      - direct preference optimization
+      - retrieval-augmented generation
+      - large-scale generative pretraining
+      domains:
+      - natural language processing
+      - computational biology
+      - proteomics
+      - functional genomics
+      tasks:
+      - protein question answering
+      - protein function understanding
+      - text generation
+    - local: models-classification/model_doc/gemma4_assistant.md
+      title: Gemma 4 Assistant
+      year: null
+      techniques:
+      - speculative decoding
+      - multi-token prediction
+      - KV sharing
+      - shared KV cache
+      - cross-attention
+      - causal language modeling
+      domains:
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - text generation
+      - image-to-text generation
+    - local: models-classification/model_doc/gemma4_unified_assistant.md
+      title: Gemma 4 Unified Assistant
+      year: null
+      techniques:
+      - speculative decoding
+      - multi-token prediction
+      - KV-cache sharing
+      - cross-attention
+      - static KV cache
+      - embedding and hidden-state concatenation
+      - linear projection
+      domains:
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - text generation
+      - image-to-text generation
+    - local: models-classification/model_doc/mistral4.md
+      title: Mistral4
+      year: null
+      techniques:
+      - mixture-of-experts
+      - causal language modeling
+      - multimodal vision-language modeling
+      - configurable reasoning and test-time compute
+      - function calling
+      - long-context modeling
+      domains:
+      - natural language processing
+      - computer vision
+      - multimodal learning
+      tasks:
+      - text generation
+      - image-to-text generation
+      - sequence classification
+      - token classification
+  Video segmentation:
+    description: Models whose primary downstream task is predicting and propagating pixel-level segmentation
+      masks for objects or regions across video frames.
+    documents:
+    - local: models-classification/model_doc/edgetam_video.md
+      title: EdgeTamVideo
+      year: 2025
+      techniques:
+      - 2D Spatial Perceiver
+      - lightweight transformer
+      - memory bank
+      - memory attention
+      - learnable queries
+      - prompt-conditioned segmentation
+      - knowledge distillation
+      - streaming inference
+      domains:
+      - computer vision
+      - video understanding
+      tasks:
+      - video segmentation
+      - video object tracking
+    - local: models-classification/model_doc/sam3_video.md
+      title: SAM3 Video
+      year: null
+      techniques:
+      - shared vision backbone
+      - image-level detector
+      - memory-based video tracker
+      - detection and tracking decoupling
+      - presence head
+      - promptable concept segmentation
+      - text prompting
+      - FlashAttention
+      - SDPA
+      domains:
+      - computer vision
+      - video understanding
+      tasks:
+      - video segmentation
+      - promptable concept segmentation
+      - object detection
+      - object tracking
+      - instance segmentation
+      - semantic segmentation
+  Multimodal generation:
+    description: Models whose primary downstream task is generating one or more modalities, such as text,
+      images, or video, conditioned on text, images, video, or multimodal sequences.
+    documents:
+    - local: models-classification/model_doc/emu3.md
+      title: Emu3
+      year: 2024
+      techniques:
+      - autoregressive next-token prediction
+      - transformer
+      - vector-quantized image tokenization
+      - discrete multimodal tokenization
+      - multimodal token fusion
+      - classifier-free guidance
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      - video generation
+      tasks:
+      - text generation
+      - image-to-text generation
+      - text-to-image generation
+      - image generation
+      - video generation
+    - local: models-classification/model_doc/gemma4_unified.md
+      title: Gemma4 Unified
+      year: null
+      techniques:
+      - encoder-free multimodal architecture
+      - autoregressive causal language model
+      - direct raw-input projection
+      - image patchification and patch merging
+      - factorized 2D positional embeddings
+      - RMSNorm-linear multimodal projection
+      - shared multimodal embedding pipeline
+      domains:
+      - multimodal learning
+      - computer vision
+      - audio processing
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - audio-to-text generation
+      - multimodal text generation
+    - local: models-classification/model_doc/glm46v.md
+      title: Glm46V
+      year: 2025
+      techniques:
+      - vision-language modeling
+      - large-scale pre-training
+      - reinforcement learning with curriculum sampling
+      - native tool use
+      - long-context modeling
+      domains:
+      - multimodal learning
+      - computer vision
+      - video understanding
+      - document understanding
+      tasks:
+      - multimodal understanding
+      - multimodal reasoning
+      - STEM problem solving
+      - video understanding
+      - content recognition
+      - coding
+      - grounding
+      - GUI-based agents
+      - long document interpretation
+    - local: models-classification/model_doc/glm4v.md
+      title: glm4v
+      year: 2025
+      techniques:
+      - vision-language model
+      - multimodal transformer
+      - autoregressive conditional generation
+      - reinforcement learning with curriculum sampling
+      domains:
+      - multimodal learning
+      - computer vision
+      - video understanding
+      tasks:
+      - image-to-text generation
+      - video-to-text generation
+      - multimodal reasoning
+      - STEM problem solving
+      - video understanding
+      - content recognition
+      - coding
+      - grounding
+      - GUI-based agents
+      - long document interpretation
+    - local: models-classification/model_doc/glm4v_moe.md
+      title: glm4v_moe
+      year: 2025
+      techniques:
+      - vision-language model
+      - mixture-of-experts
+      - vision foundation model
+      - reinforcement learning with curriculum sampling
+      - multimodal reasoning
+      - native tool use
+      - long-context modeling
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      - video understanding
+      tasks:
+      - multimodal understanding
+      - multimodal reasoning
+      - STEM problem solving
+      - video understanding
+      - content recognition
+      - code generation
+      - grounding
+      - GUI-based agents
+      - long document interpretation
+    - local: models-classification/model_doc/inkling.md
+      title: Inkling
+      year: null
+      techniques:
+      - decoder-only transformer
+      - sparse mixture-of-experts
+      - top-6-of-256 expert routing
+      - shared experts
+      - multimodal embedding projection
+      - interleaved multimodal tokens
+      - tensor parallelism
+      - scaled dot-product attention
+      domains:
+      - multimodal learning
+      - natural language processing
+      - computer vision
+      - audio and speech
+      tasks:
+      - text generation
+      - image-to-text generation
+      - audio-to-text generation
+      - multimodal generation
+    - local: models-classification/model_doc/janus.md
+      title: Janus
+      year: 2024
+      techniques:
+      - autoregressive unified transformer
+      - decoupled visual encoding pathways
+      - vision-language modeling
+      - vector-quantized variational autoencoder (VQ-VAE)
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - multimodal understanding
+      - image-to-text generation
+      - text generation
+      - text-to-image generation
+      - image generation
+    - local: models-classification/model_doc/llama4.md
+      title: Llama4
+      year: null
+      techniques:
+      - autoregressive transformer
+      - mixture-of-experts
+      - early fusion
+      - native multimodality
+      - flex attention
+      - flash attention
+      - tensor parallelism
+      - quantization
+      - hybrid cache
+      domains:
+      - natural language processing
+      - multimodal learning
+      - computer vision
+      tasks:
+      - text generation
+      - image-to-text generation
+    - local: models-classification/model_doc/llava_onevision.md
+      title: LLaVA-Onevision
+      year: 2024
+      techniques:
+      - vision-language model
+      - SigLIP vision encoder
+      - Qwen2 language backbone
+      - anyres-9 high-resolution image processing
+      - video frame token pooling
+      - autoregressive text generation
+      - chat-template prompting
+      domains:
+      - computer vision
+      - multimodal learning
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - multi-image-to-text generation
+      - video-to-text generation
+      - visual question answering
+  Optical character recognition:
+    description: Models whose primary downstream task is recognizing and extracting textual, mathematical,
+      or tabular content from document images.
+    documents:
+    - local: models-classification/model_doc/glm_ocr.md
+      title: GlmOcr
+      year: null
+      techniques:
+      - multimodal vision-language architecture
+      - CogViT visual encoder
+      - cross-modal connector
+      - token downsampling
+      - autoregressive language decoder
+      - FlashAttention 2
+      domains:
+      - computer vision
+      - multimodal learning
+      - document understanding
+      tasks:
+      - optical character recognition
+      - text recognition
+      - formula recognition
+      - table recognition
+      - information extraction
+    - local: models-classification/model_doc/got_ocr2.md
+      title: GOT-OCR2
+      year: 2024
+      techniques:
+      - vision-language encoder-decoder
+      - high-compression visual encoder
+      - long-context autoregressive decoder
+      - end-to-end generation
+      - dynamic resolution
+      - multi-page processing
+      - dynamic image cropping
+      - coordinate- or color-guided region recognition
+      - formatted text generation
+      domains:
+      - computer vision
+      - document understanding
+      - multimodal learning
+      tasks:
+      - optical character recognition
+      - plain document OCR
+      - scene text OCR
+      - formatted document OCR
+      - table OCR
+      - chart OCR
+      - mathematical formula OCR
+      - geometric shape OCR
+      - molecular formula OCR
+      - sheet music OCR
+      - interactive region-level OCR
+      - multi-page OCR
+    - local: models-classification/model_doc/kosmos2_5.md
+      title: KOSMOS-2.5
+      year: 2023
+      techniques:
+      - multimodal shared Transformer architecture
+      - task-specific prompts
+      - flexible text representations
+      - conditional generation
+      - spatially-aware text blocks
+      - Markdown-structured output
+      domains:
+      - computer vision
+      - multimodal learning
+      - document understanding
+      tasks:
+      - optical character recognition
+      - document-level text recognition
+      - image-to-markdown text generation
+      - text-intensive image understanding
+    - local: models-classification/model_doc/lighton_ocr.md
+      title: LightOnOcr
+      year: null
+      techniques:
+      - vision transformer encoder
+      - encoder-decoder vision-language model
+      - Pixtral-based visual encoder
+      - Qwen3-based text decoder
+      - knowledge distillation
+      - layout-aware text extraction
+      domains:
+      - computer vision
+      - multimodal learning
+      - document understanding
+      tasks:
+      - optical character recognition
+      - document understanding
+      - document parsing
+    - local: models-classification/model_doc/mgp-str.md
+      title: MGP-STR
+      year: 2022
+      techniques:
+      - vision transformer
+      - multi-granularity prediction
+      - character-level and subword-level prediction
+      - BPE and WordPiece representations
+      - multigranularity prediction fusion
+      domains:
+      - computer vision
+      - document image understanding
+      tasks:
+      - optical character recognition
+      - scene text recognition
+    - local: models-classification/model_doc/nougat.md
+      title: Nougat
+      year: 2023
+      techniques:
+      - vision transformer encoder
+      - autoregressive text transformer decoder
+      - vision encoder-decoder
+      - autoregressive text generation
+      - image preprocessing and tokenization
+      domains:
+      - computer vision
+      - document understanding
+      tasks:
+      - optical character recognition
+      - document transcription
+    - local: models-classification/model_doc/paddleocr_vl.md
+      title: PaddleOCRVL
+      year: 2025
+      techniques:
+      - vision-language model
+      - NaViT-style dynamic-resolution visual encoder
+      - ERNIE language model
+      - autoregressive conditional generation
+      - FlashAttention 2
+      domains:
+      - computer vision
+      - multimodal learning
+      - document processing
+      tasks:
+      - optical character recognition
+      - document parsing
+      - text recognition
+      - formula recognition
+      - table recognition
+      - chart recognition
+      - element recognition
+    - local: models-classification/model_doc/pp_formulanet.md
+      title: PP-FormulaNet
+      year: null
+      techniques:
+      - vision-language conditional generation
+      - image-text processing
+      domains:
+      - computer vision
+      - document understanding
+      - multimodal learning
+      tasks:
+      - optical character recognition
+      - formula recognition
+      - table structure recognition
+      - text detection
+    - local: models-classification/model_doc/pp_ocrv5_mobile_rec.md
+      title: PP-OCRv5_mobile_rec
+      year: null
+      techniques:
+      - lightweight model
+      - efficient inference
+      - multilingual text recognition
+      - batched inference
+      domains:
+      - computer vision
+      - document understanding
+      tasks:
+      - optical character recognition
+      - text recognition
+    - local: models-classification/model_doc/pp_ocrv5_server_rec.md
+      title: PP-OCRv5_server_rec
+      year: null
+      techniques:
+      - SVTR encoder
+      - lightweight architecture
+      - multilingual text recognition
+      - batched inference
+      domains:
+      - computer vision
+      - document understanding
+      tasks:
+      - optical character recognition
+      - text recognition
+    - local: models-classification/model_doc/pp_ocrv6_small_rec.md
+      title: PP-OCRv6_small_rec
+      year: null
+      techniques:
+      - LCNetV4 convolutional backbone
+      - EncoderWithLightSVTR recognition neck
+      - CTC+NRTR multi-head decoder
+      - multilingual recognition (50 languages)
+      domains:
+      - computer vision
+      - document processing
+      tasks:
+      - optical character recognition
+      - text recognition
+    - local: models-classification/model_doc/pp_ocrv6_tiny_rec.md
+      title: PP-OCRv6_tiny_rec
+      year: null
+      techniques:
+      - LCNetV4 backbone
+      - direct reshape projection
+      - CTC+NRTR multi-head decoder
+      domains:
+      - computer vision
+      tasks:
+      - optical character recognition
+      - text recognition
+    - local: models-classification/model_doc/pp_chart2table.md
+      title: PPChart2Table
+      year: null
+      techniques:
+      - multimodal fusion architecture
+      - vision tower
+      - language model decoding
+      - shuffled chart data retrieval
+      - token masking
+      - synthetic data generation
+      - retrieval-augmented generation
+      - two-stage distillation
+      domains:
+      - computer vision
+      - multimodal learning
+      - document understanding
+      tasks:
+      - chart parsing
+      - chart-to-table conversion
+      - table extraction
+    - local: models-classification/model_doc/qianfan_ocr.md
+      title: QianfanOCR
+      year: 2026
+      techniques:
+      - multimodal bridging architecture
+      - Qianfan-ViT vision encoder
+      - AnyResolution design
+      - Qwen3-4B language model
+      - 2-layer MLP cross-modal adapter
+      - Layout-as-Thought structured layout reasoning
+      - autoregressive conditional generation
+      domains:
+      - computer vision
+      - multimodal learning
+      - document intelligence
+      tasks:
+      - optical character recognition
+      - structured document parsing
+      - table extraction
+      - chart understanding
+      - document question answering
+      - key information extraction
+    - local: models-classification/model_doc/trocr.md
+      title: TrOCR
+      year: 2021
+      techniques:
+      - vision encoder-decoder transformer
+      - vision transformer (ViT/DeiT) encoder
+      - autoregressive language decoder
+      - end-to-end sequence-to-sequence generation
+      - multimodal image-text processing
+      - 8-bit quantization
+      domains:
+      - computer vision
+      - document ai
+      - multimodal learning
+      tasks:
+      - optical character recognition
+      - text recognition
+      - image-to-text generation
+  Object detection:
+    description: Models whose primary downstream task is detecting and localizing objects in images or
+      video, including open-set, zero-shot, and language-conditioned object detection.
+    documents:
+    - local: models-classification/model_doc/grounding-dino.md
+      title: Grounding DINO
+      year: 2023
+      techniques:
+      - transformer-based detector
+      - text encoder
+      - grounded pre-training
+      - feature enhancer
+      - language-guided query selection
+      - cross-modality decoder
+      - vision-language fusion
+      - zero-shot inference
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - object detection
+      - open-set object detection
+      - zero-shot object detection
+      - referring expression comprehension
+      - text-based mask generation
+    - local: models-classification/model_doc/mm-grounding-dino.md
+      title: MM Grounding DINO
+      year: 2024
+      techniques:
+      - contrastive class head
+      - transformer-based decoder
+      - unshared decoder parameters
+      - zero-shot detection
+      - language-conditioned detection
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - object detection
+      - zero-shot object detection
+      - grounded object detection
+      - object grounding
+    - local: models-classification/model_doc/omdet-turbo.md
+      title: OmDet-Turbo
+      year: 2024
+      techniques:
+      - transformer-based detector
+      - RT-DETR components
+      - efficient fusion head
+      - multimodal fusion
+      - open-vocabulary detection
+      - decoupled class and prompt embeddings
+      - text embedding caching
+      - end-to-end detection
+      - non-maximum suppression
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - object detection
+      - open-vocabulary object detection
+      - zero-shot object detection
+      - real-time object detection
+      - grounded object detection
+    - local: models-classification/model_doc/owlvit.md
+      title: OWL-ViT
+      year: 2022
+      techniques:
+      - CLIP multimodal backbone
+      - vision transformer
+      - causal language model text encoder
+      - contrastive image-text pre-training
+      - end-to-end detection fine-tuning
+      - open-vocabulary classification
+      - classification and bounding-box heads
+      - bipartite matching loss
+      - zero-shot text conditioning
+      - one-shot image conditioning
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - object detection
+      - open-vocabulary object detection
+      - zero-shot text-conditioned object detection
+      - one-shot image-conditioned object detection
+      - image-guided object detection
+    - local: models-classification/model_doc/owlv2.md
+      title: OWLv2
+      year: 2023
+      techniques:
+      - vision-language model
+      - CLIP multimodal backbone
+      - vision transformer
+      - causal language model text encoder
+      - classification and box heads
+      - open-vocabulary classification
+      - bipartite matching loss
+      - self-training with pseudo-box annotations
+      - objectness classifier
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - object detection
+      - zero-shot object detection
+      - text-conditioned object detection
+      - open-vocabulary object detection
+      - image-guided object detection
+    - local: models-classification/model_doc/pp_doclayout_v2.md
+      title: PP-DocLayoutV2
+      year: null
+      techniques:
+      - RT-DETR-based detector
+      - pointer network
+      - bounding-box detection
+      - layout element classification
+      domains:
+      - computer vision
+      - document understanding
+      tasks:
+      - object detection
+      - layout element classification
+      - reading order prediction
+    - local: models-classification/model_doc/pp_ocrv5_mobile_det.md
+      title: PP-OCRv5_mobile_det
+      year: null
+      techniques:
+      - lightweight model
+      domains:
+      - computer vision
+      - document analysis
+      tasks:
+      - object detection
+      - text detection
+    - local: models-classification/model_doc/pp_ocrv5_server_det.md
+      title: PP-OCRv5_server_det
+      year: null
+      techniques:
+      - server-side optimization
+      - batched inference
+      - multilingual text detection
+      - rotated and curved text detection
+      domains:
+      - computer vision
+      - document analysis
+      tasks:
+      - object detection
+      - text detection
+      - scene text detection
+    - local: models-classification/model_doc/pp_ocrv6_medium_det.md
+      title: PP-OCRv6_medium_det
+      year: null
+      techniques:
+      - LCNetV4 backbone
+      - RepLKFPN feature pyramid neck
+      domains:
+      - computer vision
+      tasks:
+      - object detection
+      - text detection
+    - local: models-classification/model_doc/pp_ocrv6_small_det.md
+      title: PP-OCRv6_small_det
+      year: null
+      techniques:
+      - LCNetV4 backbone
+      - RepLKFPN feature pyramid neck
+      domains:
+      - computer vision
+      tasks:
+      - object detection
+      - text detection
+  Video-to-text generation:
+    description: Models whose primary downstream task is generating natural-language text conditioned
+      on video inputs.
+    documents:
+    - local: models-classification/model_doc/instructblipvideo.md
+      title: InstructBlipVideo
+      year: 2023
+      techniques:
+      - vision-language model
+      - instruction tuning
+      - instruction-aware visual feature extraction
+      - vision encoder
+      - Q-Former
+      - conditional language generation
+      - video frame sampling
+      domains:
+      - video
+      - computer vision
+      - multimodal learning
+      tasks:
+      - video-to-text generation
+    - local: models-classification/model_doc/llava_next_video.md
+      title: LLaVa-NeXT-Video
+      year: 2024
+      techniques:
+      - large multimodal model
+      - vision transformer
+      - AnyRes high-resolution representation
+      - frame-sequence concatenation
+      - linear scaling for length generalization
+      - supervised fine-tuning
+      - direct preference optimization
+      - autoregressive generation
+      - FlashAttention
+      - SDPA
+      - quantization
+      domains:
+      - multimodal learning
+      - computer vision
+      - video understanding
+      - natural language processing
+      tasks:
+      - video-to-text generation
+      - video understanding
+      - image-to-text generation
+      - image understanding
+      - optical character recognition
+      - multimodal reasoning
+    - local: models-classification/model_doc/video_llava.md
+      title: VideoLlava
+      year: 2023
+      techniques:
+      - autoregressive transformer language model
+      - vision-language multimodal fusion
+      - unified visual representation
+      - alignment before projection
+      - instruction fine-tuning
+      - FlashAttention-2
+      - 4-bit quantization
+      domains:
+      - computer vision
+      - multimodal learning
+      - natural language processing
+      tasks:
+      - video-to-text generation
+      - image-to-text generation
+      - visual question answering
+      - video question answering
+      - visual reasoning
+  Visual question answering:
+    description: Models whose primary downstream task is answering natural-language questions about visual
+      inputs, including multimodal visual reasoning variants.
+    documents:
+    - local: models-classification/model_doc/lxmert.md
+      title: LXMERT
+      year: 2019
+      techniques:
+      - bidirectional transformer encoders
+      - vision-language pretraining
+      - cross-modality encoder
+      - self-attention and cross-attention
+      - masked language modeling
+      - masked object prediction
+      - visual-language alignment
+      - ROI-feature regression
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - visual question answering
+      - visual reasoning
+      - masked language modeling
+      - visual-language text alignment
+      - cross-modality matching
+      - ROI-feature regression
+      - masked visual-attribute modeling
+      - masked visual-object modeling
+      - masked object prediction
+      - image question answering
+    - local: models-classification/model_doc/matcha.md
+      title: MatCha
+      year: 2022
+      techniques:
+      - Pix2Struct architecture
+      - visual-language pretraining
+      - math reasoning pretraining
+      - chart derendering pretraining
+      - image-to-text conditional generation
+      - Adafactor optimization
+      - cosine learning rate schedule
+      domains:
+      - multimodal learning
+      - computer vision
+      - chart understanding
+      tasks:
+      - visual question answering
+      - chart question answering
+      - plot question answering
+      - chart-to-text summarization
+    - local: models-classification/model_doc/vipllava.md
+      title: VipLlava
+      year: 2023
+      techniques:
+      - vision-language model
+      - LLaVA-style multimodal architecture
+      - vision encoder
+      - multimodal projector
+      - concatenated vision hidden states
+      - layer normalization
+      - visual prompting with overlaid markers
+      - autoregressive conditional generation
+      domains:
+      - computer vision
+      - multimodal learning
+      - natural language processing
+      tasks:
+      - visual question answering
+      - visual prompt understanding
+      - region understanding
+      - point question answering
+      - visual commonsense reasoning
+    - local: models-classification/model_doc/visual_bert.md
+      title: VisualBERT
+      year: 2019
+      techniques:
+      - early-fusion multimodal transformer
+      - BERT-initialized transformer stack
+      - self-attention-based vision-language alignment
+      - object-detector region features
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - visual question answering
+      - visual reasoning
+      - multiple choice
+      - region-to-phrase alignment
+  Multimodal retrieval:
+    description: Models whose primary downstream task is retrieving or ranking semantically aligned items
+      across two or more modalities using shared or comparable embedding spaces.
+    documents:
+    - local: models-classification/model_doc/pe_audio_video.md
+      title: PE Audio Video
+      year: 2025
+      techniques:
+      - contrastive learning
+      - multimodal shared-embedding space
+      - audio and video encoders
+      - shared tied-weight text tower
+      - audio-video temporal alignment
+      - nearest-neighbor interpolation
+      domains:
+      - audio processing
+      - video understanding
+      - multimodal learning
+      tasks:
+      - audio-text retrieval
+      - video-text retrieval
+      - audio-video retrieval
+      - audio+text-video retrieval
+  General-purpose multimodal modeling:
+    description: Models whose primary task is supporting diverse structured input-output learning problems
+      across modalities rather than a single specialized downstream task.
+    documents:
+    - local: models-classification/model_doc/perceiver.md
+      title: Perceiver
+      year: 2021
+      techniques:
+      - latent bottleneck
+      - latent-space self-attention
+      - input-to-latent cross-attention
+      - latent-to-output cross-attention
+      - learned latent variables
+      - arbitrary-size output queries
+      - linear-complexity attention with respect to input and output size
+      domains:
+      - multimodal learning
+      - natural language processing
+      - computer vision
+      - audio
+      - video
+      - point clouds
+      tasks:
+      - classification
+      - masked language modeling
+      - optical flow estimation
+      - visual understanding
+      - multimodal video understanding
+      - question answering
+      - named-entity recognition
+      - object detection
+      - audio classification
+      - video classification
+      - image classification
+      - text classification
+      - multimodal autoencoding
+    - local: models-classification/model_doc/perception_lm.md
+      title: PerceptionLM
+      year: 2025
+      techniques:
+      - vision encoder
+      - large language model decoder
+      - vision-language modeling
+      - spatio-temporal grounding
+      domains:
+      - computer vision
+      - multimodal learning
+      tasks:
+      - visual question answering
+      - video question answering
+      - video-to-text generation
+      - image understanding
+      - video understanding
+    - local: models-classification/model_doc/phi4_multimodal.md
+      title: Phi4 Multimodal
+      year: 2025
+      techniques:
+      - multimodal causal language model
+      - modality-specific encoders
+      - mixture of LoRA adapters
+      - input-specific adapter routing
+      - autoregressive generation
+      domains:
+      - multimodal learning
+      - computer vision
+      - speech and audio processing
+      - natural language processing
+      tasks:
+      - text generation
+      - image-to-text generation
+      - audio-to-text generation
+      - speech transcription
+      - speech translation
+    - local: models-classification/model_doc/qwen2_5_omni.md
+      title: Qwen2.5-Omni
+      year: 2025
+      techniques:
+      - multimodal encoder
+      - block-wise audio and visual processing
+      - shared attention fusion
+      - time-aligned multimodal rotary position embedding (TMRoPE)
+      - Thinker-Talker architecture
+      - dual-track autoregressive modeling
+      - streaming generation
+      - sliding-window diffusion transformer (DiT)
+      domains:
+      - multimodal learning
+      - natural language processing
+      - computer vision
+      - speech and audio
+      tasks:
+      - multimodal generation
+      - text generation
+      - text-to-speech generation
+      - speech instruction following
+    - local: models-classification/model_doc/qwen2_5_vl.md
+      title: Qwen2.5-VL
+      year: 2025
+      techniques:
+      - vision transformer encoder
+      - window attention
+      - dynamic FPS sampling
+      - spatial-temporal sampling
+      - multi-resolutional rotary positional encoding (MRoPE)
+      - multimodal conditional generation
+      - FlashAttention
+      - scaled dot-product attention (SDPA)
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      - video understanding
+      tasks:
+      - image-to-text generation
+      - video-to-text generation
+      - visual question answering
+      - multimodal text generation
+    - local: models-classification/model_doc/qwen2_vl.md
+      title: Qwen2VL
+      year: 2024
+      techniques:
+      - vision-language model
+      - vision encoder with autoregressive language model
+      - multimodal rotary position embedding (m-rope)
+      - naive dynamic resolution
+      - variable-resolution image and video tokenization
+      - flashattention-2
+      - tensor parallelism
+      domains:
+      - multimodal learning
+      - computer vision
+      - video understanding
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - video-to-text generation
+      - visual question answering
+      - text generation
+    - local: models-classification/model_doc/qwen3_omni_moe.md
+      title: Qwen3-Omni-MoE
+      year: 2025
+      techniques:
+      - mixture-of-experts (MoE)
+      - Thinker-Talker architecture
+      - multimodal reasoning
+      - autoregressive generation
+      - discrete speech codecs
+      - multi-codebook speech modeling
+      - causal ConvNet
+      - streaming speech synthesis
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - multimodal learning
+      - natural language processing
+      - computer vision
+      - speech and audio
+      tasks:
+      - multimodal generation
+      - text generation
+      - text-to-speech generation
+      - audio-to-text generation
+      - audio captioning
+      - visual question answering
+      - video-to-text generation
+    - local: models-classification/model_doc/qwen3_vl.md
+      title: Qwen3VL
+      year: 2025
+      techniques:
+      - vision transformer
+      - multimodal vision-language model
+      - mixture of experts
+      - interleaved MRoPE
+      - DeepStack multi-level visual features
+      - text timestamp alignment
+      - autoregressive conditional generation
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      - video understanding
+      tasks:
+      - image-to-text generation
+      - video-to-text generation
+      - multimodal generation
+    - local: models-classification/model_doc/qwen3_vl_moe.md
+      title: Qwen3VLMoe
+      year: 2025
+      techniques:
+      - mixture-of-experts
+      - vision transformer
+      - interleaved MRoPE
+      - DeepStack multi-level feature integration
+      - text-based time alignment
+      - FlashAttention
+      - SDPA
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - video-to-text generation
+      - visual understanding
+      - video understanding
+      - temporal grounding
+    - local: models-classification/model_doc/smolvlm.md
+      title: SmolVLM
+      year: 2025
+      techniques:
+      - vision transformer
+      - SmolLM2 text model
+      - multimodal conditional generation
+      - multi-image and video input processing
+      - patch-based image decomposition
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - multimodal learning
+      - computer vision
+      - video understanding
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - video-to-text generation
+      - visual question answering
+      - text generation
+    - local: models-classification/model_doc/udop.md
+      title: UDOP
+      year: 2022
+      techniques:
+      - encoder-decoder transformer
+      - T5 architecture
+      - vision-text-layout transformer
+      - multimodal fusion of text, image, and layout
+      - prompt-based sequence generation
+      - self-supervised pretraining
+      - masked image reconstruction
+      - autoregressive generation
+      domains:
+      - document AI
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - document image classification
+      - document parsing
+      - document visual question answering
+      - document understanding
+      - document question answering
+      - document generation
+      - neural document editing
+      - document content customization
+    - local: models-classification/model_doc/video_llama_3.md
+      title: VideoLlama3
+      year: 2025
+      techniques:
+      - multimodal vision-language model
+      - vision encoder with projector and large language model
+      - variable-resolution image encoding
+      - adaptive vision-token compression by similarity
+      - vision encoder adaptation
+      - vision-language alignment
+      - multi-task fine-tuning
+      - video-centric fine-tuning
+      - FlashAttention-2
+      domains:
+      - multimodal learning
+      - computer vision
+      - video understanding
+      - natural language processing
+      tasks:
+      - image-to-text generation
+      - video-to-text generation
+    - local: models-classification/model_doc/vilt.md
+      title: ViLT
+      year: 2021
+      techniques:
+      - vision transformer
+      - multimodal transformer
+      - convolution-free visual processing
+      - text embeddings
+      - masked language modeling
+      domains:
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - masked language modeling
+      - visual question answering
+      - image-text classification
+      - image-text retrieval
+      - token classification
+  Robot action generation:
+    description: Models whose primary downstream task is generating action sequences or control commands
+      for robots from sensory observations, language instructions, or robot state.
+    documents:
+    - local: models-classification/model_doc/pi0.md
+      title: PI0
+      year: 2024
+      techniques:
+      - vision-language model backbone
+      - flow matching
+      - conditional generation
+      - multimodal fusion
+      - fine-tuning
+      domains:
+      - robotics
+      - computer vision
+      - natural language processing
+      - multimodal learning
+      tasks:
+      - robot action generation
+      - robotic manipulation
+      - language-conditioned robot control
+      - language instruction following
+      - zero-shot task execution
+      - robot skill acquisition
+  Image classification:
+    description: Models whose primary downstream task is assigning one or more predefined labels to whole
+      images or image regions, including specialized visual classification tasks.
+    documents:
+    - local: models-classification/model_doc/pp_lcnet.md
+      title: PPLCNet
+      year: null
+      techniques:
+      - lightweight convolutional neural network
+      - efficient architecture
+      - image classification
+      - post-processing orientation correction
+      domains:
+      - computer vision
+      - document understanding
+      - optical character recognition
+      tasks:
+      - image classification
+      - document image orientation classification
+      - table classification
+      - text line orientation classification
+    - local: models-classification/model_doc/pp_lcnet_v3.md
+      title: PPLCNetV3
+      year: 2021
+      techniques:
+      - lightweight convolutional backbone
+      - CPU optimization
+      - improved training strategies
+      - structural refinements
+      domains:
+      - computer vision
+      tasks:
+      - image classification
+    - local: models-classification/model_doc/pp_lcnet_v4.md
+      title: PPLCNetV4
+      year: null
+      techniques:
+      - backbone network
+      domains:
+      - computer vision
+      tasks:
+      - image classification
+    - local: models-classification/model_doc/shieldgemma2.md
+      title: ShieldGemma2
+      year: 2025
+      techniques:
+      - Gemma 3 backbone
+      - instruction tuning
+      - vision-language modeling
+      - policy-conditioned classification
+      - FlashAttention
+      - SDPA
+      domains:
+      - computer vision
+      - multimodal learning
+      - content safety
+      tasks:
+      - image classification
+      - image safety classification
+  Table structure recognition:
+    description: Models whose primary downstream task is recognizing and reconstructing the structural
+      organization of tables in document images or natural-scene images.
+    documents:
+    - local: models-classification/model_doc/slanet.md
+      title: SLANet
+      year: null
+      techniques:
+      - lightweight PP-LCNet backbone
+      - CSP-PAN feature fusion
+      - SLA Head feature decoding
+      - structural and positional information alignment
+      domains:
+      - computer vision
+      - document understanding
+      tasks:
+      - table structure recognition
+    - local: models-classification/model_doc/slanext.md
+      title: SLANeXt
+      year: null
+      techniques:
+      - lightweight vision model
+      - dedicated wired and wireless table models
+      - SLA head
+      domains:
+      - computer vision
+      - document processing
+      tasks:
+      - table structure recognition
+  Table question answering:
+    description: Models whose primary downstream task is answering natural-language questions over structured
+      tables, including cell selection, aggregation, and table reasoning.
+    documents:
+    - local: models-classification/model_doc/tapas.md
+      title: TAPAS
+      year: 2020
+      techniques:
+      - BERT-based encoder
+      - relative position embeddings
+      - tabular structure token types
+      - masked language modeling pre-training
+      - cell selection head
+      - aggregation head
+      - weak supervision
+      - intermediate pre-training
+      domains:
+      - natural language processing
+      - table understanding
+      tasks:
+      - table question answering
+      - conversational question answering
+      - table entailment
+      - binary classification
+  Dense prediction:
+    description: Models whose primary task is predicting dense per-pixel geometric or semantic outputs,
+      including depth, surface normals, and segmentation.
+    documents:
+    - local: models-classification/model_doc/tipsv2_dpt.md
+      title: TIPSv2 DPT
+      year: 2026
+      techniques:
+      - shared vision backbone
+      - dense prediction transformer (DPT) head
+      - multi-task prediction
+      - FlashAttention
+      - scaled dot-product attention (SDPA)
+      domains:
+      - computer vision
+      tasks:
+      - depth estimation
+      - normal estimation
+      - semantic segmentation
+  Temporal video grounding:
+    description: Models whose primary downstream task is localizing the start and end times of text-described
+      moments or events within untrimmed videos.
+    documents:
+    - local: models-classification/model_doc/tvp.md
+      title: TVP
+      year: 2023
+      techniques:
+      - text-visual prompting
+      - trainable visual and text prompts
+      - 2D visual features
+      - visual encoder
+      - language encoder
+      - cross-modal feature fusion
+      - sparse frame sampling
+      - temporal-distance IoU loss
+      - ResNet-50 visual encoder
+      - BERT text encoder
+      domains:
+      - video understanding
+      - multimodal learning
+      - computer vision
+      tasks:
+      - temporal video grounding
+  Video classification:
+    description: Models whose primary downstream task is assigning semantic action or event labels to
+      videos or sequences of video frames.
+    documents:
+    - local: models-classification/model_doc/xclip.md
+      title: X-CLIP
+      year: 2022
+      techniques:
+      - contrastive language-image pretraining
+      - text encoder
+      - cross-frame vision encoder
+      - cross-frame attention
+      - multi-frame integration transformer
+      - video-specific prompt generation
+      - zero-shot classification
+      domains:
+      - computer vision
+      - video understanding
+      - multimodal learning
+      tasks:
+      - video recognition
+      - video classification
+read_errors: []
