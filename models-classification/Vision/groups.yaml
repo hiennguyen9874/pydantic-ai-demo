@@ -1,34 +1,38 @@
-version: 2
+version: 3
 source_config: /home/hiennx/Documents/pydantic-ai-demo/models-classification/Vision/config.yaml
 groups:
   Image classification:
-    description: Models whose primary documented downstream use is assigning semantic labels or class
-      probabilities to images, including zero-shot image classification.
+    description: Models whose primary documented use is assigning semantic labels or classes to images,
+      including zero-shot image classification.
     documents:
     - local: models-classification/model_doc/aimv2.md
       title: Aimv2
       year: 2024
+      paper_link: https://huggingface.co/papers/2411.14402
+      paper_id: '2411.14402'
       techniques:
-      - large vision encoder
+      - vision encoder
       - multimodal autoregressive pre-training
-      - autoregressive multimodal decoder
-      - image-patch and text-token generation
-      - frozen vision trunk
+      - autoregressive generation of image patches and text tokens
+      - multimodal decoder
+      - image-text alignment
       domains:
       - computer vision
       - multimodal learning
       tasks:
       - image feature extraction
-      - zero-shot image classification
       - image classification
-      - visual localization
-      - visual grounding
+      - zero-shot image classification
+      - localization
+      - grounding
     - local: models-classification/model_doc/beit.md
       title: BEiT
       year: 2021
+      paper_link: https://huggingface.co/papers/2106.08254
+      paper_id: '2106.08254'
       techniques:
       - vision transformer
-      - self-supervised pre-training
+      - self-supervised pretraining
       - masked image modeling
       - visual token prediction
       - relative position embeddings
@@ -36,16 +40,18 @@ groups:
       domains:
       - computer vision
       tasks:
-      - masked image modeling
       - image classification
       - semantic segmentation
+      - masked image modeling
     - local: models-classification/model_doc/bit.md
       title: BiT
       year: 2019
+      paper_link: https://huggingface.co/papers/1912.11370
+      paper_id: '1912.11370'
       techniques:
-      - ResNetv2-like convolutional architecture
+      - ResNetv2-like convolutional neural network
       - large-scale supervised pre-training
-      - transfer learning
+      - fine-tuning for transfer learning
       - group normalization
       - weight standardization
       domains:
@@ -55,10 +61,13 @@ groups:
     - local: models-classification/model_doc/convnext.md
       title: ConvNeXT
       year: 2022
+      paper_link: https://huggingface.co/papers/2201.03545
+      paper_id: '2201.03545'
       techniques:
       - pure convolutional neural network
-      - standard ConvNet modules
-      - ResNet modernization inspired by Vision Transformers
+      - modernized ResNet design
+      - hierarchical convolutional architecture
+      - Vision Transformer-inspired design
       domains:
       - computer vision
       tasks:
@@ -68,13 +77,14 @@ groups:
     - local: models-classification/model_doc/convnextv2.md
       title: ConvNeXTV2
       year: 2023
+      paper_link: https://huggingface.co/papers/2301.00808
+      paper_id: '2301.00808'
       techniques:
       - pure convolutional neural network
       - ConvNeXt architecture
-      - Global Response Normalization
       - masked autoencoder pretraining
       - self-supervised learning
-      - fully convolutional masked autoencoder
+      - global response normalization
       domains:
       - computer vision
       tasks:
@@ -84,11 +94,14 @@ groups:
     - local: models-classification/model_doc/cvt.md
       title: CvT
       year: 2021
+      paper_link: https://huggingface.co/papers/2103.15808
+      paper_id: '2103.15808'
       techniques:
       - convolutional neural network
       - vision transformer
-      - convolutional layers
+      - hybrid convolution-transformer architecture
       - self-attention
+      - convolutional layers
       domains:
       - computer vision
       tasks:
@@ -96,6 +109,8 @@ groups:
     - local: models-classification/model_doc/deit.md
       title: DeiT
       year: 2020
+      paper_link: https://huggingface.co/papers/2012.12877
+      paper_id: '2012.12877'
       techniques:
       - vision transformer
       - transformer encoder
@@ -115,13 +130,14 @@ groups:
     - local: models-classification/model_doc/dinat.md
       title: DiNAT
       year: 2022
+      paper_link: https://huggingface.co/papers/2209.15001
+      paper_id: '2209.15001'
       techniques:
       - hierarchical vision transformer
       - neighborhood attention
       - dilated neighborhood attention
       - sparse global attention
-      - localized self-attention
-      - backbone architecture
+      - backbone
       domains:
       - computer vision
       tasks:
@@ -133,15 +149,15 @@ groups:
     - local: models-classification/model_doc/dinov2.md
       title: DINOV2
       year: 2023
+      paper_link: https://huggingface.co/papers/2304.07193
+      paper_id: '2304.07193'
       techniques:
       - vision transformer (ViT)
-      - self-supervised model distillation
       - memory-efficient attention
       - sequence packing
       - stochastic depth
       - fully sharded data parallel (FSDP)
-      - FlashAttention
-      - scaled dot-product attention (SDPA)
+      - model distillation
       - int4 weight-only quantization
       - TorchScript tracing
       domains:
@@ -154,10 +170,12 @@ groups:
     - local: models-classification/model_doc/dinov2_with_registers.md
       title: DINOv2 with Registers
       year: 2023
+      paper_link: https://huggingface.co/papers/2309.16588
+      paper_id: '2309.16588'
       techniques:
       - vision transformer
       - transformer encoder
-      - self-supervised learning
+      - self-supervised pretraining
       - register tokens
       - FlashAttention
       - scaled dot-product attention
@@ -166,9 +184,13 @@ groups:
       tasks:
       - image classification
       - image feature extraction
+      - dense visual prediction
+      - object discovery
     - local: models-classification/model_doc/efficientnet.md
       title: EfficientNet
       year: 2019
+      paper_link: https://huggingface.co/papers/1905.11946
+      paper_id: '1905.11946'
       techniques:
       - convolutional neural network
       - compound scaling of depth, width, and resolution
@@ -180,12 +202,14 @@ groups:
     - local: models-classification/model_doc/focalnet.md
       title: FocalNet
       year: 2022
+      paper_link: https://huggingface.co/papers/2203.11926
+      paper_id: '2203.11926'
       techniques:
       - focal modulation
       - hierarchical contextualization
       - depth-wise convolutional layers
       - gated aggregation
-      - element-wise affine modulation
+      - element-wise modulation
       - hierarchical vision backbone
       domains:
       - computer vision
@@ -193,11 +217,14 @@ groups:
       - image classification
       - masked image modeling
       - object detection
+      - segmentation
       - semantic segmentation
       - panoptic segmentation
     - local: models-classification/model_doc/hgnet_v2.md
       title: HGNet-V2
       year: null
+      paper_link: null
+      paper_id: null
       techniques:
       - convolutional neural network
       - CNN backbone
@@ -210,9 +237,11 @@ groups:
     - local: models-classification/model_doc/hiera.md
       title: Hiera
       year: 2023
+      paper_link: https://huggingface.co/papers/2306.00989
+      paper_id: '2306.00989'
       techniques:
       - hierarchical vision transformer
-      - multi-stage transformer architecture
+      - multi-stage vision transformer
       - masked autoencoder (MAE) pretraining
       - visual pretext-task pretraining
       domains:
@@ -220,32 +249,17 @@ groups:
       tasks:
       - image classification
       - video recognition
-    - local: models-classification/model_doc/imagegpt.md
-      title: ImageGPT
-      year: null
-      techniques:
-      - decoder-only transformer
-      - autoregressive next-pixel prediction
-      - self-supervised pretraining
-      - k-means pixel tokenization
-      - causal image modeling
-      - linear probing
-      domains:
-      - computer vision
-      tasks:
-      - image classification
-      - unconditional image generation
-      - conditional image generation
-      - causal image modeling
     - local: models-classification/model_doc/levit.md
       title: LeViT
       year: 2021
+      paper_link: https://huggingface.co/papers/2104.01136
+      paper_id: '2104.01136'
       techniques:
-      - hybrid convolutional-transformer architecture
+      - hybrid convolutional neural network and vision transformer
       - decreasing-resolution activation maps
       - attention bias for positional information
+      - knowledge distillation
       - distillation head
-      - hard knowledge distillation
       - data augmentation
       domains:
       - computer vision
@@ -254,12 +268,13 @@ groups:
     - local: models-classification/model_doc/mobilenet_v1.md
       title: MobileNetV1
       year: 2017
+      paper_link: https://huggingface.co/papers/1704.04861
+      paper_id: '1704.04861'
       techniques:
       - convolutional neural network
       - depthwise separable convolutions
       - width multiplier
       - image resolution multiplier
-      - global average pooling
       domains:
       - computer vision
       tasks:
@@ -267,11 +282,13 @@ groups:
     - local: models-classification/model_doc/mobilenet_v2.md
       title: MobileNetV2
       year: 2018
+      paper_link: https://huggingface.co/papers/1801.04381
+      paper_id: '1801.04381'
       techniques:
       - inverted residual blocks
       - linear bottlenecks
       - depthwise separable convolutions
-      - efficient mobile architecture
+      - global average pooling
       domains:
       - computer vision
       tasks:
@@ -280,12 +297,14 @@ groups:
     - local: models-classification/model_doc/mobilevit.md
       title: MobileViT
       year: 2021
+      paper_link: https://huggingface.co/papers/2110.02178
+      paper_id: '2110.02178'
       techniques:
-      - hybrid CNN-transformer architecture
       - lightweight vision transformer
+      - convolutional neural network
+      - hybrid CNN-transformer architecture
       - global context modeling
-      - feature-map processing
-      - DeepLabV3 segmentation head
+      - feature maps instead of token embeddings
       domains:
       - computer vision
       tasks:
@@ -294,12 +313,13 @@ groups:
     - local: models-classification/model_doc/mobilevitv2.md
       title: MobileViTV2
       year: 2022
+      paper_link: https://huggingface.co/papers/2206.02680
+      paper_id: '2206.02680'
       techniques:
+      - convolutional neural network
       - mobile vision transformer
       - separable self-attention
-      - element-wise self-attention
-      - convolutional backbone
-      - DeepLabV3 head
+      - DeepLabV3 segmentation head
       domains:
       - computer vision
       tasks:
@@ -309,11 +329,13 @@ groups:
     - local: models-classification/model_doc/poolformer.md
       title: PoolFormer
       year: 2021
+      paper_link: https://huggingface.co/papers/2111.11418
+      paper_id: '2111.11418'
       techniques:
-      - MetaFormer architecture
       - hierarchical architecture
-      - average-pooling token mixer
-      - transformer-like vision backbone
+      - MetaFormer architecture
+      - average pooling token mixer
+      - transformer-style architecture
       domains:
       - computer vision
       tasks:
@@ -321,12 +343,14 @@ groups:
     - local: models-classification/model_doc/pvt.md
       title: Pyramid Vision Transformer (PVT)
       year: 2021
+      paper_link: https://huggingface.co/papers/2102.12122
+      paper_id: '2102.12122'
       techniques:
       - vision transformer
-      - hierarchical pyramid structure
+      - pyramid structure
       - spatial-reduction attention
-      - progressive sequence shrinking
-      - convolution-free backbone
+      - progressive sequence reduction
+      - hierarchical feature representations
       domains:
       - computer vision
       tasks:
@@ -337,6 +361,8 @@ groups:
     - local: models-classification/model_doc/pvt_v2.md
       title: Pyramid Vision Transformer v2 (PVTv2)
       year: 2021
+      paper_link: https://huggingface.co/papers/2106.13797
+      paper_id: '2106.13797'
       techniques:
       - hierarchical vision transformer
       - multi-scale feature maps
@@ -344,23 +370,26 @@ groups:
       - convolutional feed-forward network
       - spatial reduction attention
       - linear spatial reduction attention
-      - depth-wise convolutions
+      - depth-wise convolution
       - zero-padding positional encoding
       domains:
       - computer vision
       tasks:
       - image classification
+      - object detection
       - semantic segmentation
       - monocular depth estimation
       - panoptic segmentation
-      - object detection
     - local: models-classification/model_doc/regnet.md
       title: RegNet
       year: 2020
+      paper_link: https://huggingface.co/papers/2003.13678
+      paper_id: '2003.13678'
       techniques:
       - neural architecture search
-      - network design spaces
-      - quantized linear width and depth parametrization
+      - network design space search
+      - quantized linear width-and-depth parameterization
+      - regular network design
       domains:
       - computer vision
       tasks:
@@ -368,12 +397,14 @@ groups:
     - local: models-classification/model_doc/resnet.md
       title: ResNet
       year: 2015
+      paper_link: https://huggingface.co/papers/1512.03385
+      paper_id: '1512.03385'
       techniques:
       - convolutional neural network
       - residual connections
       - residual learning
       - bottleneck blocks
-      - deep network architecture
+      - strided convolutional downsampling
       domains:
       - computer vision
       tasks:
@@ -384,10 +415,12 @@ groups:
     - local: models-classification/model_doc/swiftformer.md
       title: SwiftFormer
       year: 2023
+      paper_link: https://huggingface.co/papers/2303.15446
+      paper_id: '2303.15446'
       techniques:
-      - efficient additive attention
       - vision transformer
-      - linear element-wise attention operations
+      - efficient additive attention
+      - linear element-wise attention
       - mobile-efficient architecture
       domains:
       - computer vision
@@ -396,12 +429,14 @@ groups:
     - local: models-classification/model_doc/swin.md
       title: Swin Transformer
       year: 2021
+      paper_link: https://huggingface.co/papers/2103.14030
+      paper_id: '2103.14030'
       techniques:
       - hierarchical vision transformer
       - patch-based image processing
       - windowed self-attention
       - shifted windows
-      - hierarchical multiscale architecture
+      - hierarchical multi-scale representation
       domains:
       - computer vision
       tasks:
@@ -411,25 +446,29 @@ groups:
     - local: models-classification/model_doc/swinv2.md
       title: Swin Transformer V2
       year: 2021
+      paper_link: https://huggingface.co/papers/2111.09883
+      paper_id: '2111.09883'
       techniques:
       - hierarchical vision transformer
-      - shifted-window attention
       - residual post-normalization
       - cosine attention
       - log-spaced continuous position bias
       - SimMIM pre-training
+      - masked image modeling
       domains:
       - computer vision
       tasks:
       - image classification
       - masked image modeling
+      - visual feature extraction
     - local: models-classification/model_doc/timm_wrapper.md
       title: Timm Wrapper
       year: null
+      paper_link: null
+      paper_id: null
       techniques:
       - timm model integration
       - image preprocessing
-      - pretrained image model
       domains:
       - computer vision
       tasks:
@@ -437,58 +476,50 @@ groups:
     - local: models-classification/model_doc/vit.md
       title: Vision Transformer (ViT)
       year: 2020
+      paper_link: https://huggingface.co/papers/2010.11929
+      paper_id: '2010.11929'
       techniques:
       - vision transformer
-      - image patch tokenization
-      - transformer self-attention
+      - patch tokenization
+      - self-attention
       - supervised pretraining
       - masked image modeling
-      domains:
-      - computer vision
-      tasks:
-      - image classification
-      - masked image modeling
-    - local: models-classification/model_doc/vit_mae.md
-      title: ViTMAE
-      year: 2021
-      techniques:
-      - vision transformer
-      - self-supervised pretraining
-      - masked image modeling
-      - large-scale patch masking
-      - encoder-decoder transformer
-      - pixel reconstruction
-      - mask tokens
-      domains:
-      - computer vision
-      tasks:
-      - masked image reconstruction
-      - image classification
-      - object detection
-    - local: models-classification/model_doc/vit_msn.md
-      title: ViTMSN
-      year: 2022
-      techniques:
-      - vision transformer
-      - self-supervised masked siamese pre-training
-      - joint-embedding architecture
-      - masked patch modeling
-      - prototype matching
       - scaled dot-product attention
       domains:
       - computer vision
       tasks:
       - image classification
+      - masked image modeling
+    - local: models-classification/model_doc/vit_msn.md
+      title: ViTMSN
+      year: 2022
+      paper_link: https://huggingface.co/papers/2204.07141
+      paper_id: '2204.07141'
+      techniques:
+      - vision transformer
+      - masked siamese self-supervised pre-training
+      - joint-embedding architecture
+      - masked patch modeling
+      - prototype matching
+      - scaled dot-product attention
+      - FlashAttention
+      domains:
+      - computer vision
+      tasks:
+      - image classification
   Depth estimation:
-    description: Models whose primary documented downstream use is predicting per-pixel or scene-level
-      depth or height from visual inputs.
+    description: Models whose primary documented use is predicting per-pixel or scene-level depth or related
+      elevation measurements from visual inputs.
     documents:
     - local: models-classification/model_doc/chmv2.md
       title: CHMv2
       year: 2026
+      paper_link: https://huggingface.co/papers/2603.06382
+      paper_id: '2603.06382'
       techniques:
-      - DINOv3 self-supervised vision backbone
-      - DPT depth-estimation head
+      - DINOv3 vision backbone
+      - self-supervised vision pretraining
+      - DPT head
       - FlashAttention
       - scaled dot-product attention
       domains:
@@ -500,13 +531,15 @@ groups:
     - local: models-classification/model_doc/depth_anything.md
       title: Depth Anything
       year: 2024
+      paper_link: https://huggingface.co/papers/2401.10891
+      paper_id: '2401.10891'
       techniques:
       - DINOv2 image encoder
       - DPT decoder
+      - semi-supervised learning
       - teacher-student training
       - pseudo-labeling
-      - semi-supervised learning
-      - strong perturbations
+      - strong image perturbations
       domains:
       - computer vision
       tasks:
@@ -515,10 +548,13 @@ groups:
     - local: models-classification/model_doc/depth_anything_v2.md
       title: Depth Anything V2
       year: 2024
+      paper_link: https://huggingface.co/papers/2406.09414
+      paper_id: '2406.09414'
       techniques:
-      - synthetic data training
+      - monocular depth estimation
       - teacher-student knowledge distillation
-      - pseudo-labeling with large-scale real images
+      - synthetic data training
+      - pseudo-labeling
       - fine-tuning with metric depth labels
       domains:
       - computer vision
@@ -528,31 +564,34 @@ groups:
     - local: models-classification/model_doc/depth_pro.md
       title: DepthPro
       year: 2024
+      paper_link: https://huggingface.co/papers/2410.02073
+      paper_id: '2410.02073'
       techniques:
       - multi-scale vision transformer
-      - DINOv2 encoder
+      - Dinov2 encoder
       - patch-based processing
       - DPT-like feature fusion decoder
-      - dense prediction
-      - convolutional focal length estimation head
+      - zero-shot metric estimation
       - scaled dot-product attention
+      - focal length estimation head
       domains:
       - computer vision
       tasks:
       - monocular depth estimation
       - metric depth estimation
+      - field-of-view estimation
       - focal length estimation
-      - field-of-view prediction
     - local: models-classification/model_doc/dpt.md
       title: DPT
       year: 2021
+      paper_link: https://huggingface.co/papers/2103.13413
+      paper_id: '2103.13413'
       techniques:
       - vision transformer backbone
-      - multi-stage feature/token fusion
-      - image-like representations at multiple resolutions
+      - multi-stage token assembly
+      - multi-resolution feature representations
       - progressive convolutional decoder
       - dense prediction
-      - global receptive field
       domains:
       - computer vision
       tasks:
@@ -561,12 +600,13 @@ groups:
     - local: models-classification/model_doc/glpn.md
       title: GLPN
       year: 2022
+      paper_link: https://huggingface.co/papers/2201.07436
+      paper_id: '2201.07436'
       techniques:
       - hierarchical mix-transformer encoder
       - lightweight decoder
-      - global-local path networks
       - selective feature fusion
-      - multi-scale feature fusion
+      - global-local path networks
       - depth-specific augmentation
       - vertical CutDepth
       domains:
@@ -576,14 +616,18 @@ groups:
     - local: models-classification/model_doc/prompt_depth_anything.md
       title: Prompt Depth Anything
       year: 2024
+      paper_link: https://huggingface.co/papers/2412.14015
+      paper_id: '2412.14015'
       techniques:
-      - depth foundation model
       - prompt fusion
-      - multi-scale LiDAR integration
+      - multi-scale depth decoder
+      - LiDAR prompting
       - synthetic LiDAR simulation
       - pseudo ground-truth depth generation
+      - depth foundation model
       domains:
       - computer vision
+      - 3D vision
       - robotics
       tasks:
       - metric depth estimation
@@ -593,31 +637,37 @@ groups:
     - local: models-classification/model_doc/zoedepth.md
       title: ZoeDepth
       year: 2023
+      paper_link: https://huggingface.co/papers/2302.12288
+      paper_id: '2302.12288'
       techniques:
       - relative depth estimation
       - metric depth estimation
+      - lightweight metric head
       - domain-specific metric bin modules
-      - lightweight prediction heads
-      - latent domain classifier
-      - test-time horizontal flip ensembling
+      - latent head selection
+      - test-time horizontal flip averaging
       domains:
       - computer vision
       tasks:
       - depth estimation
+      - relative depth estimation
+      - metric depth estimation
   Object detection:
-    description: Models whose primary documented downstream use is detecting and localizing objects in
-      visual inputs, typically by predicting object classes and bounding boxes.
+    description: Models whose primary documented use is detecting and localizing objects in visual inputs,
+      optionally with related segmentation outputs.
     documents:
     - local: models-classification/model_doc/conditional_detr.md
       title: Conditional DETR
       year: 2021
+      paper_link: https://huggingface.co/papers/2108.06152
+      paper_id: '2108.06152'
       techniques:
       - transformer encoder-decoder
       - conditional cross-attention
       - conditional spatial queries
       - multi-head cross-attention
       - object queries
-      - bipartite matching
+      - box regression
       domains:
       - computer vision
       tasks:
@@ -628,12 +678,13 @@ groups:
     - local: models-classification/model_doc/d_fine.md
       title: D-FINE
       year: 2024
+      paper_link: https://huggingface.co/papers/2410.13842
+      paper_id: '2410.13842'
       techniques:
       - DETR
       - fine-grained distribution refinement
       - global optimal localization self-distillation
       - iterative probability distribution refinement
-      - bounding box regression
       - lightweight computational optimizations
       domains:
       - computer vision
@@ -642,13 +693,14 @@ groups:
     - local: models-classification/model_doc/dab-detr.md
       title: DAB-DETR
       year: 2022
+      paper_link: https://huggingface.co/papers/2201.12329
+      paper_id: '2201.12329'
       techniques:
-      - encoder-decoder transformer
       - dynamic anchor boxes
+      - transformer decoder
+      - cross-attention
       - reference point and anchor size queries
-      - layer-by-layer query updates
-      - cross-attention modulation
-      - ResNet convolutional backbone
+      - convolutional ResNet backbone
       domains:
       - computer vision
       tasks:
@@ -656,10 +708,12 @@ groups:
     - local: models-classification/model_doc/deformable_detr.md
       title: Deformable DETR
       year: 2020
+      paper_link: https://huggingface.co/papers/2010.04159
+      paper_id: '2010.04159'
       techniques:
       - deformable attention
-      - sparse key sampling around reference points
-      - DETR architecture
+      - reference-point-guided sparse sampling
+      - transformer-based detection
       domains:
       - computer vision
       tasks:
@@ -668,11 +722,15 @@ groups:
     - local: models-classification/model_doc/deimv2.md
       title: DEIMv2
       year: 2025
+      paper_link: https://huggingface.co/papers/2509.20787
+      paper_id: '2509.20787'
       techniques:
-      - DINOv3-pretrained/distilled backbones
+      - DETR architecture
+      - DINOv3-pretrained and distilled backbones
       - Spatial Tuning Adapter (STA)
-      - multi-scale feature adaptation
-      - HGNetv2 depth and width pruning
+      - HGNetv2 backbone
+      - depth and width pruning
+      - multi-scale feature conversion
       - simplified decoder
       - Dense O2O matching
       domains:
@@ -682,16 +740,18 @@ groups:
     - local: models-classification/model_doc/detr.md
       title: DETR
       year: 2020
+      paper_link: https://huggingface.co/papers/2005.12872
+      paper_id: '2005.12872'
       techniques:
       - convolutional backbone
       - encoder-decoder transformer
       - object queries
-      - self-attention and cross-attention
+      - parallel decoding
       - bipartite matching
       - Hungarian matching
       - auxiliary decoder losses
       - mask head
-      - learned or sinusoidal positional embeddings
+      - sinusoidal or learned positional embeddings
       domains:
       - computer vision
       tasks:
@@ -701,14 +761,14 @@ groups:
     - local: models-classification/model_doc/lw_detr.md
       title: LW-DETR
       year: 2024
+      paper_link: https://huggingface.co/papers/2407.17140
+      paper_id: '2407.17140'
       techniques:
-      - plain vision transformer encoder
+      - vision transformer encoder
       - interleaved window/global attention
-      - window-major organization
       - multi-level feature aggregation
       - C2f projector
-      - two-scale features
-      - shallow DETR decoder
+      - DETR encoder-decoder
       - deformable cross-attention
       - mixed content and spatial queries
       domains:
@@ -718,13 +778,16 @@ groups:
     - local: models-classification/model_doc/rf_detr.md
       title: RF-DETR
       year: 2024
+      paper_link: null
+      paper_id: null
       techniques:
       - DINOv2 backbone
-      - projector with multi-level features
-      - group-wise one-to-many assignment
+      - C2f projector
+      - multi-level feature aggregation
       - shallow DETR decoder
       - deformable cross-attention
-      - mixed learnable-content and spatial queries
+      - mixed content and spatial queries
+      - group-wise one-to-many assignment
       domains:
       - computer vision
       tasks:
@@ -733,13 +796,15 @@ groups:
     - local: models-classification/model_doc/rt_detr.md
       title: RT-DETR
       year: 2023
+      paper_link: https://huggingface.co/papers/2304.08069
+      paper_id: '2304.08069'
       techniques:
-      - transformer architecture
-      - convolutional ResNet-D backbone
-      - hybrid encoder
-      - multi-scale feature processing
+      - convolutional backbone (ResNet-D variant)
+      - multi-scale feature extraction
+      - efficient hybrid encoder
+      - transformer decoder
       - IoU-aware query selection
-      - decoder with auxiliary prediction heads
+      - auxiliary prediction heads
       - end-to-end detection without non-maximum suppression
       domains:
       - computer vision
@@ -748,13 +813,15 @@ groups:
     - local: models-classification/model_doc/rt_detr_v2.md
       title: RT-DETRv2
       year: 2024
+      paper_link: https://huggingface.co/papers/2407.17140
+      paper_id: '2407.17140'
       techniques:
+      - transformer-based object detector
       - deformable attention
       - selective multi-scale feature extraction
       - discrete sampling operator
       - dynamic data augmentation
       - scale-adaptive hyperparameters
-      - encoder-decoder transformer
       domains:
       - computer vision
       tasks:
@@ -762,41 +829,31 @@ groups:
     - local: models-classification/model_doc/table-transformer.md
       title: Table Transformer
       year: 2021
+      paper_link: https://huggingface.co/papers/2110.00061
+      paper_id: '2110.00061'
       techniques:
       - DETR
       - transformer-based object detection
-      - bipartite matching
+      - padding of images
       domains:
       - computer vision
       - document understanding
       tasks:
       - object detection
       - table detection
-      - table extraction
       - table structure recognition
+      - table extraction
       - functional analysis
-    - local: models-classification/model_doc/textnet.md
-      title: TextNet
-      year: 2021
-      techniques:
-      - neural architecture search
-      - convolutional backbone
-      - stride-2 convolutions
-      - searchable blocks
-      - asymmetric convolutions
-      domains:
-      - computer vision
-      tasks:
-      - text detection
-      - image classification
     - local: models-classification/model_doc/vitdet.md
       title: ViTDet
       year: 2022
+      paper_link: https://huggingface.co/papers/2203.16527
+      paper_id: '2203.16527'
       techniques:
-      - plain vision transformer backbone
-      - simple feature pyramid
+      - Vision Transformer backbone
+      - plain non-hierarchical backbone
       - window attention
-      - cross-window propagation blocks
+      - simple feature pyramid
       - masked autoencoder pretraining
       domains:
       - computer vision
@@ -805,32 +862,32 @@ groups:
     - local: models-classification/model_doc/yolos.md
       title: YOLOS
       year: 2021
+      paper_link: https://huggingface.co/papers/2106.00666
+      paper_id: '2106.00666'
       techniques:
-      - vision transformer
+      - vision transformer (ViT)
+      - transformer-based object detection
       - region priors
-      - self-attention
       domains:
       - computer vision
       tasks:
       - object detection
-  Image feature extraction:
-    description: Models whose primary documented downstream use is extracting global or dense image embeddings
-      and visual features for reuse in vision applications.
+  Visual feature extraction:
+    description: Models whose primary documented use is extracting general-purpose global or dense visual
+      representations for downstream vision tasks.
     documents:
     - local: models-classification/model_doc/dinov3.md
       title: DINOv3
       year: 2025
+      paper_link: https://huggingface.co/papers/2508.10104
+      paper_id: '2508.10104'
       techniques:
       - vision transformer
-      - convnext backbone
+      - ConvNeXt backbone
       - self-supervised learning
-      - weakly supervised learning
+      - dense feature extraction
       - patch embeddings
       - register tokens
-      - dense feature extraction
-      - FlashAttention
-      - scaled dot-product attention
-      - int4 weight-only quantization
       domains:
       - computer vision
       tasks:
@@ -839,15 +896,16 @@ groups:
       - image classification
       - image retrieval
       - semantic segmentation
-      - dense prediction
     - local: models-classification/model_doc/ijepa.md
       title: I-JEPA
       year: 2023
+      paper_link: https://huggingface.co/papers/2301.08243
+      paper_id: '2301.08243'
       techniques:
       - self-supervised learning
-      - joint embedding predictive architecture
-      - abstract representation prediction
-      - image representation learning
+      - predictive representation learning
+      - vision transformer
+      - abstract feature prediction
       domains:
       - computer vision
       tasks:
@@ -856,21 +914,29 @@ groups:
     - local: models-classification/model_doc/mlcd.md
       title: MLCD
       year: 2024
+      paper_link: https://huggingface.co/papers/2407.17331
+      paper_id: '2407.17331'
       techniques:
       - vision transformer
       - 2D rotary position embedding (RoPE2D)
       - sample-to-cluster contrastive learning
-      - large-scale visual-language pretraining
+      - large-scale visual pretraining
       domains:
       - computer vision
       - multimodal learning
       tasks:
-      - image feature extraction
+      - visual feature extraction
       - document understanding
       - visual question answering
+      - chart question answering
+      - document visual question answering
+      - information visual question answering
+      - optical character recognition
     - local: models-classification/model_doc/pixio.md
       title: Pixio
       year: null
+      paper_link: null
+      paper_id: null
       techniques:
       - vision transformer (ViT) feature extractor
       - masked autoencoder (MAE) pre-training
@@ -878,74 +944,101 @@ groups:
       - larger masking granularity
       - multiple class tokens
       - web-scale curated training data
+      - FlashAttention
+      - scaled dot-product attention (SDPA)
+      - torch.compile
       domains:
       - computer vision
       - robotics
       tasks:
-      - image feature extraction
       - depth estimation
       - semantic segmentation
       - feed-forward 3D reconstruction
+      - robotics
       - image classification
       - image retrieval
-      - robotics
+      - image embedding
     - local: models-classification/model_doc/radio.md
       title: RADIO
       year: null
+      paper_link: https://huggingface.co/papers/2312.06709
+      paper_id: '2312.06709'
       techniques:
+      - vision transformer (ViT) backbone
       - multi-teacher distillation
-      - vision transformer backbone
-      - cropped position embedding patch generator
+      - Cropped Position Embedding (CPE)
+      - global image embeddings
+      - dense spatial features
       - variable-resolution input
-      - FlashAttention
-      - SDPA
       domains:
       - computer vision
       tasks:
-      - image feature extraction
+      - visual feature extraction
+    - local: models-classification/model_doc/vit_mae.md
+      title: ViTMAE
+      year: 2021
+      paper_link: https://huggingface.co/papers/2111.06377
+      paper_id: '2111.06377'
+      techniques:
+      - vision transformer
+      - masked autoencoding
+      - self-supervised pretraining
+      - patch masking
+      - encoder-decoder architecture
+      - pixel reconstruction
+      domains:
+      - computer vision
+      tasks:
+      - image reconstruction
+      - image classification
+      - object detection
   Feature matching:
-    description: Models whose primary documented downstream use is matching local visual features or keypoints
-      across images.
+    description: Models whose primary documented use is finding correspondences or matching local visual
+      features or keypoints across images.
     documents:
     - local: models-classification/model_doc/efficientloftr.md
       title: EfficientLoFTR
       year: 2024
+      paper_link: https://huggingface.co/papers/2403.04765
+      paper_id: '2403.04765'
       techniques:
       - detector-free local feature matching
       - aggregated attention
       - adaptive token selection
       - two-stage correlation layer
-      - semi-dense matching
       - subpixel correspondence estimation
+      - semi-dense matching
+      domains:
+      - computer vision
+      tasks:
+      - keypoint matching
+    - local: models-classification/model_doc/lightglue.md
+      title: LightGlue
+      year: 2023
+      paper_link: https://huggingface.co/papers/2306.13643
+      paper_id: '2306.13643'
+      techniques:
+      - deep neural network
+      - adaptive inference based on task difficulty
+      - local feature correspondence matching
+      - confidence scoring
       domains:
       - computer vision
       tasks:
       - keypoint matching
       - feature matching
-      - image retrieval
-      - 3d reconstruction
-    - local: models-classification/model_doc/lightglue.md
-      title: LightGlue
-      year: 2023
-      techniques:
-      - deep neural network
-      - local feature matching
-      - adaptive inference
-      - confidence-based matching
-      domains:
-      - computer vision
-      tasks:
-      - keypoint matching
       - image matching
       - pose estimation
     - local: models-classification/model_doc/superglue.md
       title: SuperGlue
       year: 2019
+      paper_link: https://huggingface.co/papers/1911.11763
+      paper_id: '1911.11763'
       techniques:
       - graph neural network
       - attention-based context aggregation
       - differentiable optimal transport
-      - joint correspondence estimation and non-match rejection
+      - joint correspondence estimation and non-matchable point rejection
       domains:
       - computer vision
       tasks:
@@ -953,31 +1046,16 @@ groups:
       - keypoint matching
       - image matching
       - homography estimation
-      - camera pose estimation
-    - local: models-classification/model_doc/superpoint.md
-      title: SuperPoint
-      year: 2017
-      techniques:
-      - self-supervised training
-      - fully convolutional network
-      - interest point detection
-      - local feature description
-      - homography-aware training
-      domains:
-      - computer vision
-      tasks:
-      - interest point detection
-      - keypoint detection
-      - feature description
-      - image matching
-      - homography estimation
+      - pose estimation
   Image segmentation:
-    description: Models whose primary documented downstream use is partitioning images into semantic,
-      instance-level, or panoptic regions and masks.
+    description: Models whose primary documented use is assigning per-pixel or per-region masks and labels
+      to images, including semantic, instance, and panoptic segmentation.
     documents:
     - local: models-classification/model_doc/eomt.md
       title: EoMT
       year: 2025
+      paper_link: https://huggingface.co/papers/2503.19108
+      paper_id: '2503.19108'
       techniques:
       - DINOv2-pretrained vision transformer
       - register tokens
@@ -987,7 +1065,6 @@ groups:
       - masked attention
       - mask annealing
       - mask prediction module
-      - decoder-free inference
       - sliding-window inference
       - padded inference
       domains:
@@ -1000,10 +1077,12 @@ groups:
     - local: models-classification/model_doc/eomt_dinov3.md
       title: EoMT-DINOv3
       year: 2025
+      paper_link: https://huggingface.co/papers/2503.19108
+      paper_id: '2503.19108'
       techniques:
       - encoder-only mask transformer
       - vision transformer
-      - DINOv3 pretraining
+      - DINOv3 pre-training
       - rotary position embeddings
       - gated MLP blocks
       - query-based inference
@@ -1017,10 +1096,13 @@ groups:
     - local: models-classification/model_doc/mask2former.md
       title: Mask2Former
       year: 2021
+      paper_link: https://huggingface.co/papers/2112.01527
+      paper_id: '2112.01527'
       techniques:
       - masked attention
       - mask transformer
-      - universal segmentation
+      - localized cross-attention
+      - unified segmentation architecture
       domains:
       - computer vision
       tasks:
@@ -1030,12 +1112,15 @@ groups:
     - local: models-classification/model_doc/maskformer.md
       title: MaskFormer
       year: 2021
+      paper_link: https://huggingface.co/papers/2107.06278
+      paper_id: '2107.06278'
       techniques:
-      - mask classification paradigm
+      - mask classification
       - transformer decoder
       - binary mask prediction
-      - auxiliary decoder losses
-      - Hungarian matching losses
+      - set prediction
+      - auxiliary losses
+      - Hungarian matching loss
       domains:
       - computer vision
       tasks:
@@ -1045,50 +1130,51 @@ groups:
     - local: models-classification/model_doc/sam2.md
       title: SAM2
       year: null
+      paper_link: null
+      paper_id: null
       techniques:
       - transformer architecture
       - streaming memory
       - promptable segmentation
-      - point and bounding-box prompts
-      - multimask prediction
-      - interactive segmentation
-      - automatic mask generation
+      - point and bounding-box prompting
       domains:
       - computer vision
-      - video processing
+      - video understanding
       tasks:
       - image segmentation
       - video segmentation
-      - promptable segmentation
-      - automatic mask generation
     - local: models-classification/model_doc/sam3_tracker.md
       title: Sam3Tracker
       year: null
+      paper_link: null
+      paper_id: null
       techniques:
       - promptable segmentation
-      - interactive point, box, mask, and text prompts
-      - shared image backbone
+      - shared backbone
       - image-level detector
       - memory-based video tracker
       - presence head
-      - multimask prediction
+      - interactive point, box, mask, and text prompts
       domains:
       - computer vision
-      - image and video understanding
+      - video understanding
       tasks:
-      - image segmentation
-      - instance segmentation
       - promptable visual segmentation
-      - promptable concept segmentation
+      - image segmentation
       - object detection
-      - video object tracking
+      - object tracking
+      - promptable concept segmentation
     - local: models-classification/model_doc/segformer.md
       title: SegFormer
       year: 2021
+      paper_link: https://huggingface.co/papers/2105.15203
+      paper_id: '2105.15203'
       techniques:
-      - hierarchical transformer encoder (Mix Transformer/MiT)
+      - hierarchical Transformer encoder (Mix Transformer/MiT)
       - lightweight all-MLP decoder
-      - positional-encoding-free architecture
+      - positional-encoding-free design
+      - random crop and padding preprocessing
+      - image normalization
       domains:
       - computer vision
       tasks:
@@ -1097,22 +1183,23 @@ groups:
     - local: models-classification/model_doc/seggpt.md
       title: SegGpt
       year: 2023
+      paper_link: https://huggingface.co/papers/2304.03284
+      paper_id: '2304.03284'
       techniques:
       - decoder-only transformer
       - in-context learning
-      - in-context coloring
+      - one-shot and few-shot segmentation
       - random color mapping
-      - prompt-based segmentation
-      - one-shot and few-shot inference
+      - in-context coloring objective
+      - feature ensemble
       domains:
       - computer vision
-      - video understanding
       tasks:
       - image segmentation
-      - semantic segmentation
-      - few-shot semantic segmentation
       - one-shot semantic segmentation
+      - few-shot semantic segmentation
       - video object segmentation
+      - semantic segmentation
       - panoptic segmentation
       - instance segmentation
       - stuff segmentation
@@ -1122,29 +1209,30 @@ groups:
     - local: models-classification/model_doc/sam.md
       title: Segment Anything
       year: 2023
+      paper_link: https://huggingface.co/papers/2304.02643
+      paper_id: '2304.02643'
       techniques:
       - promptable segmentation
       - point and bounding-box prompting
-      - image encoder
       - prompt encoder
       - mask decoder
       - zero-shot transfer
-      - binary mask prediction
       domains:
       - computer vision
       tasks:
       - image segmentation
-      - automatic mask generation
-      - text-based mask generation
     - local: models-classification/model_doc/sam_hq.md
       title: Segment Anything High Quality
       year: 2023
+      paper_link: https://huggingface.co/papers/2306.01567
+      paper_id: '2306.01567'
       techniques:
       - vision transformer
-      - promptable segmentation
+      - prompt encoder
+      - mask decoder
       - learnable high-quality output token
       - global-local feature fusion
-      - mask decoder
+      - promptable segmentation
       - zero-shot generalization
       domains:
       - computer vision
@@ -1153,35 +1241,80 @@ groups:
     - local: models-classification/model_doc/upernet.md
       title: UperNet
       year: 2018
+      paper_link: https://huggingface.co/papers/1807.10221
+      paper_id: '1807.10221'
       techniques:
       - multi-task learning
-      - heterogeneous image annotations
+      - heterogeneous-annotation training
       - flexible vision backbone integration
+      - unified perceptual parsing
       domains:
       - computer vision
       tasks:
       - semantic segmentation
       - unified perceptual parsing
-  Human-centric dense prediction:
-    description: Models whose primary documented downstream uses are multiple dense prediction tasks focused
-      on humans, such as pose, body-part segmentation, surface normals, or 3D pointmaps.
+    - local: models-classification/model_doc/vitmatte.md
+      title: ViTMatte
+      year: 2023
+      paper_link: https://huggingface.co/papers/2305.15272
+      paper_id: '2305.15272'
+      techniques:
+      - vision transformer
+      - hybrid attention
+      - convolution neck
+      - detail capture module
+      - lightweight convolutions
+      - trimap-conditioned inference
+      domains:
+      - computer vision
+      tasks:
+      - image matting
+  Image generation:
+    description: Models whose primary documented use is generating images, either unconditionally or conditioned
+      on inputs, through learned generative modeling.
+    documents:
+    - local: models-classification/model_doc/imagegpt.md
+      title: ImageGPT
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - autoregressive sequence transformer
+      - causal language modeling objective
+      - next-pixel prediction
+      - self-supervised pretraining
+      - k-means pixel-value quantization
+      - linear probing
+      - full-model fine-tuning
+      domains:
+      - computer vision
+      - generative modeling
+      tasks:
+      - unconditional image generation
+      - conditional image generation
+      - causal image modeling
+      - image classification
+      - visual feature extraction
+  Human-centric visual understanding:
+    description: Models whose primary documented use is performing human-centric visual understanding
+      through pose, body geometry, or dense human-structure predictions from images.
     documents:
     - local: models-classification/model_doc/sapiens2.md
       title: Sapiens2
       year: 2026
+      paper_link: https://huggingface.co/papers/2604.21681
+      paper_id: '2604.21681'
       techniques:
       - high-resolution vision transformer
-      - masked image reconstruction
+      - masked image reconstruction pretraining
       - self-distilled contrastive learning
       - rotary position embeddings
       - grouped query attention
       - register tokens
-      - native 1K resolution
+      - native 1K-resolution training
       - hierarchical 4K variants
       domains:
       - computer vision
-      - 3D vision
-      - human-centric vision
       tasks:
       - pose estimation
       - body-part segmentation
@@ -1191,41 +1324,91 @@ groups:
     - local: models-classification/model_doc/vitpose.md
       title: ViTPose
       year: 2022
+      paper_link: https://huggingface.co/papers/2204.12484
+      paper_id: '2204.12484'
       techniques:
       - vision transformer backbone
-      - non-hierarchical transformer
       - lightweight decoder head
-      - mixture-of-experts backbone
       - top-down pose estimation
+      - mixture-of-experts backbone
       domains:
       - computer vision
       tasks:
-      - keypoint estimation
-      - pose estimation
+      - human pose estimation
+      - keypoint detection
+  Keypoint detection:
+    description: Models whose primary documented use is detecting local interest points or keypoints in
+      visual inputs and producing associated local descriptors.
+    documents:
+    - local: models-classification/model_doc/superpoint.md
+      title: SuperPoint
+      year: 2017
+      paper_link: https://huggingface.co/papers/1712.07629
+      paper_id: '1712.07629'
+      techniques:
+      - fully convolutional network
+      - self-supervised training
+      - homography-invariant interest point detection
+      - local feature description
+      domains:
+      - computer vision
+      tasks:
+      - interest point detection
+      - keypoint detection
+      - feature description
+      - homography estimation
+      - image matching
   Image restoration:
-    description: Models whose primary documented downstream uses restore or enhance degraded images, including
-      super-resolution and removal of compression or other visual artifacts.
+    description: Models whose primary documented use is restoring or enhancing degraded images, including
+      image super-resolution and compression artifact removal.
     documents:
     - local: models-classification/model_doc/swin2sr.md
       title: Swin2SR
       year: 2022
+      paper_link: https://huggingface.co/papers/2209.11345
+      paper_id: '2209.11345'
       techniques:
       - Swin Transformer v2 layers
-      - hierarchical vision transformer
+      - transformer-based vision model
       - shifted-window attention
       domains:
       - computer vision
       tasks:
       - JPEG compression artifact removal
       - image super-resolution
-      - classical image super-resolution
-      - lightweight image super-resolution
       - compressed image super-resolution
+      - image restoration
+  Text detection:
+    description: Models whose primary documented use is detecting and localizing text regions or text
+      lines in visual inputs.
+    documents:
+    - local: models-classification/model_doc/textnet.md
+      title: TextNet
+      year: 2021
+      paper_link: https://huggingface.co/papers/2111.02394
+      paper_id: '2111.02394'
+      techniques:
+      - neural architecture search
+      - convolutional backbone
+      - stride-2 convolutions
+      - searchable blocks
+      - asymmetric convolutions
+      domains:
+      - computer vision
+      tasks:
+      - text detection
+      - image classification
+  Document image rectification:
+    description: Models whose primary documented use is correcting geometric distortion, inclination,
+      perspective deformation, or related warping in document images.
+    documents:
     - local: models-classification/model_doc/uvdoc.md
       title: UVDoc
       year: null
+      paper_link: null
+      paper_id: null
       techniques:
-      - geometric transformation
+      - geometric image transformation
       - document image rectification
       domains:
       - computer vision
@@ -1233,45 +1416,30 @@ groups:
       tasks:
       - document image rectification
   Video segmentation:
-    description: Models whose primary documented downstream use is partitioning video frames into temporally
-      coherent semantic, instance-level, or panoptic regions and masks.
+    description: Models whose primary documented use is assigning temporally consistent per-frame masks
+      and labels to video content, including semantic, instance, and panoptic video segmentation.
     documents:
     - local: models-classification/model_doc/videomt.md
       title: VidEoMT
       year: 2026
+      paper_link: https://huggingface.co/papers/2602.17807
+      paper_id: '2602.17807'
       techniques:
-      - vision transformer
-      - DINOv2 backbone
+      - vision transformer encoder
       - encoder-only mask transformer
+      - DINOv2 backbone
       - register tokens
       - learned object queries
       - mask prediction head
       - query propagation
       - query fusion
       - temporal reasoning
+      - online segmentation
       domains:
       - computer vision
       - video understanding
       tasks:
-      - video segmentation
       - video instance segmentation
       - video semantic segmentation
       - video panoptic segmentation
-  Image matting:
-    description: Models whose primary documented downstream use is estimating foreground alpha mattes
-      or separating foreground objects from backgrounds in images or videos.
-    documents:
-    - local: models-classification/model_doc/vitmatte.md
-      title: ViTMatte
-      year: 2023
-      techniques:
-      - vision transformer
-      - hybrid attention mechanism
-      - convolution neck
-      - detail capture module
-      - trimap-conditioned input
-      domains:
-      - computer vision
-      tasks:
-      - image matting
 read_errors: []
