@@ -1,0 +1,171 @@
+version: 3
+source_config: /home/hiennx/Documents/pydantic-ai-demo/models-classification/Video/config.yaml
+groups:
+  Video-text retrieval:
+    description: Models whose primary documented task is retrieving or matching videos and text in a shared
+      representation space.
+    documents:
+    - local: models-classification/model_doc/pe_video.md
+      title: PE Video
+      year: 2025
+      paper_link: https://huggingface.co/papers/2504.13181
+      paper_id: '2504.13181'
+      techniques:
+      - contrastive learning
+      - shared video-text embedding space
+      - vision transformer
+      - rotary embeddings
+      - spatiotemporal patch embedding
+      - variable-length video encoding
+      - zero-shot inference
+      domains:
+      - multimodal learning
+      - computer vision
+      - video understanding
+      tasks:
+      - zero-shot video classification
+      - video-text retrieval
+  Video segmentation:
+    description: Models whose primary documented task is segmenting objects or regions across video frames,
+      often with temporal propagation or tracking.
+    documents:
+    - local: models-classification/model_doc/sam2_video.md
+      title: SAM2 Video
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - transformer architecture
+      - streaming memory
+      - promptable segmentation
+      - point and bounding-box prompts
+      - temporal mask propagation
+      - streaming inference
+      domains:
+      - computer vision
+      - video understanding
+      tasks:
+      - video segmentation
+      - image segmentation
+      - video object tracking
+    - local: models-classification/model_doc/sam3_tracker_video.md
+      title: Sam3TrackerVideo
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - promptable segmentation
+      - memory-based video tracker
+      - shared image-video backbone
+      - interactive point, box, mask, and text prompts
+      - temporal mask propagation
+      - streaming video inference
+      domains:
+      - computer vision
+      - video understanding
+      tasks:
+      - promptable visual segmentation
+      - video segmentation
+      - video object tracking
+      - object detection
+  Video classification:
+    description: Models whose primary documented task is assigning one or more semantic labels to an entire
+      video or video clip, including action recognition.
+    documents:
+    - local: models-classification/model_doc/timesformer.md
+      title: TimeSformer
+      year: 2021
+      paper_link: https://huggingface.co/papers/2102.05095
+      paper_id: '2102.05095'
+      techniques:
+      - video transformer
+      - self-attention
+      - spatiotemporal attention
+      - divided spatial and temporal attention
+      - frame-level patch embeddings
+      - convolution-free architecture
+      domains:
+      - computer vision
+      - video understanding
+      tasks:
+      - video classification
+      - action recognition
+    - local: models-classification/model_doc/vjepa2.md
+      title: V-JEPA 2
+      year: 2025
+      paper_link: https://huggingface.co/papers/2506.09985
+      paper_id: '2506.09985'
+      techniques:
+      - self-supervised learning
+      - video encoder
+      - vision transformer
+      - latent action-conditioned world model
+      - post-training with robot trajectory interaction data
+      - scaled dot-product attention
+      - FlashAttention
+      domains:
+      - computer vision
+      - video understanding
+      - robotics
+      tasks:
+      - video classification
+      - motion understanding
+      - human action anticipation
+      - robot manipulation
+      - feature extraction
+    - local: models-classification/model_doc/videomae.md
+      title: VideoMAE
+      year: 2022
+      paper_link: https://huggingface.co/papers/2203.12602
+      paper_id: '2203.12602'
+      techniques:
+      - video masked autoencoder
+      - self-supervised video pre-training
+      - masked tube reconstruction
+      - vision transformer backbone
+      - scaled dot-product attention
+      domains:
+      - computer vision
+      - video understanding
+      tasks:
+      - video classification
+      - video reconstruction
+    - local: models-classification/model_doc/videoprism.md
+      title: VideoPrism
+      year: 2024
+      paper_link: https://huggingface.co/papers/2402.13217
+      paper_id: '2402.13217'
+      techniques:
+      - factorized spatio-temporal encoder
+      - separate spatial and temporal transformers
+      - global-local distillation
+      - token shuffling
+      - masked autoencoding
+      - video-text contrastive learning
+      - frozen encoder
+      - FlashAttention
+      domains:
+      - computer vision
+      - video understanding
+      - multimodal learning
+      tasks:
+      - video classification
+      - video feature extraction
+      - video-text contrastive learning
+    - local: models-classification/model_doc/vivit.md
+      title: ViViT
+      year: 2021
+      paper_link: https://huggingface.co/papers/2103.15691
+      paper_id: '2103.15691'
+      techniques:
+      - vision transformer
+      - spatio-temporal tokenization
+      - factorized spatial-temporal attention
+      - scaled dot-product attention
+      - FlashAttention
+      domains:
+      - computer vision
+      - video understanding
+      tasks:
+      - video classification
+read_errors: []
