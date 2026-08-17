@@ -1,23 +1,27 @@
-"""Download Hugging Face paper Markdown for classified models.
+"""Download paper Markdown or arXiv LaTeX sources for classified models.
 
-Example:
+Examples:
     uv run python models-classification/download_papers.py
+    uv run python models-classification/download_papers.py --source
 
 The large groups checkpoint is parsed as YAML events, so only one document record is
-kept in memory at a time. Each ``hf papers read`` response is streamed directly into
-its destination file.
+kept in memory at a time. Markdown and arXiv source downloads are streamed directly
+to temporary destinations before being published.
 """
 
 from __future__ import annotations
 
 import argparse
 import os
+import shutil
 import subprocess
+import tarfile
 import tempfile
 from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Literal
+from typing import BinaryIO, Literal
+from urllib.request import urlopen
 
 import yaml
 from yaml.events import (
@@ -245,6 +249,66 @@ def download_paper(
             temporary_path.unlink(missing_ok=True)
 
 
+def _source_target(record: PaperRecord, output_directory: Path) -> Path:
+    """Return the output directory for an arXiv source archive."""
+    assert record.paper_id is not None
+    return (
+        output_directory
+        / _path_component(record.group_name, "group name")
+        / f"{_path_component(record.paper_id, 'paper ID')}_{_path_component(record.model_name, 'model name')}"
+    )
+
+
+def _extract_tar_safely(archive: Path, destination: Path) -> None:
+    """Extract archive without allowing member paths to escape destination."""
+    destination_root = destination.resolve()
+    with tarfile.open(archive, mode="r:*") as source:
+        members = source.getmembers()
+        for member in members:
+            member_path = (destination / member.name).resolve()
+            if member_path != destination_root and destination_root not in member_path.parents:
+                raise ValueError(f"Archive member escapes destination: {member.name!r}")
+            if not member.isfile() and not member.isdir():
+                raise ValueError(f"Archive member has unsupported type: {member.name!r}")
+        source.extractall(destination, members=members)
+
+
+def _download_to_file(response: BinaryIO, destination: Path) -> None:
+    with destination.open("wb") as output:
+        shutil.copyfileobj(response, output)
+
+
+def download_paper_source(
+    record: PaperRecord, output_directory: Path, *, overwrite: bool = False
+) -> Literal["downloaded", "skipped", "missing-paper-id", "failed"]:
+    """Download and safely extract an arXiv source archive into the model directory."""
+    if record.paper_id is None:
+        return "missing-paper-id"
+
+    target = _source_target(record, output_directory)
+    if target.exists() and not overwrite:
+        return "skipped"
+
+    target.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with tempfile.TemporaryDirectory(dir=target.parent, prefix=f".{target.name}.") as temporary:
+            temporary_directory = Path(temporary)
+            archive = temporary_directory / f"{record.paper_id}.tar.gz"
+            extracted = temporary_directory / "source"
+            with urlopen(f"https://arxiv.org/src/{record.paper_id}", timeout=60) as response:
+                _download_to_file(response, archive)
+            extracted.mkdir()
+            _extract_tar_safely(archive, extracted)
+
+            if target.exists():
+                shutil.rmtree(target)
+            os.replace(extracted, target)
+        return "downloaded"
+    except (OSError, tarfile.TarError, ValueError) as exc:
+        print(f"failed: {record.model_name} ({record.paper_id}): {exc}")
+        return "failed"
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
@@ -254,7 +318,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="Root for group folders (default: the config directory)",
     )
-    parser.add_argument("--overwrite", action="store_true", help="Replace existing Markdown files")
+    parser.add_argument("--overwrite", action="store_true", help="Replace existing downloaded output")
+    parser.add_argument(
+        "--source",
+        action="store_true",
+        help="Download and extract arXiv LaTeX source archives instead of Markdown",
+    )
     return parser.parse_args()
 
 
@@ -264,11 +333,13 @@ def main() -> None:
     output_directory = args.output_dir or args.config.parent
     counts: dict[str, int] = {"downloaded": 0, "skipped": 0, "missing-paper-id": 0, "failed": 0}
 
+    download = download_paper_source if args.source else download_paper
+    output_suffix = "/" if args.source else ".md"
     for record in iter_paper_records(args.groups, configured_models):
-        outcome = download_paper(record, output_directory, overwrite=args.overwrite)
+        outcome = download(record, output_directory, overwrite=args.overwrite)
         counts[outcome] += 1
         if outcome == "downloaded":
-            print(f"downloaded: {record.group_name}/{record.paper_id}_{record.model_name}.md")
+            print(f"downloaded: {record.group_name}/{record.paper_id}_{record.model_name}{output_suffix}")
         elif outcome == "missing-paper-id":
             print(f"no paper id: {record.group_name}/{record.model_name}")
         elif outcome == "failed":

@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import io
 import sys
+import tarfile
 import tempfile
 import unittest
+from contextlib import closing
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
@@ -10,7 +13,13 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).parent))
 
 import download_papers  # noqa: E402
-from download_papers import PaperRecord, download_paper, iter_paper_records, load_configured_models  # noqa: E402
+from download_papers import (  # noqa: E402
+    PaperRecord,
+    download_paper,
+    download_paper_source,
+    iter_paper_records,
+    load_configured_models,
+)
 
 
 class DownloadPapersTests(unittest.TestCase):
@@ -72,6 +81,40 @@ groups:
                 calls,
                 [(["uv", "run", "hf", "papers", "read", "2508.10104"], download_papers.PROJECT_DIRECTORY.parent, False)],
             )
+
+    def test_arxiv_source_is_downloaded_to_a_temporary_tar_gz_and_extracted(self) -> None:
+        archive = io.BytesIO()
+        with tarfile.open(fileobj=archive, mode="w:gz") as source:
+            contents = b"\\documentclass{article}\\n"
+            member = tarfile.TarInfo("main.tex")
+            member.size = len(contents)
+            source.addfile(member, io.BytesIO(contents))
+
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            record = PaperRecord("Document information extraction", "LayoutLM", "1912.13318")
+            with patch.object(
+                download_papers, "urlopen", return_value=closing(io.BytesIO(archive.getvalue()))
+            ) as urlopen:
+                result = download_paper_source(record, output)
+
+            target = output / "Document information extraction" / "1912.13318_LayoutLM"
+            self.assertEqual(result, "downloaded")
+            self.assertEqual((target / "main.tex").read_bytes(), b"\\documentclass{article}\\n")
+            urlopen.assert_called_once_with("https://arxiv.org/src/1912.13318", timeout=60)
+
+    def test_existing_source_directory_is_skipped_without_a_download(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            target = output / "Group name" / "2508.10104_Model name"
+            target.mkdir(parents=True)
+            record = PaperRecord("Group name", "Model name", "2508.10104")
+
+            with patch.object(download_papers, "urlopen") as urlopen:
+                result = download_paper_source(record, output)
+
+            self.assertEqual(result, "skipped")
+            urlopen.assert_not_called()
 
 
 if __name__ == "__main__":
