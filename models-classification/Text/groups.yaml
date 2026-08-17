@@ -1,0 +1,4251 @@
+version: 3
+source_config: /home/hiennx/Documents/pydantic-ai-demo/models-classification/Text/config.yaml
+groups:
+  Text generation:
+    description: Models whose primary documented use is generating text autoregressively from input text.
+    documents:
+    - local: models-classification/model_doc/axk1.md
+      title: A.X-K1
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - multi-head latent attention (MLA)
+      - mixture-of-experts (MoE)
+      - grouped sigmoid top-k routing
+      - shared expert
+      - post-MLP layer normalization
+      - FlashAttention
+      - scaled dot-product attention (SDPA)
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/axk2.md
+      title: A.X-K2
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - mixture-of-experts decoder
+      - DeepSeek-V3.2 architecture
+      - multi-head latent attention
+      - DeepSeek sparse attention
+      - sparse gated attention
+      - lightning indexer
+      - gated RMSNorm
+      - attention output gate
+      - sigmoid top-k routing
+      - shared expert
+      - eager and SDPA attention implementations
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/afmoe.md
+      title: AFMoE
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - sparse mixture of experts
+      - shared experts
+      - token-choice top-k routing
+      - sliding window and full attention
+      - RoPE embeddings
+      - Q/K normalization
+      - attention output gating
+      - FlashAttention 2
+      - SDPA
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/apertus.md
+      title: Apertus
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - causal language modeling
+      - FlashAttention
+      - scaled dot-product attention (SDPA)
+      - tensor parallelism
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - token classification
+    - local: models-classification/model_doc/arcee.md
+      title: Arcee
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - Llama architecture
+      - ReLU² activation in MLP blocks
+      - RoPE scaling
+      - FlashAttention 2
+      - SDPA
+      - gradient checkpointing
+      - quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - sequence classification
+      - question answering
+      - token classification
+    - local: models-classification/model_doc/bamba.md
+      title: Bamba
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only language model
+      - Mamba-2 architecture
+      - state space model
+      - causal language modeling
+      - FlashAttention
+      - scaled dot-product attention
+      - padding-free training
+      - int4 weight-only quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/bartpho.md
+      title: BARTpho
+      year: 2021
+      paper_link: https://huggingface.co/papers/2109.09701
+      paper_id: '2109.09701'
+      techniques:
+      - encoder-decoder transformer
+      - BART architecture
+      - denoising pretraining
+      - layer normalization
+      domains:
+      - natural language processing
+      tasks:
+      - text summarization
+    - local: models-classification/model_doc/bert-generation.md
+      title: BertGeneration
+      year: 2019
+      paper_link: https://huggingface.co/papers/1907.12461
+      paper_id: '1907.12461'
+      techniques:
+      - BERT encoder-decoder
+      - encoder-decoder architecture
+      - cross-attention
+      - autoregressive sequence generation
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - sequence-to-sequence generation
+      - summarization
+      - sentence splitting
+      - sentence fusion
+      - translation
+    - local: models-classification/model_doc/biogpt.md
+      title: BioGpt
+      year: 2022
+      paper_link: https://huggingface.co/papers/2210.10341
+      paper_id: '2210.10341'
+      techniques:
+      - generative transformer
+      - GPT-2-based decoder architecture
+      - causal language modeling
+      - absolute position embeddings
+      - key-value attention caching
+      - 4-bit quantization
+      - SDPA
+      - FlashAttention
+      domains:
+      - natural language processing
+      - biomedical language
+      tasks:
+      - text generation
+      - token classification
+      - sequence classification
+    - local: models-classification/model_doc/bitnet.md
+      title: BitNet
+      year: 2025
+      paper_link: https://huggingface.co/papers/2504.12285
+      paper_id: '2504.12285'
+      techniques:
+      - decoder-only transformer
+      - native 1.58-bit weight and 8-bit activation quantization
+      - ternary weight quantization
+      - BitLinear layers
+      - rotary position embeddings
+      - squared ReLU activation
+      - subln normalization
+      - supervised fine-tuning
+      - direct preference optimization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - instruction following
+      - conversational response generation
+    - local: models-classification/model_doc/blenderbot.md
+      title: Blenderbot
+      year: 2020
+      paper_link: https://huggingface.co/papers/2004.13637
+      paper_id: '2004.13637'
+      techniques:
+      - sequence-to-sequence transformer
+      - autoregressive generation
+      - absolute position embeddings
+      - conditional generation
+      domains:
+      - natural language processing
+      - conversational ai
+      tasks:
+      - open-domain dialogue generation
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/blenderbot-small.md
+      title: Blenderbot Small
+      year: 2020
+      paper_link: https://huggingface.co/papers/2004.13637
+      paper_id: '2004.13637'
+      techniques:
+      - encoder-decoder sequence-to-sequence modeling
+      - conditional generation
+      - causal language modeling
+      - absolute position embeddings
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      - conversational AI
+      tasks:
+      - text generation
+      - open-domain dialogue
+      - causal language modeling
+      - machine translation
+      - text summarization
+    - local: models-classification/model_doc/bloom.md
+      title: BLOOM
+      year: 2022
+      paper_link: https://huggingface.co/papers/2211.05100
+      paper_id: '2211.05100'
+      techniques:
+      - autoregressive transformer
+      - decoder-only language model
+      - causal language modeling
+      - next-token prediction
+      - multilingual pretraining
+      domains:
+      - natural language processing
+      - multilingual language modeling
+      tasks:
+      - text generation
+      - causal language modeling
+      - text classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/blt.md
+      title: BLT
+      year: 2024
+      paper_link: https://huggingface.co/papers/2412.09871
+      paper_id: '2412.09871'
+      techniques:
+      - byte-level language model
+      - entropy-based dynamic patching
+      - local encoder
+      - global transformer
+      - local decoder
+      - causal language modeling
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/byt5.md
+      title: ByT5
+      year: 2021
+      paper_link: https://huggingface.co/papers/2105.13626
+      paper_id: '2105.13626'
+      techniques:
+      - encoder-decoder transformer
+      - sequence-to-sequence language modeling
+      - tokenizer-free byte-level modeling
+      - UTF-8 byte processing
+      - denoising pretraining
+      - int4 weight-only quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text summarization
+      - machine translation
+      - text denoising
+    - local: models-classification/model_doc/cohere.md
+      title: Cohere
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only causal language model
+      - long-context modeling
+      - retrieval-augmented generation
+      - grounded generation
+      - tool use
+      - FlashAttention
+      - SDPA
+      - tensor parallelism
+      - 4-bit quantization
+      - static cache
+      domains:
+      - natural language processing
+      - multilingual language
+      tasks:
+      - text generation
+      - retrieval-augmented generation
+      - tool use
+      - function calling
+    - local: models-classification/model_doc/cohere2.md
+      title: Cohere2
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - sliding window attention
+      - global attention
+      - rotary positional embeddings (RoPE)
+      - FlashAttention
+      - SDPA
+      - tensor parallelism
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/cohere2_moe.md
+      title: Cohere2Moe
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - mixture-of-experts
+      - hybrid sliding-window and full attention
+      - shared and routed experts
+      - causal language modeling
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/cpm.md
+      title: CPM
+      year: 2020
+      paper_link: https://huggingface.co/papers/2012.00413
+      paper_id: '2012.00413'
+      techniques:
+      - GPT-2-style autoregressive transformer
+      - generative pre-training
+      - large-scale Chinese language pre-training
+      - subword tokenization
+      domains:
+      - natural language processing
+      tasks:
+      - conversation
+      - essay generation
+      - cloze test
+      - language understanding
+    - local: models-classification/model_doc/cpmant.md
+      title: CPMANT
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - causal language modeling
+      - autoregressive generation
+      - delta tuning
+      - pre-trained language model
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/ctrl.md
+      title: CTRL
+      year: 2019
+      paper_link: https://huggingface.co/papers/1909.05858
+      paper_id: '1909.05858'
+      techniques:
+      - causal (unidirectional) transformer
+      - control-code conditioning
+      - causal language modeling
+      - absolute position embeddings
+      - autoregressive next-token prediction
+      - past key/value caching
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - text classification
+    - local: models-classification/model_doc/dbrx.md
+      title: DBRX
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - mixture of experts
+      - next-token prediction
+      - rotary position encodings
+      - gated linear units
+      - grouped query attention
+      - BPE tokenization
+      - curriculum learning
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/deepseek_v2.md
+      title: DeepSeek-V2
+      year: 2024
+      paper_link: https://huggingface.co/papers/2405.04434
+      paper_id: '2405.04434'
+      techniques:
+      - mixture-of-experts
+      - DeepSeekMoE sparse computation
+      - multi-head latent attention
+      - auxiliary-loss-free load balancing
+      - multi-token prediction
+      - supervised fine-tuning
+      - reinforcement learning
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - sequence classification
+    - local: models-classification/model_doc/deepseek_v3.md
+      title: DeepSeek-V3
+      year: 2024
+      paper_link: https://huggingface.co/papers/2412.19437
+      paper_id: '2412.19437'
+      techniques:
+      - mixture-of-experts
+      - multi-head latent attention
+      - DeepSeekMoE
+      - auxiliary-loss-free load balancing
+      - multi-token prediction
+      - rotary positional embeddings
+      - supervised fine-tuning
+      - reinforcement learning
+      - FP8 inference
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/deepseek_v32.md
+      title: DeepSeek-V3.2
+      year: 2025
+      paper_link: https://huggingface.co/papers/2512.02556
+      paper_id: '2512.02556'
+      techniques:
+      - mixture-of-experts
+      - multi-head latent attention
+      - DeepSeek Sparse Attention
+      - sparse attention
+      - lightning indexer
+      - top-k token selection
+      - causal language modeling
+      - continued training
+      - reinforcement learning
+      - FP8 quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/deepseek_v4.md
+      title: DeepSeek-V4
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - mixture-of-experts
+      - hybrid local and long-range attention
+      - sliding-window attention
+      - compressed sparse attention
+      - heavily compressed attention
+      - multi-query attention
+      - partial rotary positional embeddings
+      - manifold-constrained hyper-connections
+      - hash-based expert routing
+      - top-k expert routing
+      - clamped SwiGLU
+      - dynamic caching
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/diffllama.md
+      title: DiffLlama
+      year: 2024
+      paper_link: https://huggingface.co/papers/2410.05258
+      paper_id: '2410.05258'
+      techniques:
+      - large language model
+      - Llama architecture
+      - differential attention
+      - causal language modeling
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - sequence classification
+      - question answering
+      - token classification
+      - text summarization
+      - long-context modeling
+      - key information retrieval
+      - in-context learning
+    - local: models-classification/model_doc/doge.md
+      title: Doge
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - dynamic mask attention
+      - state-space modeling
+      - self-attention
+      - cross-domain mixture of experts
+      - sparse activation feedforward networks
+      - RMSNorm
+      - learnable residual connections
+      - zero-order hold
+      - cached value states
+      - wsd scheduler
+      domains:
+      - natural language processing
+      - language modeling
+      tasks:
+      - text generation
+      - question answering
+      - sequence classification
+    - local: models-classification/model_doc/dots1.md
+      title: dots1
+      year: 2025
+      paper_link: https://huggingface.co/papers/2506.05767
+      paper_id: '2506.05767'
+      techniques:
+      - causal language modeling
+      - mixture-of-experts
+      - sparse top-6-of-128 expert routing
+      - shared experts
+      - tensor parallelism
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/encoder-decoder.md
+      title: Encoder Decoder Models
+      year: 2017
+      paper_link: https://huggingface.co/papers/1706.03762
+      paper_id: '1706.03762'
+      techniques:
+      - encoder-decoder architecture
+      - pretrained encoder and autoregressive decoder
+      - cross-attention
+      - sequence-to-sequence modeling
+      - beam search
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text summarization
+      - machine translation
+    - local: models-classification/model_doc/ernie4_5.md
+      title: Ernie4_5
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - Llama architecture
+      - causal language modeling
+      - autoregressive text generation
+      - FlashAttention
+      - scaled dot-product attention
+      - tensor parallelism
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/ernie4_5_moe.md
+      title: Ernie4_5_MoE
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - mixture of experts
+      - shared experts
+      - Llama architecture
+      - Mixtral-based MoE
+      - tensor parallelism
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text completion
+    - local: models-classification/model_doc/exaone4.md
+      title: EXAONE-4.0
+      year: 2025
+      paper_link: https://huggingface.co/papers/2507.11407
+      paper_id: '2507.11407'
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - hybrid local-global attention
+      - sliding window attention
+      - grouped-query attention
+      - QK-Reorder-Norm
+      - RMS normalization
+      - SwiGLU
+      - reasoning mode
+      - tool calling
+      domains:
+      - natural language processing
+      - multilingual language modeling
+      tasks:
+      - text generation
+      - sequence classification
+      - token classification
+      - question answering
+      - agentic tool use
+    - local: models-classification/model_doc/exaone4_5.md
+      title: EXAONE-4.5
+      year: 2026
+      paper_link: https://huggingface.co/papers/2604.08644
+      paper_id: '2604.08644'
+      techniques:
+      - vision-language model
+      - dedicated visual encoder
+      - autoregressive conditional generation
+      - multi-token prediction (MTP)
+      - long-context modeling
+      - reasoning and non-reasoning generation modes
+      domains:
+      - multimodal learning
+      - natural language processing
+      - computer vision
+      tasks:
+      - text generation
+      - image-to-text generation
+      - optical character recognition
+      - document understanding
+    - local: models-classification/model_doc/exaone_moe.md
+      title: EXAONE-MoE
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - causal language modeling
+      - mixture-of-experts
+      - multi-token prediction
+      - self-speculative decoding
+      - hybrid sliding-window and global attention
+      - long-context modeling
+      - multi-agent tool calling
+      - multilingual tokenization with SuperBPE
+      domains:
+      - natural language processing
+      - multilingual language modeling
+      - long-context language modeling
+      - AI agents
+      tasks:
+      - text generation
+      - reasoning
+      - tool use
+      - search
+    - local: models-classification/model_doc/falcon.md
+      title: Falcon
+      year: 2023
+      paper_link: https://huggingface.co/papers/2311.16867
+      paper_id: '2311.16867'
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - multigroup attention
+      - rotary positional embeddings (RoPE)
+      - FlashAttention
+      - scaled dot-product attention
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/falcon3.md
+      title: Falcon3
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - large-scale pretraining
+      - depth up-scaling
+      - pruning
+      - knowledge distillation
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/falcon_h1.md
+      title: FalconH1
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - causal language modeling
+      - hybrid attention and Mamba architecture
+      - Mamba-2
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/falcon_mamba.md
+      title: FalconMamba
+      year: 2024
+      paper_link: https://huggingface.co/papers/2410.05355
+      paper_id: '2410.05355'
+      techniques:
+      - pure Mamba architecture
+      - state space model
+      - causal language modeling
+      - autoregressive generation
+      - instruction tuning
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/flan-t5.md
+      title: FLAN-T5
+      year: 2022
+      paper_link: https://huggingface.co/papers/2210.11416
+      paper_id: '2210.11416'
+      techniques:
+      - encoder-decoder sequence-to-sequence language model
+      - instruction fine-tuning
+      - text-to-text transfer
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/flan-ul2.md
+      title: FLAN-UL2
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - encoder-decoder transformer
+      - T5 architecture
+      - Flan instruction tuning
+      - few-shot in-context learning
+      - 8-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/flex_olmo.md
+      title: FlexOlmo
+      year: 2025
+      paper_link: https://huggingface.co/papers/2507.07024
+      paper_id: '2507.07024'
+      techniques:
+      - mixture-of-experts
+      - independently trained experts
+      - domain-informed routing
+      - distributed training without data sharing
+      - data-flexible inference
+      - causal language modeling
+      - 4-bit weight-only quantization
+      domains:
+      - natural language processing
+      - language modeling
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/gemma.md
+      title: Gemma
+      year: 2024
+      paper_link: https://huggingface.co/papers/2403.08295
+      paper_id: '2403.08295'
+      techniques:
+      - decoder-only transformer
+      - multi-query attention
+      - rotary positional embeddings
+      - GeGLU activation
+      - RMSNorm
+      - supervised fine-tuning
+      - reinforcement learning from human feedback
+      - KV caching
+      - static caching
+      - SDPA
+      - FlashAttention
+      - tensor parallelism
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/gemma2.md
+      title: Gemma2
+      year: 2024
+      paper_link: https://huggingface.co/papers/2408.00118
+      paper_id: '2408.00118'
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - interleaved local and global attention
+      - grouped-query attention
+      - knowledge distillation
+      - supervised fine-tuning
+      - reinforcement learning
+      - 4-bit weight quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/glm.md
+      title: GLM-4
+      year: 2024
+      paper_link: https://huggingface.co/papers/2406.12793
+      paper_id: '2406.12793'
+      techniques:
+      - autoregressive causal language modeling
+      - supervised fine-tuning
+      - learning from human feedback
+      - FlashAttention
+      - scaled dot-product attention
+      - tensor parallelism
+      domains:
+      - natural language processing
+      - multilingual language modeling
+      tasks:
+      - text generation
+      - text classification
+      - token classification
+      - instruction following
+      - tool use
+    - local: models-classification/model_doc/glm4.md
+      title: GLM-4-0414
+      year: 2024
+      paper_link: https://huggingface.co/papers/2406.12793
+      paper_id: '2406.12793'
+      techniques:
+      - causal language modeling
+      - human preference alignment
+      - rejection sampling
+      - reinforcement learning
+      - pairwise ranking feedback
+      - extended reinforcement learning
+      - end-to-end reinforcement learning
+      - search-tool use
+      domains:
+      - natural language processing
+      - software engineering
+      tasks:
+      - text generation
+      - dialogue
+      - instruction following
+      - code generation
+      - function calling
+      - search-based question answering
+      - report generation
+      - research-style writing
+      - mathematical reasoning
+      - logical reasoning
+    - local: models-classification/model_doc/glm4_moe.md
+      title: GLM-4.5, GLM-4.6, GLM-4.7
+      year: 2025
+      paper_link: https://huggingface.co/papers/2508.06471
+      paper_id: '2508.06471'
+      techniques:
+      - mixture-of-experts (MoE)
+      - causal language modeling
+      - hybrid reasoning with thinking and non-thinking modes
+      - interleaved thinking
+      - preserved thinking
+      - turn-level thinking
+      - long-context modeling
+      - tool use during inference
+      domains:
+      - natural language processing
+      - code generation
+      - intelligent agents
+      tasks:
+      - text generation
+      - code generation
+      - agentic task execution
+      - tool use
+      - terminal-based task execution
+      - web browsing
+      - mathematical reasoning
+      - chat
+      - creative writing
+      - role-play
+      - webpage generation
+      - slide generation
+    - local: models-classification/model_doc/glm4_moe_lite.md
+      title: GLM-4.7-Flash
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - mixture-of-experts
+      - causal language modeling
+      - autoregressive generation
+      - interleaved thinking
+      - tensor parallelism
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/glm_moe_dsa.md
+      title: GlmMoeDsa
+      year: 2026
+      paper_link: https://huggingface.co/papers/2603.12201
+      paper_id: '2603.12201'
+      techniques:
+      - mixture-of-experts
+      - DeepSeek Sparse Attention
+      - sparse attention
+      - IndexShare indexer reuse
+      - speculative decoding
+      - long-context modeling
+      - tensor parallelism
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - code generation
+      - reasoning
+      - agentic task execution
+      - long-horizon task solving
+    - local: models-classification/model_doc/openai-gpt.md
+      title: GPT
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - autoregressive next-token prediction
+      - causal language modeling
+      - unsupervised pretraining
+      - supervised fine-tuning
+      - absolute position embeddings
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - textual entailment
+      - question answering
+      - semantic similarity
+      - document classification
+    - local: models-classification/model_doc/gpt_neo.md
+      title: GPT Neo
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - local attention in alternating layers
+      - absolute position embeddings
+      - flash attention
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - question answering
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/gpt_neox.md
+      title: GPT NeoX
+      year: 2022
+      paper_link: https://huggingface.co/papers/2204.06745
+      paper_id: '2204.06745'
+      techniques:
+      - autoregressive language modeling
+      - causal language modeling
+      - decoder-only transformer
+      - few-shot prompting
+      - Flash Attention 2
+      - scaled dot-product attention (SDPA)
+      - half-precision inference
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - code generation
+      - few-shot reasoning
+    - local: models-classification/model_doc/gpt_neox_japanese.md
+      title: GPT NeoX Japanese
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - GPT-NeoX transformer architecture
+      - autoregressive causal language modeling
+      - BPE subword tokenization
+      - 4-bit weight quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/gptj.md
+      title: GPT-J
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - autoregressive generation
+      - FlashAttention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - text classification
+      - question answering
+    - local: models-classification/model_doc/gpt2.md
+      title: GPT2
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - causal transformer
+      - unidirectional causal attention
+      - autoregressive next-token prediction
+      - key-value attention caching
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - question answering
+      - text classification
+      - token classification
+    - local: models-classification/model_doc/gpt_oss.md
+      title: GptOss
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - sparse mixture-of-experts
+      - top-4-of-128 expert routing
+      - attention sinks
+      - YaRN rotary embeddings
+      - FlashAttention
+      - Flex Attention
+      - tensor parallelism
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/gpt-sw3.md
+      title: GPTSw3
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - autoregressive generation
+      - GPT-2 architecture
+      - subword tokenization
+      domains:
+      - natural language processing
+      - programming language modeling
+      tasks:
+      - text generation
+      - causal language modeling
+      - text classification
+      - token classification
+    - local: models-classification/model_doc/granite.md
+      title: Granite
+      year: 2024
+      paper_link: https://huggingface.co/papers/2408.13359
+      paper_id: '2408.13359'
+      techniques:
+      - causal language modeling
+      - Power scheduler
+      - Maximum Update Parameterization (MUP)
+      - FlashAttention
+      - scaled dot-product attention (SDPA)
+      - tensor parallelism
+      - 4-bit quantization
+      - static cache
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/granitemoe.md
+      title: GraniteMoe
+      year: 2024
+      paper_link: https://huggingface.co/papers/2408.13359
+      paper_id: '2408.13359'
+      techniques:
+      - causal language modeling
+      - sparse mixture of experts
+      - autoregressive token generation
+      - Power learning rate scheduler
+      - Maximum Update Parameterization (μP)
+      - FlashAttention
+      - scaled dot-product attention (SDPA)
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - code generation
+      - math reasoning
+    - local: models-classification/model_doc/granitemoehybrid.md
+      title: GraniteMoeHybrid
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - causal language modeling
+      - hybrid state space and attention architecture
+      - mixture-of-experts attention
+      - shared experts
+      - padding-free training
+      - flash attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/granitemoeshared.md
+      title: GraniteMoeShared
+      year: 2024
+      paper_link: https://huggingface.co/papers/2408.13359
+      paper_id: '2408.13359'
+      techniques:
+      - mixture-of-experts
+      - shared experts
+      - causal language modeling
+      - autoregressive token generation
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/granitemoe_swa.md
+      title: GraniteMoeSWA
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - mixture-of-experts routing
+      - shared experts
+      - sliding-window attention
+      - full attention layers
+      - learnable attention sinks
+      - causal language modeling
+      - flash attention
+      - tensor parallelism
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/granite_swa.md
+      title: GraniteSWA
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - per-layer sliding window attention
+      - learnable per-head attention sinks
+      - FlashAttention
+      - tensor parallelism
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/helium.md
+      title: Helium
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - rotary positional embeddings (RoPE)
+      - FlashAttention
+      - scaled dot-product attention (SDPA)
+      - autoregressive decoding
+      domains:
+      - natural language processing
+      - multilingual language modeling
+      tasks:
+      - text generation
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/hrm_text.md
+      title: HRM-Text
+      year: 2025
+      paper_link: https://huggingface.co/papers/2506.21734
+      paper_id: '2506.21734'
+      techniques:
+      - hierarchical recurrent transformer
+      - nested recurrence with slow and fast transformer stacks
+      - PrefixLM attention
+      - per-head sigmoid attention output gate
+      - parameterless RMSNorm
+      - k-step gradient truncation
+      domains:
+      - natural language processing
+      tasks:
+      - causal language modeling
+      - text generation
+    - local: models-classification/model_doc/hunyuan_v1_dense.md
+      title: HunYuanDenseV1
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - dense language model
+      - autoregressive causal language modeling
+      - chain-of-thought reasoning
+      - long-context processing
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+    - local: models-classification/model_doc/hunyuan_v1_moe.md
+      title: HunYuanMoEV1
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - mixture-of-experts
+      - fine-grained expert routing
+      - grouped query attention
+      - causal language modeling
+      - dual-mode reasoning
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+    - local: models-classification/model_doc/hyperclovax.md
+      title: HyperCLOVAX
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - transformer architecture
+      - causal language modeling
+      - pruning
+      - knowledge distillation
+      - peri-layer normalization
+      - maximal update parametrization (μP)
+      - supervised fine-tuning
+      - reinforcement learning from verifiable rewards (RLVR)
+      - reinforcement learning from human feedback (RLHF)
+      - dual-mode reasoning
+      - function calling
+      - FlashAttention
+      - scaled dot-product attention (SDPA)
+      - tensor parallelism
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - reasoning
+      - function calling
+    - local: models-classification/model_doc/hy_v3.md
+      title: HYV3
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - causal language modeling
+      - mixture-of-experts
+      - dense-MoE hybrid architecture
+      - top-k expert routing
+      - sigmoid routing
+      - expert-bias load balancing
+      - shared experts
+      - QK-Norm
+      - per-head RMSNorm
+      - gradient checkpointing
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/jais2.md
+      title: Jais2
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - transformer architecture
+      - causal language modeling
+      - LayerNorm
+      - ReLU² activation
+      - rotary position embeddings (RoPE)
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/jamba.md
+      title: Jamba
+      year: 2024
+      paper_link: https://huggingface.co/papers/2403.19887
+      paper_id: '2403.19887'
+      techniques:
+      - hybrid Transformer-Mamba architecture
+      - state space model layers
+      - mixture-of-experts
+      - causal language modeling
+      - multi-layer perceptron
+      - FlashAttention
+      - scaled dot-product attention
+      - 8-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+    - local: models-classification/model_doc/jetmoe.md
+      title: JetMoe
+      year: 2023
+      paper_link: https://huggingface.co/papers/2306.04640
+      paper_id: '2306.04640'
+      techniques:
+      - sparsely activated mixture of experts
+      - mixture of attention heads
+      - mixture of MLP experts
+      - causal language modeling
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - text classification
+    - local: models-classification/model_doc/laguna.md
+      title: Laguna
+      year: 2024
+      paper_link: https://huggingface.co/papers/2408.15664
+      paper_id: '2408.15664'
+      techniques:
+      - mixture-of-experts transformer
+      - SwiGLU
+      - per-layer attention head counts
+      - sigmoid MoE router
+      - auxiliary-loss-free load balancing
+      - router logit soft-capping
+      - sliding-window attention
+      - FlashAttention
+      - SDPA
+      - tensor parallelism
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/lfm2.md
+      title: LFM2
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - autoregressive causal language modeling
+      - gated short convolution blocks
+      - grouped-query attention
+      - QK layer normalization
+      - input-dependent gating
+      - architecture search for edge inference
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/lfm2_moe.md
+      title: LFM2Moe
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - mixture-of-experts
+      - sparse MoE feed-forward networks
+      - input-aware gated convolutions
+      - grouped-query attention
+      - causal language modeling
+      - on-device inference optimization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/llama.md
+      title: LLaMA
+      year: 2023
+      paper_link: https://huggingface.co/papers/2302.13971
+      paper_id: '2302.13971'
+      techniques:
+      - GPT-style decoder-only transformer
+      - pre-normalization
+      - SwiGLU activation
+      - rotary positional embeddings (RoPE)
+      - causal language modeling
+      - byte-pair encoding tokenizer
+      - FlashAttention
+      - scaled dot-product attention
+      - tensor parallelism
+      - weight-only int4 quantization
+      - static key-value caching
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+      - question answering
+      - token classification
+    - local: models-classification/model_doc/llama2.md
+      title: Llama2
+      year: 2023
+      paper_link: https://huggingface.co/papers/2307.09288
+      paper_id: '2307.09288'
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - grouped-query attention
+      - supervised fine-tuning
+      - reinforcement learning from human feedback
+      - rejection sampling
+      - proximal policy optimization
+      - tensor parallelism
+      - weight-only int4 quantization
+      - flash attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+    - local: models-classification/model_doc/llama3.md
+      title: Llama3
+      year: 2024
+      paper_link: https://huggingface.co/papers/2407.21783
+      paper_id: '2407.21783'
+      techniques:
+      - causal language modeling
+      - BPE tokenization
+      - tensor parallelism
+      - Flash Attention 2
+      - bfloat16 mixed-precision training
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/longcat_flash.md
+      title: LongCatFlash
+      year: 2025
+      paper_link: https://huggingface.co/papers/2509.01322
+      paper_id: '2509.01322'
+      techniques:
+      - causal language modeling
+      - mixture-of-experts
+      - dynamic parameter activation
+      - shortcut-connected architecture
+      - sparse expert routing
+      - skip connections via identity experts
+      - long-context modeling
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - code generation
+      - reasoning
+      - tool calling
+    - local: models-classification/model_doc/mamba.md
+      title: Mamba
+      year: 2023
+      paper_link: https://huggingface.co/papers/2312.00752
+      paper_id: '2312.00752'
+      techniques:
+      - selective structured state space model
+      - attention-free architecture
+      - H3 blocks
+      - gated MLP blocks
+      - content-based reasoning
+      - hardware-aware parallel algorithm
+      - causal language modeling
+      - 4-bit weight-only quantization
+      - LoRA fine-tuning
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/mamba2.md
+      title: Mamba2
+      year: 2024
+      paper_link: https://huggingface.co/papers/2405.21060
+      paper_id: '2405.21060'
+      techniques:
+      - structured state space model
+      - state space duality
+      - SSD algorithm
+      - grouped-value attention
+      - tensor parallelism
+      - causal language modeling
+      - 4-bit weight-only quantization
+      - LoRA fine-tuning
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/mimo_v2_flash.md
+      title: MiMo-V2-Flash
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - mixture-of-experts
+      - hybrid sliding-window and global attention
+      - attention sink bias
+      - long-context modeling
+      - FP8 mixed-precision training
+      - multi-teacher on-policy distillation
+      - agentic reinforcement learning
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - complex reasoning
+      - agentic tasks
+      - tool use
+    - local: models-classification/model_doc/minicpm3.md
+      title: MiniCPM3
+      year: 2024
+      paper_link: null
+      paper_id: null
+      techniques:
+      - dense transformer language model
+      - multi-head latent attention (MLA)
+      - rotary positional embeddings
+      - SwiGLU MLP
+      - causal language modeling
+      - residual scaling
+      - low-rank key/value cache compression
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+    - local: models-classification/model_doc/minimax.md
+      title: MiniMax
+      year: 2025
+      paper_link: https://huggingface.co/papers/2501.08313
+      paper_id: '2501.08313'
+      techniques:
+      - causal language modeling
+      - hybrid lightning and softmax attention
+      - mixture of experts
+      - top-2 expert routing
+      - rotary position embeddings
+      - sliding window attention
+      - FlashAttention-2
+      - quantization
+      - long-context modeling
+      - parallel compute-communication overlap
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - sequence classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/minimax_m2.md
+      title: MiniMax-M2
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - mixture-of-experts
+      - causal language modeling
+      - autoregressive text generation
+      - tool use
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - code generation
+      - agentic tasks
+      - tool use
+    - local: models-classification/model_doc/ministral.md
+      title: Ministral
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - alternating full attention and sliding window attention
+      - long-context modeling
+      - FlashAttention
+      - scaled dot-product attention
+      - tensor parallelism
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/ministral3.md
+      title: Ministral3
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - causal language modeling
+      - vision-language modeling
+      - instruction fine-tuning
+      - multilingual modeling
+      - native function calling
+      - structured JSON output
+      - long-context modeling
+      domains:
+      - natural language processing
+      - computer vision
+      - multimodal learning
+      tasks:
+      - text generation
+      - instruction following
+      - chat
+      - image understanding
+      - text classification
+      - token classification
+      - question answering
+      - function calling
+    - local: models-classification/model_doc/mistral.md
+      title: Mistral
+      year: 2023
+      paper_link: https://huggingface.co/papers/2310.06825
+      paper_id: '2310.06825'
+      techniques:
+      - causal language modeling
+      - sliding window attention
+      - grouped-query attention
+      - byte-fallback BPE tokenizer
+      - 4-bit quantization
+      - FlashAttention
+      - SDPA
+      - tensor parallelism
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - sequence classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/mixtral.md
+      title: Mixtral
+      year: 2024
+      paper_link: https://huggingface.co/papers/2401.04088
+      paper_id: '2401.04088'
+      techniques:
+      - decoder-only transformer
+      - sparse mixture of experts
+      - top-2 expert routing
+      - sliding window attention
+      - grouped query attention
+      - byte-fallback BPE tokenizer
+      - supervised fine-tuning
+      - direct preference optimization
+      - FlashAttention
+      - 4-bit quantization
+      - tensor parallelism
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - text classification
+      - token classification
+    - local: models-classification/model_doc/modernbert-decoder.md
+      title: ModernBERTDecoder
+      year: 2024
+      paper_link: https://huggingface.co/papers/2412.13663
+      paper_id: '2412.13663'
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - autoregressive generation
+      - sliding window attention
+      - rotary positional embeddings
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - sequence classification
+    - local: models-classification/model_doc/mpt.md
+      title: MPT
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - GPT-style architecture
+      - causal language modeling
+      - next-token prediction
+      - ALiBi positional bias
+      - performance-optimized layer implementations
+      - Triton kernels
+      - flash attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - sequence classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/mvp.md
+      title: MVP
+      year: 2022
+      paper_link: https://huggingface.co/papers/2206.12131
+      paper_id: '2206.12131'
+      techniques:
+      - transformer encoder-decoder
+      - supervised pre-training
+      - task-specific soft prompts
+      - multi-task pre-training
+      - prompt tuning
+      - prefix-tuning
+      domains:
+      - natural language processing
+      tasks:
+      - natural language generation
+      - summarization
+      - data-to-text generation
+      - open-ended dialogue
+      - story generation
+      - question answering
+      - question generation
+      - task-oriented dialogue
+      - commonsense generation
+      - paraphrase generation
+      - text style transfer
+      - text simplification
+      - sequence classification
+      - extractive question answering
+    - local: models-classification/model_doc/myt5.md
+      title: myt5
+      year: 2024
+      paper_link: https://huggingface.co/papers/2403.10691
+      paper_id: '2403.10691'
+      techniques:
+      - T5 encoder-decoder transformer
+      - morpheme-based byte encoding (MYTE)
+      - unsupervised morphological segmentation
+      - multilingual language modeling
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - multilingual language modeling
+    - local: models-classification/model_doc/nanochat.md
+      title: NanoChat
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - simplified attention mechanism
+      - normalization layers
+      - chat templates
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/nemotron.md
+      title: Nemotron
+      year: 2024
+      paper_link: https://huggingface.co/papers/2402.16819
+      paper_id: '2402.16819'
+      techniques:
+      - transformer decoder
+      - autoregressive language modeling
+      - model pruning
+      - knowledge distillation
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - sequence classification
+      - question answering
+      - token classification
+      - code generation
+    - local: models-classification/model_doc/nemotron_h.md
+      title: NemotronH
+      year: 2025
+      paper_link: https://huggingface.co/papers/2504.03624
+      paper_id: '2504.03624'
+      techniques:
+      - hybrid attention and state-space architecture
+      - Mamba2 layers
+      - transformer blocks
+      - long-context modeling
+      - linear-time sequence processing
+      - causal language modeling
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      - language modeling
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/olmo.md
+      title: OLMo
+      year: 2024
+      paper_link: https://huggingface.co/papers/2402.00838
+      paper_id: '2402.00838'
+      techniques:
+      - causal language modeling
+      - SwiGLU activations
+      - non-parametric layer normalization
+      - rotary positional embeddings
+      - BPE tokenization
+      - FlashAttention
+      - scaled dot-product attention
+      - tensor parallelism
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+    - local: models-classification/model_doc/olmo2.md
+      title: OLMo2
+      year: 2024
+      paper_link: https://huggingface.co/papers/2501.00656
+      paper_id: '2501.00656'
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - SwiGLU activation
+      - rotary positional embeddings
+      - RMSNorm
+      - bias-free architecture
+      - BPE tokenizer
+      - FlashAttention
+      - scaled dot-product attention
+      - 4-bit weight-only quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - sequence classification
+    - local: models-classification/model_doc/olmo3.md
+      title: Olmo3
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - causal language modeling
+      - autoregressive generation
+      - FlashAttention
+      - scaled dot-product attention
+      - 4-bit weight-only quantization
+      - static KV caching
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+    - local: models-classification/model_doc/olmoe.md
+      title: OLMoE
+      year: 2024
+      paper_link: https://huggingface.co/papers/2409.02060
+      paper_id: '2409.02060'
+      techniques:
+      - sparse mixture-of-experts
+      - fine-grained expert routing
+      - dropless token-based routing
+      - causal language modeling
+      - FlashAttention
+      - scaled dot-product attention
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/olmo_hybrid.md
+      title: OlmoHybrid
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - hybrid transformer architecture
+      - standard transformer attention
+      - linear attention
+      - Gated DeltaNet
+      - interleaved full and linear attention layers
+      - causal language modeling
+      - FlashAttention
+      - scaled dot-product attention
+      - hybrid KV and recurrent-state caching
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/opt.md
+      title: OPT
+      year: 2022
+      paper_link: https://huggingface.co/papers/2205.01068
+      paper_id: '2205.01068'
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - autoregressive text generation
+      - 8-bit quantization
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - text classification
+      - question answering
+    - local: models-classification/model_doc/persimmon.md
+      title: Persimmon
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - query and key normalization
+      - operator fusion
+      - CUDA graphs
+      - SentencePiece Unigram tokenizer
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+      - token classification
+    - local: models-classification/model_doc/phi3.md
+      title: Phi-3
+      year: 2024
+      paper_link: https://huggingface.co/papers/2404.14219
+      paper_id: '2404.14219'
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - scaled rotary position embeddings
+      - FlashAttention
+      - scaled dot-product attention
+      - tensor parallelism
+      - instruction tuning
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+      - token classification
+    - local: models-classification/model_doc/phimoe.md
+      title: PhiMoE
+      year: 2024
+      paper_link: https://huggingface.co/papers/2404.14219
+      paper_id: '2404.14219'
+      techniques:
+      - decoder-only transformer
+      - mixture-of-experts (MoE)
+      - causal language modeling
+      - rotary positional embeddings with long-context scaling
+      - fused query-key-value projections
+      - fused MLP up and gate projections
+      - FlashAttention
+      domains:
+      - natural language processing
+      - language modeling
+      tasks:
+      - text generation
+      - text classification
+      - code generation
+      - mathematical reasoning
+    - local: models-classification/model_doc/prophetnet.md
+      title: ProphetNet
+      year: 2020
+      paper_link: https://huggingface.co/papers/2001.04063
+      paper_id: '2001.04063'
+      techniques:
+      - encoder-decoder transformer
+      - future n-gram prediction
+      - n-stream self-attention
+      - absolute position embeddings
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - machine translation
+      - text summarization
+      - question generation
+    - local: models-classification/model_doc/qwen2.md
+      title: Qwen2
+      year: 2024
+      paper_link: https://huggingface.co/papers/2407.10671
+      paper_id: '2407.10671'
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - grouped-query attention
+      - rotary positional embeddings
+      - sliding-window and full attention
+      - dual chunk attention with YARN
+      - mixture-of-experts
+      - FlashAttention
+      - scaled dot-product attention
+      - tensor parallelism
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/qwen2_moe.md
+      title: Qwen2MoE
+      year: 2024
+      paper_link: https://huggingface.co/papers/2407.10671
+      paper_id: '2407.10671'
+      techniques:
+      - mixture-of-experts
+      - SwiGLU activation
+      - group query attention
+      - sliding window and full attention
+      - causal language modeling
+      - model upcycling
+      - FlashAttention
+      - SDPA
+      - tensor parallelism
+      - 8-bit quantization
+      domains:
+      - natural language processing
+      - language modeling
+      tasks:
+      - text generation
+      - causal language modeling
+      - sequence classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/qwen3.md
+      title: Qwen3
+      year: 2025
+      paper_link: https://huggingface.co/papers/2505.09388
+      paper_id: '2505.09388'
+      techniques:
+      - autoregressive causal language modeling
+      - multi-step reasoning
+      - thinking and non-thinking modes
+      - scaled dot-product attention
+      - tensor parallelism
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - sequence classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/qwen3_5.md
+      title: Qwen3.5
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - hybrid linear and full attention
+      - Gated DeltaNet linear attention
+      - Gated Attention
+      - multimodal rotary position embeddings
+      - vision encoder
+      - causal language modeling
+      - interleaved text, image, and video tokens
+      domains:
+      - natural language processing
+      - computer vision
+      - multimodal learning
+      tasks:
+      - text generation
+      - multimodal generation
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/qwen3_5_moe.md
+      title: Qwen3.5 Moe
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - sparse mixture of experts
+      - top-k expert routing
+      - shared expert
+      - gated deltanet
+      - gated attention
+      - rotary position embedding scaling
+      - flashattention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      - computer vision
+      - multimodal learning
+      tasks:
+      - text generation
+      - multimodal generation
+    - local: models-classification/model_doc/qwen3_moe.md
+      title: Qwen3MoE
+      year: 2025
+      paper_link: https://huggingface.co/papers/2505.09388
+      paper_id: '2505.09388'
+      techniques:
+      - mixture-of-experts
+      - routed experts
+      - causal language modeling
+      - YaRN context extension
+      - tensor parallelism
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/qwen3_next.md
+      title: Qwen3Next
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - causal language modeling
+      - hybrid attention
+      - Gated DeltaNet
+      - Gated Attention
+      - high-sparsity mixture-of-experts
+      - multi-token prediction
+      - zero-centered weight-decayed layer normalization
+      - long-context modeling
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - sequence classification
+      - question answering
+      - token classification
+    - local: models-classification/model_doc/recurrent_gemma.md
+      title: RecurrentGemma
+      year: 2024
+      paper_link: https://huggingface.co/papers/2404.07839
+      paper_id: '2404.07839'
+      techniques:
+      - linear recurrences
+      - local attention
+      - fixed-sized recurrent state
+      - causal language modeling
+      - instruction tuning
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/rwkv.md
+      title: RWKV
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - recurrent linear attention
+      - causal language modeling
+      - recurrent state passing
+      - sigmoid receptance gating
+      - learnable time decay
+      - numerically stable recurrent softmax
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+    - local: models-classification/model_doc/seed_oss.md
+      title: Seed-Oss
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - dense transformer language model
+      - causal language modeling
+      - autoregressive decoding
+      - long-context modeling
+      - flexible thinking-budget control
+      - tensor parallelism
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/smollm3.md
+      title: SmolLM3
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - Transformer decoder architecture
+      - grouped query attention (GQA)
+      - no rotary positional embeddings (RoPE)
+      - multi-stage training
+      - causal language modeling
+      - 4-bit quantization
+      - FlashAttention
+      - scaled dot-product attention (SDPA)
+      - static key-value caching
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - sequence classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/solar_open.md
+      title: SolarOpen
+      year: 2026
+      paper_link: https://huggingface.co/papers/2601.07022
+      paper_id: '2601.07022'
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - mixture-of-experts
+      - progressive curriculum learning
+      - reinforcement learning
+      - SnapPO optimization
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/stablelm.md
+      title: StableLm
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - partial rotary position embeddings
+      - SwiGLU activation
+      - FlashAttention 2
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/switch_transformers.md
+      title: SwitchTransformers
+      year: 2021
+      paper_link: https://huggingface.co/papers/2101.03961
+      paper_id: '2101.03961'
+      techniques:
+      - encoder-decoder transformer
+      - T5 architecture
+      - sparse mixture-of-experts
+      - top-1 token routing
+      - dense MLP experts
+      - 8-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - masked language modeling
+      - conditional text generation
+    - local: models-classification/model_doc/t5.md
+      title: T5
+      year: 2019
+      paper_link: https://huggingface.co/papers/1910.10683
+      paper_id: '1910.10683'
+      techniques:
+      - encoder-decoder transformer
+      - text-to-text formulation
+      - task-specific prompting prefixes
+      - conditional generation
+      - relative scalar embeddings
+      - int4 weight-only quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - machine translation
+      - text summarization
+      - question answering
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/t5gemma.md
+      title: T5Gemma
+      year: 2025
+      paper_link: https://huggingface.co/papers/2504.06225
+      paper_id: '2504.06225'
+      techniques:
+      - transformer encoder-decoder
+      - grouped-query attention (GQA)
+      - rotary positional embeddings (RoPE)
+      - GeGLU activation
+      - RMSNorm
+      - interleaved local/global attention
+      - prefix language modeling (PrefixLM)
+      - UL2 pretraining
+      - knowledge distillation
+      - supervised fine-tuning
+      - reinforcement learning
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - conditional text generation
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/t5v1.1.md
+      title: T5v1.1
+      year: 2020
+      paper_link: https://huggingface.co/papers/2002.05202
+      paper_id: '2002.05202'
+      techniques:
+      - encoder-decoder transformer
+      - GEGLU activation
+      - text-to-text transfer learning
+      - C4 pre-training
+      - dropout-free pre-training
+      - separate embedding and classifier weights
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/ul2.md
+      title: UL2
+      year: 2022
+      paper_link: https://huggingface.co/papers/2205.05131
+      paper_id: '2205.05131'
+      techniques:
+      - encoder-decoder transformer
+      - mixture-of-denoisers pre-training
+      - self-supervised denoising
+      - mode switching
+      - gated-SiLU activation
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - language understanding
+      - text classification
+      - question answering
+      - commonsense reasoning
+      - long text reasoning
+      - structured knowledge grounding
+      - information retrieval
+      - text summarization
+      - in-context learning
+    - local: models-classification/model_doc/umt5.md
+      title: UMT5
+      year: 2023
+      paper_link: https://huggingface.co/papers/2304.09151
+      paper_id: '2304.09151'
+      techniques:
+      - encoder-decoder transformer
+      - sequence-to-sequence modeling
+      - unsupervised multilingual pretraining
+      - UniMax language sampling
+      - non-shared relative positional bias
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - sequence classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/vaultgemma.md
+      title: VaultGemma
+      year: 2016
+      paper_link: https://huggingface.co/papers/1607.00133
+      paper_id: '1607.00133'
+      techniques:
+      - decoder-only transformer
+      - full attention in all layers
+      - removed post-attention and post-MLP norms
+      - causal language modeling
+      - sequence-level differential privacy
+      - DP-SGD
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+    - local: models-classification/model_doc/xglm.md
+      title: XGLM
+      year: 2021
+      paper_link: https://huggingface.co/papers/2112.10668
+      paper_id: '2112.10668'
+      techniques:
+      - autoregressive language modeling
+      - multilingual pretraining
+      - few-shot and zero-shot in-context learning
+      domains:
+      - natural language processing
+      - multilingual language processing
+      tasks:
+      - causal language modeling
+      - text generation
+      - machine translation
+      - natural language inference
+      - commonsense reasoning
+      - hate speech detection
+    - local: models-classification/model_doc/xlnet.md
+      title: XLNet
+      year: 2019
+      paper_link: https://huggingface.co/papers/1906.08237
+      paper_id: '1906.08237'
+      techniques:
+      - Transformer-XL recurrence
+      - autoregressive permutation language modeling
+      - bidirectional context modeling
+      - permutation-based factorization masking
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - text classification
+      - token classification
+      - question answering
+      - multiple-choice classification
+      - natural language inference
+      - sentiment analysis
+      - document ranking
+    - local: models-classification/model_doc/xlstm.md
+      title: xLSTM
+      year: 2024
+      paper_link: https://huggingface.co/papers/2405.04517
+      paper_id: '2405.04517'
+      techniques:
+      - recurrent neural network
+      - extended long short-term memory (xLSTM)
+      - exponential gating
+      - scalar and matrix memory
+      - residual blocks
+      - parallelizable training
+      domains:
+      - natural language processing
+      tasks:
+      - causal language modeling
+      - text generation
+    - local: models-classification/model_doc/youtu.md
+      title: Youtu-LLM
+      year: 2025
+      paper_link: https://huggingface.co/papers/2512.24618
+      paper_id: '2512.24618'
+      techniques:
+      - causal language modeling
+      - dense transformer architecture
+      - multi-head latent attention (MLA)
+      - 128k long-context support
+      - commonsense-STEM-agent curriculum
+      - supervised fine-tuning
+      - reinforcement learning
+      - chain-of-thought reasoning mode
+      - agentic mid-training
+      domains:
+      - natural language processing
+      - language modeling
+      - agentic systems
+      tasks:
+      - text generation
+      - reasoning
+      - planning
+      - mathematical problem solving
+      - code generation
+      - tool use
+    - local: models-classification/model_doc/zamba.md
+      title: Zamba
+      year: 2024
+      paper_link: https://huggingface.co/papers/2405.16712
+      paper_id: '2405.16712'
+      techniques:
+      - hybrid state-space model and transformer architecture
+      - Mamba blocks
+      - shared transformer layer
+      - causal language modeling
+      - next-token prediction
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - causal language modeling
+      - text classification
+    - local: models-classification/model_doc/zamba2.md
+      title: Zamba2
+      year: 2024
+      paper_link: https://huggingface.co/papers/2411.15242
+      paper_id: '2411.15242'
+      techniques:
+      - hybrid state-space model and transformer architecture
+      - Mamba2 blocks
+      - shared transformer layers
+      - autoregressive next-token prediction
+      - Mistral v0.1 tokenizer
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+      - text classification
+    - local: models-classification/model_doc/zaya.md
+      title: ZAYA
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - mixture of experts
+      - compressed convolutional attention
+      - nonlinear routing
+      - residual scaling
+      - causal language modeling
+      domains:
+      - natural language processing
+      tasks:
+      - text generation
+  Masked language modeling:
+    description: Models whose primary documented use is predicting tokens that are masked within an input
+      sequence.
+    documents:
+    - local: models-classification/model_doc/albert.md
+      title: ALBERT
+      year: 2019
+      paper_link: https://huggingface.co/papers/1909.11942
+      paper_id: '1909.11942'
+      techniques:
+      - transformer encoder
+      - factorized embedding parameterization
+      - cross-layer parameter sharing
+      - absolute position embeddings
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - text classification
+      - token classification
+      - question answering
+      - multiple choice
+    - local: models-classification/model_doc/bart.md
+      title: BART
+      year: 2019
+      paper_link: https://huggingface.co/papers/1910.13461
+      paper_id: '1910.13461'
+      techniques:
+      - encoder-decoder transformer
+      - denoising pretraining
+      - text corruption with token masking, word deletion, and sentence shuffling
+      - absolute position embeddings
+      - conditional text generation
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - fill-mask
+      - conditional text generation
+      - summarization
+      - sequence classification
+      - question answering
+      - causal language modeling
+    - local: models-classification/model_doc/barthez.md
+      title: BARThez
+      year: 2020
+      paper_link: https://huggingface.co/papers/2010.12321
+      paper_id: '2010.12321'
+      techniques:
+      - encoder-decoder transformer
+      - denoising pretraining
+      - continued multilingual pretraining
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - fill-mask
+      - text generation
+    - local: models-classification/model_doc/bert.md
+      title: BERT
+      year: 2018
+      paper_link: https://huggingface.co/papers/1810.04805
+      paper_id: '1810.04805'
+      techniques:
+      - bidirectional transformer encoder
+      - masked-token pretraining
+      - next-sentence prediction pretraining
+      - absolute position embeddings
+      - fine-tuning task-specific heads
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - next sentence prediction
+      - sequence classification
+      - multiple choice
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/bert-japanese.md
+      title: BertJapanese
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - bidirectional transformer encoder
+      - MeCab tokenization
+      - WordPiece tokenization
+      - character-level tokenization
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+    - local: models-classification/model_doc/bertweet.md
+      title: BERTweet
+      year: 2020
+      paper_link: https://huggingface.co/papers/2005.10200
+      paper_id: '2005.10200'
+      techniques:
+      - BERT-base architecture
+      - bidirectional transformer encoder
+      - RoBERTa-style pretraining
+      - masked language modeling
+      - tweet-specific tokenizer and vocabulary
+      domains:
+      - natural language processing
+      - social media text
+      tasks:
+      - masked language modeling
+      - fill-mask
+      - part-of-speech tagging
+      - named entity recognition
+      - text classification
+    - local: models-classification/model_doc/big_bird.md
+      title: BigBird
+      year: 2020
+      paper_link: https://huggingface.co/papers/2007.14062
+      paper_id: '2007.14062'
+      techniques:
+      - transformer
+      - sparse attention
+      - local attention
+      - random attention
+      - global attention
+      - block-sparse attention
+      - absolute position embeddings
+      domains:
+      - natural language processing
+      - genomics
+      tasks:
+      - masked language modeling
+      - text generation
+      - sequence classification
+      - multiple-choice classification
+      - token classification
+      - question answering
+      - summarization
+    - local: models-classification/model_doc/camembert.md
+      title: CamemBERT
+      year: 2019
+      paper_link: https://huggingface.co/papers/1911.03894
+      paper_id: '1911.03894'
+      techniques:
+      - RoBERTa-based transformer
+      - masked language modeling
+      - French-language pretraining
+      - OSCAR dataset pretraining
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - fill-mask prediction
+      - text classification
+      - sentiment analysis
+      - token classification
+      - entity recognition
+      - sentence pair classification
+      - natural language inference
+      - causal language modeling
+      - multiple-choice classification
+      - question answering
+    - local: models-classification/model_doc/canine.md
+      title: CANINE
+      year: 2021
+      paper_link: https://huggingface.co/papers/2103.06874
+      paper_id: '2103.06874'
+      techniques:
+      - tokenization-free transformer
+      - character-level processing
+      - Unicode character inputs
+      - input downsampling
+      - bidirectional transformer encoder
+      - masked language modeling
+      - next sentence prediction
+      domains:
+      - natural language processing
+      tasks:
+      - feature extraction
+      - masked language modeling
+      - next sentence prediction
+      - text sequence classification
+      - multiple-choice classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/convbert.md
+      title: ConvBERT
+      year: 2020
+      paper_link: https://huggingface.co/papers/2008.02496
+      paper_id: '2008.02496'
+      techniques:
+      - BERT-style transformer encoder
+      - mixed attention block
+      - span-based dynamic convolution
+      - global self-attention
+      - local dependency modeling
+      - masked language model pretraining
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - sequence classification
+      - multiple choice
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/ernie.md
+      title: ERNIE
+      year: 2019
+      paper_link: https://huggingface.co/papers/1904.09223
+      paper_id: '1904.09223'
+      techniques:
+      - knowledge-enhanced masking
+      - entity-level masking
+      - phrase-level masking
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - causal language modeling
+      - next sentence prediction
+      - text classification
+      - multiple-choice classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/eurobert.md
+      title: EuroBERT
+      year: 2025
+      paper_link: https://huggingface.co/papers/2503.05500
+      paper_id: '2503.05500'
+      techniques:
+      - bidirectional transformer encoder
+      - masked language modeling
+      - multilingual pretraining
+      - long-context sequences
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - fill-mask prediction
+      - text classification
+      - token classification
+    - local: models-classification/model_doc/flaubert.md
+      title: FlauBERT
+      year: 2019
+      paper_link: https://huggingface.co/papers/1912.05372
+      paper_id: '1912.05372'
+      techniques:
+      - transformer
+      - masked language modeling pretraining
+      - contextualized representations
+      - French language pretraining
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - text classification
+      - token classification
+      - question answering
+      - multiple choice
+      - paraphrasing
+      - natural language inference
+      - parsing
+      - word sense disambiguation
+    - local: models-classification/model_doc/herbert.md
+      title: HerBERT
+      year: 2020
+      paper_link: https://huggingface.co/papers/2005.00630
+      paper_id: '2005.00630'
+      techniques:
+      - BERT-based transformer
+      - masked language modeling
+      - dynamic masking
+      - whole-word masking
+      - Polish-language pretraining
+      - subword tokenization
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - named entity recognition
+      - question answering
+      - textual entailment
+      - sentiment analysis
+    - local: models-classification/model_doc/longformer.md
+      title: Longformer
+      year: 2020
+      paper_link: https://huggingface.co/papers/2004.05150
+      paper_id: '2004.05150'
+      techniques:
+      - transformer
+      - sparse attention
+      - local windowed attention
+      - task-specific global attention
+      - linear attention scaling
+      - RoBERTa-based architecture
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - fill-mask
+      - sequence classification
+      - multiple-choice classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/megatron-bert.md
+      title: MegatronBERT
+      year: 2019
+      paper_link: https://huggingface.co/papers/1909.08053
+      paper_id: '1909.08053'
+      techniques:
+      - transformer encoder
+      - BERT architecture
+      - tensor model parallelism
+      - pipeline model parallelism
+      - hybrid model parallelism
+      - careful layer-normalization placement
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - causal language modeling
+      - next sentence prediction
+      - text classification
+      - token classification
+      - question answering
+      - multiple choice
+    - local: models-classification/model_doc/mluke.md
+      title: mLUKE
+      year: 2021
+      paper_link: https://huggingface.co/papers/2110.08151
+      paper_id: '2110.08151'
+      techniques:
+      - multilingual transformer language model
+      - XLM-RoBERTa backbone
+      - entity embeddings
+      - entity representations
+      - cross-lingual alignment
+      - cloze prompting
+      domains:
+      - natural language processing
+      - multilingual language understanding
+      tasks:
+      - masked language modeling
+      - named entity recognition
+      - extractive question answering
+      - relation classification
+      - cloze-style knowledge completion
+      - multilingual cloze prompt task
+    - local: models-classification/model_doc/mobilebert.md
+      title: MobileBERT
+      year: 2020
+      paper_link: https://huggingface.co/papers/2004.02984
+      paper_id: '2004.02984'
+      techniques:
+      - transformer encoder
+      - self-attention
+      - feedforward networks
+      - bottleneck structure
+      - inverted bottleneck
+      - knowledge distillation
+      - absolute position embeddings
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - fill-mask prediction
+      - next sentence prediction
+      - sequence classification
+      - multiple-choice classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/modernbert.md
+      title: ModernBert
+      year: 2024
+      paper_link: https://huggingface.co/papers/2412.13663
+      paper_id: '2412.13663'
+      techniques:
+      - bidirectional transformer encoder
+      - rotary positional embeddings
+      - GeGLU layers
+      - alternating attention
+      - padding-free unpadding
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - sequence classification
+      - token classification
+      - multiple-choice classification
+      - question answering
+    - local: models-classification/model_doc/modernvbert.md
+      title: ModernVBert
+      year: 2025
+      paper_link: https://huggingface.co/papers/2510.01149
+      paper_id: '2510.01149'
+      techniques:
+      - vision-language encoder
+      - ModernBert text encoder
+      - SigLIP vision encoder
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      - document understanding
+      tasks:
+      - masked language modeling
+      - multimodal retrieval
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/mpnet.md
+      title: MPNet
+      year: 2020
+      paper_link: https://huggingface.co/papers/2004.09297
+      paper_id: '2004.09297'
+      techniques:
+      - masked language modeling
+      - permuted language modeling
+      - auxiliary position information
+      - transformer encoder
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - text classification
+      - token classification
+      - question answering
+      - multiple choice
+    - local: models-classification/model_doc/mra.md
+      title: MRA
+      year: 2022
+      paper_link: https://huggingface.co/papers/2207.10284
+      paper_id: '2207.10284'
+      techniques:
+      - transformer architecture
+      - multi-resolution analysis
+      - wavelet-based attention approximation
+      - approximate self-attention
+      - sparse attention
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - text classification
+      - multiple-choice classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/nystromformer.md
+      title: Nyströmformer
+      year: 2021
+      paper_link: https://huggingface.co/papers/2102.03902
+      paper_id: '2102.03902'
+      techniques:
+      - transformer encoder
+      - Nyström approximation of self-attention
+      - linear-complexity attention
+      - landmark-based attention approximation
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - text classification
+      - token classification
+      - question answering
+      - multiple choice
+    - local: models-classification/model_doc/phobert.md
+      title: PhoBERT
+      year: 2020
+      paper_link: https://huggingface.co/papers/2003.00744
+      paper_id: '2003.00744'
+      techniques:
+      - BERT-style transformer encoder
+      - monolingual pretraining
+      - Vietnamese word-segmented tokenization
+      domains:
+      - natural language processing
+      tasks:
+      - part-of-speech tagging
+      - dependency parsing
+      - named-entity recognition
+      - natural language inference
+    - local: models-classification/model_doc/reformer.md
+      title: Reformer
+      year: 2020
+      paper_link: https://huggingface.co/papers/2001.04451
+      paper_id: '2001.04451'
+      techniques:
+      - transformer
+      - locality-sensitive hashing attention
+      - local self-attention
+      - reversible residual layers
+      - axial positional encodings
+      - chunked feedforward computation
+      - tied query-key projections
+      domains:
+      - natural language processing
+      tasks:
+      - text classification
+      - question answering
+      - causal language modeling
+      - masked language modeling
+    - local: models-classification/model_doc/roberta.md
+      title: RoBERTa
+      year: 2019
+      paper_link: https://huggingface.co/papers/1907.11692
+      paper_id: '1907.11692'
+      techniques:
+      - transformer encoder
+      - dynamic masking
+      - sentence packing
+      - byte-level BPE tokenizer
+      - large-batch pretraining
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - causal language modeling
+      - text classification
+      - multiple-choice classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/roberta-prelayernorm.md
+      title: RoBERTa-PreLayerNorm
+      year: 2019
+      paper_link: https://huggingface.co/papers/1904.01038
+      paper_id: '1904.01038'
+      techniques:
+      - transformer encoder
+      - self-attention
+      - pre-layer normalization
+      - RoBERTa pretraining
+      domains:
+      - natural language processing
+      tasks:
+      - causal language modeling
+      - masked language modeling
+      - text classification
+      - multiple-choice classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/roc_bert.md
+      title: RoCBert
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - BERT encoder
+      - contrastive learning
+      - adversarial training
+      - semantic, phonetic, and visual feature alignment
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - fill-mask prediction
+      - causal language modeling
+      - text classification
+      - multiple-choice classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/roformer.md
+      title: RoFormer
+      year: 2021
+      paper_link: https://huggingface.co/papers/2104.09864
+      paper_id: '2104.09864'
+      techniques:
+      - encoder-only transformer
+      - rotary position embedding (RoPE)
+      - linear self-attention
+      - subword tokenization
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - causal language modeling
+      - text classification
+      - multiple-choice classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/squeezebert.md
+      title: SqueezeBERT
+      year: 2020
+      paper_link: https://huggingface.co/papers/2006.11316
+      paper_id: '2006.11316'
+      techniques:
+      - bidirectional transformer
+      - grouped convolutions
+      - absolute position embeddings
+      - masked language modeling objective
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - sequence classification
+      - token classification
+      - question answering
+      - multiple choice
+    - local: models-classification/model_doc/xmod.md
+      title: X-MOD
+      year: 2022
+      paper_link: https://huggingface.co/papers/2205.06266
+      paper_id: '2205.06266'
+      techniques:
+      - multilingual transformer
+      - modular transformer
+      - language-specific adapters
+      - masked language modeling pretraining
+      - frozen language adapters during fine-tuning
+      - cross-lingual transfer
+      domains:
+      - natural language processing
+      - multilingual learning
+      tasks:
+      - masked language modeling
+      - causal language modeling
+      - text classification
+      - token classification
+      - named entity recognition
+      - question answering
+      - multiple choice
+      - natural language inference
+    - local: models-classification/model_doc/xlm.md
+      title: XLM
+      year: 2019
+      paper_link: https://huggingface.co/papers/1901.07291
+      paper_id: '1901.07291'
+      techniques:
+      - cross-lingual pretraining
+      - causal language modeling objective
+      - masked language modeling objective
+      - translation language modeling objective
+      domains:
+      - natural language processing
+      - multilingual language modeling
+      tasks:
+      - masked language modeling
+      - causal language modeling
+      - text classification
+      - machine translation
+      - question answering
+      - multiple-choice classification
+      - token classification
+    - local: models-classification/model_doc/xlm-roberta.md
+      title: XLM-RoBERTa
+      year: 2019
+      paper_link: https://huggingface.co/papers/1911.02116
+      paper_id: '1911.02116'
+      techniques:
+      - transformer encoder
+      - RoBERTa pretraining objectives
+      - masked language modeling
+      - multilingual pretraining
+      - scaled dot-product attention
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      - multilingual language understanding
+      tasks:
+      - masked language modeling
+      - text classification
+      - token classification
+      - causal language modeling
+      - question answering
+      - multiple choice
+      - machine translation
+    - local: models-classification/model_doc/xlm-roberta-xl.md
+      title: XLM-RoBERTa-XL
+      year: 2021
+      paper_link: https://huggingface.co/papers/2105.00572
+      paper_id: '2105.00572'
+      techniques:
+      - multilingual transformer encoder
+      - masked language modeling pretraining
+      - large-scale model scaling
+      - scaled dot-product attention (SDPA)
+      - int4 weight-only quantization
+      domains:
+      - natural language processing
+      - multilingual language understanding
+      tasks:
+      - masked language modeling
+      - fill-mask prediction
+      - causal language modeling
+      - text classification
+      - multiple-choice classification
+      - token classification
+      - question answering
+      - machine translation
+    - local: models-classification/model_doc/xlm-v.md
+      title: XLM-V
+      year: 2023
+      paper_link: https://huggingface.co/papers/2301.10472
+      paper_id: '2301.10472'
+      techniques:
+      - transformer encoder
+      - masked language modeling
+      - multilingual pretraining
+      - one-million-token vocabulary
+      - subword tokenization
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - natural language inference
+      - question answering
+      - named entity recognition
+    - local: models-classification/model_doc/yoso.md
+      title: YOSO
+      year: 2021
+      paper_link: https://huggingface.co/papers/2111.09714
+      paper_id: '2111.09714'
+      techniques:
+      - transformer
+      - LSH-based Bernoulli sampling
+      - linear-cost self-attention
+      - Fast Hadamard Transform
+      - custom CUDA kernels
+      domains:
+      - natural language processing
+      tasks:
+      - masked language modeling
+      - text classification
+      - token classification
+      - question answering
+      - multiple choice
+  Text summarization:
+    description: Models whose primary documented use is producing concise summaries of input text, including
+      long-document summarization.
+    documents:
+    - local: models-classification/model_doc/bigbird_pegasus.md
+      title: BigBirdPegasus
+      year: 2020
+      paper_link: https://huggingface.co/papers/2007.14062
+      paper_id: '2007.14062'
+      techniques:
+      - encoder-decoder transformer
+      - sequence-to-sequence modeling
+      - block-sparse attention
+      - long-context modeling
+      - gap sequence generation pretraining
+      domains:
+      - natural language processing
+      tasks:
+      - text summarization
+      - sequence classification
+      - question answering
+      - causal language modeling
+    - local: models-classification/model_doc/led.md
+      title: LED
+      year: 2020
+      paper_link: https://huggingface.co/papers/2004.05150
+      paper_id: '2004.05150'
+      techniques:
+      - encoder-decoder transformer
+      - Longformer chunked sparse self-attention
+      - global attention
+      - autoregressive decoding
+      - 4-bit quantization
+      - gradient checkpointing
+      domains:
+      - natural language processing
+      tasks:
+      - text summarization
+      - question answering
+    - local: models-classification/model_doc/longt5.md
+      title: LongT5
+      year: 2021
+      paper_link: https://huggingface.co/papers/2112.07916
+      paper_id: '2112.07916'
+      techniques:
+      - encoder-decoder transformer
+      - text-to-text denoising pretraining
+      - local sparse sliding-window attention
+      - transient-global attention
+      - long-sequence modeling
+      - PEGASUS-inspired pretraining
+      domains:
+      - natural language processing
+      tasks:
+      - text summarization
+      - machine translation
+      - question answering
+    - local: models-classification/model_doc/mt5.md
+      title: MT5
+      year: 2020
+      paper_link: https://huggingface.co/papers/2010.11934
+      paper_id: '2010.11934'
+      techniques:
+      - encoder-decoder transformer
+      - multilingual pretraining on 101 languages
+      - span corruption pretraining
+      - accidental translation prevention
+      - conditional text generation
+      - 4-bit weight quantization
+      domains:
+      - natural language processing
+      - multilingual language
+      tasks:
+      - text summarization
+      - text generation
+      - machine translation
+      - sequence classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/pegasus.md
+      title: Pegasus
+      year: 2019
+      paper_link: https://huggingface.co/papers/1912.08777
+      paper_id: '1912.08777'
+      techniques:
+      - encoder-decoder transformer
+      - sequence-to-sequence modeling
+      - masked language modeling
+      - gap sentence generation
+      - abstractive summarization
+      - static/sinusoidal positional embeddings
+      - beam search
+      - 4-bit weight quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text summarization
+      - abstractive summarization
+    - local: models-classification/model_doc/pegasus_x.md
+      title: PEGASUS-X
+      year: 2022
+      paper_link: https://huggingface.co/papers/2208.04347
+      paper_id: '2208.04347'
+      techniques:
+      - encoder-decoder transformer
+      - staggered block-local attention
+      - global encoder tokens
+      - long-sequence pretraining
+      - flashattention
+      domains:
+      - natural language processing
+      tasks:
+      - text summarization
+  Code generation:
+    description: Models whose primary documented use is generating executable programs or source code
+      from natural-language or code-based specifications.
+    documents:
+    - local: models-classification/model_doc/codegen.md
+      title: CodeGen
+      year: 2022
+      paper_link: https://huggingface.co/papers/2203.13474
+      paper_id: '2203.13474'
+      techniques:
+      - autoregressive language modeling
+      - causal language modeling
+      - multi-turn conversational program synthesis
+      - sequential pretraining on natural-language and programming-language data
+      domains:
+      - natural language processing
+      - software engineering
+      tasks:
+      - program synthesis
+      - code generation
+      - causal language modeling
+      - conversational program synthesis
+    - local: models-classification/model_doc/code_llama.md
+      title: CodeLlama
+      year: 2023
+      paper_link: https://huggingface.co/papers/2308.12950
+      paper_id: '2308.12950'
+      techniques:
+      - decoder-only transformer
+      - causal language modeling
+      - autoregressive generation
+      - code infilling
+      - byte-pair encoding tokenizer
+      - long-context generation
+      - 4-bit weight quantization
+      domains:
+      - natural language processing
+      - software engineering
+      tasks:
+      - code generation
+      - code explanation
+      - code infilling
+    - local: models-classification/model_doc/gpt_bigcode.md
+      title: GPTBigCode
+      year: 2023
+      paper_link: https://huggingface.co/papers/2301.03988
+      paper_id: '2301.03988'
+      techniques:
+      - decoder-only transformer
+      - GPT-2 architecture
+      - causal self-attention
+      - multi-query attention
+      - FlashAttention 2
+      - attention key/value caching
+      - JIT-fused attention operations
+      domains:
+      - natural language processing
+      - source code
+      tasks:
+      - code generation
+      - code infilling
+      - causal language modeling
+      - sequence classification
+      - token classification
+    - local: models-classification/model_doc/mellum.md
+      title: Mellum
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - mixture-of-experts
+      - routed experts
+      - sliding window attention
+      - rotary position embeddings (RoPE)
+      - FlashAttention
+      - scaled dot-product attention (SDPA)
+      domains:
+      - natural language processing
+      - code intelligence
+      tasks:
+      - code generation
+      - text generation
+    - local: models-classification/model_doc/phi.md
+      title: Phi
+      year: 2023
+      paper_link: https://huggingface.co/papers/2306.11644
+      paper_id: '2306.11644'
+      techniques:
+      - transformer
+      - causal language modeling
+      - autoregressive generation
+      - FlashAttention
+      - scaled dot-product attention
+      - tensor parallelism
+      - 4-bit quantization
+      - static KV cache
+      domains:
+      - natural language processing
+      - code generation
+      tasks:
+      - code generation
+      - text generation
+      - text classification
+      - token classification
+    - local: models-classification/model_doc/plbart.md
+      title: PLBart
+      year: 2021
+      paper_link: https://huggingface.co/papers/2103.06333
+      paper_id: '2103.06333'
+      techniques:
+      - encoder-decoder transformer
+      - BART-like sequence-to-sequence architecture
+      - multilingual denoising autoencoding pretraining
+      - language-specific special tokens
+      domains:
+      - natural language processing
+      - programming languages
+      - code intelligence
+      tasks:
+      - code summarization
+      - code generation
+      - code translation
+      - program repair
+      - clone detection
+      - vulnerable code detection
+      - text classification
+      - causal language modeling
+      - translation
+      - text summarization
+    - local: models-classification/model_doc/starcoder2.md
+      title: Starcoder2
+      year: 2024
+      paper_link: https://huggingface.co/papers/2402.19173
+      paper_id: '2402.19173'
+      techniques:
+      - decoder-only transformer
+      - grouped query attention
+      - sliding window attention
+      - fill-in-the-middle training objective
+      - causal language modeling
+      - FlashAttention
+      - SDPA
+      - tensor parallelism
+      domains:
+      - natural language processing
+      - code
+      tasks:
+      - code generation
+      - code completion
+      - text generation
+      - text classification
+      - token classification
+  Text classification:
+    description: Models whose primary documented use is assigning labels or relations to input text sequences
+      or sentence pairs.
+    documents:
+    - local: models-classification/model_doc/deberta.md
+      title: DeBERTa
+      year: 2020
+      paper_link: https://huggingface.co/papers/2006.03654
+      paper_id: '2006.03654'
+      techniques:
+      - disentangled attention
+      - relative position embeddings
+      - enhanced mask decoder
+      - transformer-based encoder
+      domains:
+      - natural language processing
+      tasks:
+      - text classification
+      - masked language modeling
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/deberta-v2.md
+      title: DeBERTa-v2
+      year: 2020
+      paper_link: https://huggingface.co/papers/2006.03654
+      paper_id: '2006.03654'
+      techniques:
+      - transformer encoder
+      - disentangled attention
+      - SentencePiece tokenizer
+      - convolutional layer for local dependencies
+      - shared position and content projection matrices
+      - 4-bit weight quantization
+      domains:
+      - natural language processing
+      tasks:
+      - text classification
+      - masked language modeling
+      - token classification
+      - question answering
+      - multiple-choice classification
+    - local: models-classification/model_doc/distilbert.md
+      title: DistilBERT
+      year: 2019
+      paper_link: https://huggingface.co/papers/1910.01108
+      paper_id: '1910.01108'
+      techniques:
+      - transformer encoder
+      - knowledge distillation
+      - triple-loss pretraining
+      - language modeling loss
+      - distillation loss
+      - cosine-distance loss
+      domains:
+      - natural language processing
+      tasks:
+      - text classification
+      - masked language modeling
+      - multiple-choice classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/electra.md
+      title: ELECTRA
+      year: 2020
+      paper_link: https://huggingface.co/papers/2003.10555
+      paper_id: '2003.10555'
+      techniques:
+      - transformer encoder
+      - generator-discriminator pretraining
+      - replaced token detection
+      - attention masking
+      - embedding projection
+      domains:
+      - natural language processing
+      tasks:
+      - text classification
+      - sequence classification
+      - token classification
+      - question answering
+      - multiple-choice classification
+      - masked language modeling
+      - causal language modeling
+    - local: models-classification/model_doc/fnet.md
+      title: FNet
+      year: 2021
+      paper_link: https://huggingface.co/papers/2105.03824
+      paper_id: '2105.03824'
+      techniques:
+      - transformer encoder
+      - Fourier transform token mixing
+      - feed-forward layers
+      - self-attention replacement
+      - pretraining
+      domains:
+      - natural language processing
+      tasks:
+      - text classification
+      - token classification
+      - question answering
+      - masked language modeling
+      - next sentence prediction
+      - multiple choice
+    - local: models-classification/model_doc/funnel.md
+      title: Funnel Transformer
+      year: 2020
+      paper_link: https://huggingface.co/papers/2006.03236
+      paper_id: '2006.03236'
+      techniques:
+      - bidirectional transformer
+      - hierarchical pooling
+      - sequence compression
+      - decoder-based upsampling
+      - masked language pretraining
+      domains:
+      - natural language processing
+      tasks:
+      - text classification
+      - masked language modeling
+      - multiple-choice classification
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/ibert.md
+      title: I-BERT
+      year: 2021
+      paper_link: https://huggingface.co/papers/2101.01321
+      paper_id: '2101.01321'
+      techniques:
+      - RoBERTa-based transformer
+      - integer-only quantization
+      - INT8 inference
+      - integer-only approximations for GELU, Softmax, and layer normalization
+      domains:
+      - natural language processing
+      tasks:
+      - text classification
+      - sequence classification
+      - token classification
+      - question answering
+      - masked language modeling
+      - multiple choice
+    - local: models-classification/model_doc/luke.md
+      title: LUKE
+      year: 2020
+      paper_link: https://huggingface.co/papers/2010.01057
+      paper_id: '2010.01057'
+      techniques:
+      - RoBERTa-based bidirectional transformer
+      - entity embeddings
+      - entity-aware self-attention
+      - entity-aware token representations
+      - masked language modeling pretraining
+      domains:
+      - natural language processing
+      tasks:
+      - named entity recognition
+      - extractive question answering
+      - cloze-style question answering
+      - entity typing
+      - relation classification
+      - entity classification
+      - entity pair classification
+      - entity span classification
+      - sequence classification
+      - token classification
+      - multiple choice
+      - masked language modeling
+    - local: models-classification/model_doc/markuplm.md
+      title: MarkupLM
+      year: 2021
+      paper_link: https://huggingface.co/papers/2110.08518
+      paper_id: '2110.08518'
+      techniques:
+      - BERT-style transformer encoder
+      - joint text-and-markup pre-training
+      - HTML/XML markup modeling
+      - XPath tag and subscript embeddings
+      - tokenization with node-level alignment
+      domains:
+      - natural language processing
+      - document understanding
+      - web data
+      tasks:
+      - web page classification
+      - token classification
+      - question answering
+      - information extraction
+      - named-entity recognition
+    - local: models-classification/model_doc/openai_privacy_filter.md
+      title: OpenAI Privacy Filter
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - autoregressive pretraining
+      - bidirectional token classification
+      - supervised classification loss
+      - constrained Viterbi decoding
+      - long-context modeling
+      - parameter-efficient runtime control
+      domains:
+      - natural language processing
+      - text privacy
+      tasks:
+      - token classification
+      - personally identifiable information detection
+      - personally identifiable information masking
+      - privacy span detection
+    - local: models-classification/model_doc/rembert.md
+      title: RemBERT
+      year: 2020
+      paper_link: https://huggingface.co/papers/2010.12821
+      paper_id: '2010.12821'
+      techniques:
+      - Transformer encoder
+      - multilingual pretraining
+      - decoupled input and output embeddings
+      - ALBERT-like embedding factorization
+      domains:
+      - natural language processing
+      tasks:
+      - text classification
+      - causal language modeling
+      - masked language modeling
+      - sequence classification
+      - multiple-choice classification
+      - token classification
+      - question answering
+  Optical character recognition:
+    description: Models whose primary documented use is extracting text from images or scanned documents,
+      optionally with spatial grounding or structured document conversion.
+    documents:
+    - local: models-classification/model_doc/deepseek_ocr2.md
+      title: DeepSeek-OCR-2
+      year: 2026
+      paper_link: https://huggingface.co/papers/2601.20552
+      paper_id: '2601.20552'
+      techniques:
+      - SAM ViT-B vision encoder
+      - Qwen2 hybrid attention encoder
+      - MLP projector
+      - DeepSeek-V2 mixture-of-experts language model
+      - bidirectional image-token attention
+      - causal query-token attention
+      - vision-language modeling
+      - coordinate-aware generation
+      domains:
+      - computer vision
+      - multimodal learning
+      - document understanding
+      tasks:
+      - optical character recognition
+      - document text extraction
+      - document grounding
+      - document-to-markdown conversion
+    - local: models-classification/model_doc/hunyuan_vl.md
+      title: HunYuanVL
+      year: 2025
+      paper_link: https://huggingface.co/papers/2511.19575
+      paper_id: '2511.19575'
+      techniques:
+      - native vision transformer
+      - lightweight language model
+      - MLP adapter
+      - end-to-end vision-language architecture
+      - image-text prompting
+      - reinforcement learning
+      domains:
+      - computer vision
+      - multimodal learning
+      - document understanding
+      tasks:
+      - optical character recognition
+      - text spotting
+      - text parsing
+      - information extraction
+      - visual question answering
+      - text-image translation
+      - image-text generation
+  Question answering:
+    description: Models whose primary documented use is retrieving relevant passages and/or extracting
+      or generating answers to natural-language questions.
+    documents:
+    - local: models-classification/model_doc/dpr.md
+      title: DPR
+      year: 2020
+      paper_link: https://huggingface.co/papers/2004.04906
+      paper_id: '2004.04906'
+      techniques:
+      - dual-encoder architecture
+      - dense passage retrieval
+      - question encoder
+      - context encoder
+      - dense vector representations
+      - answer-span reader
+      - relevance scoring
+      domains:
+      - natural language processing
+      - information retrieval
+      tasks:
+      - passage retrieval
+      - open-domain question answering
+      - extractive question answering
+    - local: models-classification/model_doc/rag.md
+      title: RAG
+      year: 2020
+      paper_link: https://huggingface.co/papers/2005.11401
+      paper_id: '2005.11401'
+      techniques:
+      - retrieval-augmented generation
+      - neural passage retriever
+      - external non-parametric memory
+      - pretrained language model
+      - retrieval-conditioned generation
+      - autoregressive generation
+      - FlashAttention
+      - 4-bit quantization
+      domains:
+      - natural language processing
+      tasks:
+      - question answering
+      - text generation
+    - local: models-classification/model_doc/splinter.md
+      title: Splinter
+      year: 2021
+      paper_link: https://huggingface.co/papers/2101.00438
+      paper_id: '2101.00438'
+      techniques:
+      - encoder-only transformer
+      - recurring span selection pretraining
+      - question-aware span selection
+      - QASS layer
+      - few-shot learning
+      domains:
+      - natural language processing
+      tasks:
+      - question answering
+  Protein structure prediction:
+    description: Models whose primary documented use is predicting the three-dimensional or folded structure
+      of proteins from amino-acid sequences.
+    documents:
+    - local: models-classification/model_doc/esm.md
+      title: ESM
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - transformer protein language model
+      - masked language modeling
+      - unsupervised pretraining
+      - ESM-2 language-model stem
+      - protein-folding prediction head
+      - MSA-free inference
+      - token embeddings
+      domains:
+      - computational biology
+      - protein modeling
+      tasks:
+      - protein structure prediction
+      - mutational effect prediction
+      - secondary structure prediction
+      - long-range contact prediction
+      - text classification
+      - token classification
+      - masked language modeling
+  Machine translation:
+    description: Models whose primary documented use is translating text between natural languages.
+    documents:
+    - local: models-classification/model_doc/fsmt.md
+      title: FSMT
+      year: 2019
+      paper_link: https://huggingface.co/papers/1907.06616
+      paper_id: '1907.06616'
+      techniques:
+      - encoder-decoder transformer
+      - byte-pair encoding
+      - sampled back-translation
+      - bitext data filtering
+      - ensemble decoding
+      - domain-specific fine-tuning
+      - noisy-channel model reranking
+      - separate source and target vocabularies
+      domains:
+      - natural language processing
+      - machine translation
+      tasks:
+      - machine translation
+    - local: models-classification/model_doc/m2m_100.md
+      title: M2M100
+      year: 2020
+      paper_link: https://huggingface.co/papers/2010.11125
+      paper_id: '2010.11125'
+      techniques:
+      - multilingual encoder-decoder transformer
+      - sequence-to-sequence modeling
+      - many-to-many multilingual training
+      - dense scaling
+      - language-specific sparse parameters
+      - language-id prefix tokens
+      - forced target-language token
+      - FlashAttention
+      - scaled dot-product attention
+      domains:
+      - natural language processing
+      - multilingual language modeling
+      tasks:
+      - machine translation
+      - text summarization
+    - local: models-classification/model_doc/madlad-400.md
+      title: MADLAD-400
+      year: 2023
+      paper_link: https://huggingface.co/papers/2309.04662
+      paper_id: '2309.04662'
+      techniques:
+      - encoder-decoder transformer
+      - sequence-to-sequence generation
+      - multilingual modeling
+      - few-shot translation
+      domains:
+      - natural language processing
+      - multilingual language processing
+      tasks:
+      - machine translation
+    - local: models-classification/model_doc/marian.md
+      title: MarianMT
+      year: 2018
+      paper_link: https://huggingface.co/papers/1804.00344
+      paper_id: '1804.00344'
+      techniques:
+      - transformer encoder-decoder
+      - autoregressive sequence generation
+      - static sinusoidal positional embeddings
+      - attention masking
+      - static key-value caching
+      - SDPA/FlashAttention support
+      domains:
+      - natural language processing
+      - multilingual language
+      tasks:
+      - machine translation
+    - local: models-classification/model_doc/mbart.md
+      title: MBart and MBart-50
+      year: 2020
+      paper_link: https://huggingface.co/papers/2001.08210
+      paper_id: '2001.08210'
+      techniques:
+      - encoder-decoder transformer
+      - multilingual pretraining
+      - denoising autoencoding
+      - sequence-to-sequence generation
+      - language-specific tokens
+      domains:
+      - natural language processing
+      - multilingual language processing
+      tasks:
+      - machine translation
+      - text generation
+      - question answering
+      - text classification
+      - causal language modeling
+    - local: models-classification/model_doc/nllb.md
+      title: NLLB
+      year: 2022
+      paper_link: https://huggingface.co/papers/2207.04672
+      paper_id: '2207.04672'
+      techniques:
+      - sequence-to-sequence language modeling
+      - conditional compute
+      - sparsely gated mixture of experts
+      - data mining for low-resource languages
+      - 8-bit quantization
+      domains:
+      - natural language processing
+      - multilingual language
+      tasks:
+      - machine translation
+    - local: models-classification/model_doc/nllb-moe.md
+      title: NLLB-MoE
+      year: 2022
+      paper_link: https://huggingface.co/papers/2207.04672
+      paper_id: '2207.04672'
+      techniques:
+      - conditional computation
+      - sparsely gated mixture of experts
+      - top-2 expert routing
+      - transformer-based sequence-to-sequence generation
+      domains:
+      - natural language processing
+      - multilingual language processing
+      tasks:
+      - machine translation
+  Image captioning:
+    description: Models whose primary documented use is generating natural-language captions or descriptions
+      of images.
+    documents:
+    - local: models-classification/model_doc/fuyu.md
+      title: Fuyu
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - decoder-only transformer
+      - multimodal embeddings
+      - linear image encoder
+      - query and key normalization
+      - image tokens treated as text tokens
+      - special image-newline token
+      domains:
+      - computer vision
+      - multimodal learning
+      - natural language processing
+      tasks:
+      - image captioning
+      - text generation
+    - local: models-classification/model_doc/minimax_m3_vl.md
+      title: MiniMax-M3-VL
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - CLIP-style vision tower
+      - Conv3d patch embedding
+      - 3D rotary position embeddings
+      - multimodal projector
+      - mixed dense/sparse Mixture-of-Experts decoder
+      - SwiGLU gated experts
+      - grouped-query attention
+      - block-sparse attention with lightning indexer
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - image captioning
+      - visual question answering
+      - text generation
+  Image generation:
+    description: Models whose primary documented use is generating or transforming images from text prompts,
+      reference images, or both.
+    documents:
+    - local: models-classification/model_doc/glm_image.md
+      title: GLM-Image
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - hybrid autoregressive and diffusion decoder
+      - autoregressive visual-token generation
+      - single-stream diffusion transformer (DiT)
+      - latent-space image decoding
+      - glyph encoder
+      - vector-quantized variational autoencoder (VQ-VAE)
+      - decoupled reinforcement learning
+      - GRPO
+      domains:
+      - computer vision
+      - generative AI
+      tasks:
+      - image generation
+      - text-to-image generation
+      - image-to-image generation
+      - image editing
+      - style transfer
+      - multi-subject consistency
+      - identity-preserving generation
+  Text embedding:
+    description: Models whose primary documented use is producing dense text representations for semantic
+      comparison, retrieval, clustering, or downstream language tasks.
+    documents:
+    - local: models-classification/model_doc/jina_embeddings_v3.md
+      title: jina_embeddings_v3
+      year: 2024
+      paper_link: https://huggingface.co/papers/2409.10173
+      paper_id: '2409.10173'
+      techniques:
+      - XLM-RoBERTa architecture
+      - rotary position embeddings
+      - long-context modeling up to 8192 tokens
+      - task-specific LoRA adapters
+      - mean pooling
+      - L2 normalization
+      domains:
+      - natural language processing
+      - information retrieval
+      tasks:
+      - text embedding
+      - feature extraction
+      - asymmetric retrieval
+      - clustering
+      - re-ranking
+      - text classification
+      - semantic textual similarity
+      - symmetric retrieval
+      - masked language modeling
+      - token classification
+      - question answering
+    - local: models-classification/model_doc/nomic_bert.md
+      title: NomicBERT
+      year: 2024
+      paper_link: https://huggingface.co/papers/2402.01613
+      paper_id: '2402.01613'
+      techniques:
+      - BERT-style encoder
+      - rotary positional embeddings (RoPE)
+      - mean pooling
+      - L2 normalization
+      - dynamic RoPE scaling
+      - long-context encoding
+      domains:
+      - natural language processing
+      tasks:
+      - text embedding
+      - semantic search
+      - clustering
+      - text classification
+      - masked language modeling
+      - token classification
+  Multimodal generation:
+    description: Models whose primary documented use is generating outputs conditioned on combined inputs
+      from multiple modalities, such as text and vision.
+    documents:
+    - local: models-classification/model_doc/muse_glimmer.md
+      title: MuseGlimmer
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - multimodal text-vision architecture
+      - text transformer
+      - vision transformer
+      - conditional generation
+      domains:
+      - multimodal learning
+      - computer vision
+      - natural language processing
+      tasks:
+      - conditional generation
+    - local: models-classification/model_doc/muse_glimmer_assistant.md
+      title: MuseGlimmerAssistant
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques: []
+      domains: []
+      tasks: []
+    - local: models-classification/model_doc/t5gemma2.md
+      title: T5Gemma2
+      year: null
+      paper_link: null
+      paper_id: null
+      techniques:
+      - encoder-decoder transformer
+      - UL2 pretraining
+      - model adaptation
+      - tied word embeddings
+      - merged self- and cross-attention
+      - long-context modeling
+      - multilingual modeling
+      domains:
+      - natural language processing
+      - computer vision
+      - multimodal learning
+      tasks:
+      - multimodal generation
+      - image captioning
+      - text generation
+      - text classification
+      - token classification
+read_errors: []
