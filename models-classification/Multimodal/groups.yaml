@@ -2070,9 +2070,9 @@ groups:
       - image-text similarity
     - local: models-classification/model_doc/metaclip_2.md
       title: MetaCLIP 2
-      year: null
-      paper_link: null
-      paper_id: null
+      year: 2025
+      paper_link: "https://huggingface.co/papers/2507.22062"
+      paper_id: "2507.22062"
       techniques:
       - CLIP-style vision-language dual encoder
       - image and text projection heads
@@ -2124,9 +2124,9 @@ groups:
       - video classification
     - local: models-classification/model_doc/pp_lcnet.md
       title: PPLCNet
-      year: null
-      paper_link: null
-      paper_id: null
+      year: 2021
+      paper_link: "https://huggingface.co/papers/2109.15099"
+      paper_id: "2109.15099"
       techniques:
       - lightweight convolutional neural network
       - efficient architecture
